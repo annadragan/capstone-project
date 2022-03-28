@@ -2,7 +2,7 @@ import Card from './Card';
 import { render, screen } from '@testing-library/react';
 
 describe('Card', () => {
-  it('renders a word and example and/or explanation', () => {
+  it('renders a word, example and explanation', () => {
     render(
       <Card
         word="Aufflackern"
