@@ -4,14 +4,14 @@ export const vocabulary = [
     word: 'Aufflackern',
     example: '"Der Widerstand ist noch einmal kurz aufgeflackert"',
     explanation:
-      'an Heftigkeit gewinnen, auflodern, heftiger werden. Übertragen: immer mal wieder kurz an intensität gewinnen',
+      'an Heftigkeit gewinnen, auflodern, heftiger werden. Übertragen: Immer mal wieder kurz an Intensität gewinnen',
   },
   {
     _id: 'c2hvcHBpbmcuaXRlbToy',
     word: 'erobern',
     example: '"Die Ukraine hat Gebiete zurückerobert"',
     explanation:
-      'ein Gebiet, eine Region, eine Stadt usw. unter seine Kontrolle bringen, aber auch: durch eigene Bemühung oft gegen Widerstände etwas erlangen, gewinnen',
+      'ein Gebiet, eine Region, eine Stadt usw. unter seine Kontrolle bringen, aber auch: Durch eigene Bemühung oft gegen Widerstände etwas erlangen, gewinnen',
   },
   {
     _id: 'c2hvcHBpbmcuaXRlbTo0',
@@ -34,7 +34,7 @@ export const vocabulary = [
     example:
       '"Chromebooks mausern sich im Einstiegsbereich zur echten Alternative zu Windows"',
     explanation:
-      'übertragen: sich mausern -> sich zu seinem Vorteil entwickeln, sich wandeln, sich ändern, heranreifen',
+      'übertragen: Sich mausern -> sich zu seinem Vorteil entwickeln, sich wandeln, sich ändern, heranreifen',
   },
   {
     _id: 'c2hvcHBpbmcuaXRlbToz',
@@ -49,7 +49,7 @@ export const vocabulary = [
     example:
       '"Berliner Polizei nimmt bei Razzia gegen Drogenhändlerbande fünf Männer fest"',
     explanation:
-      'meinstens durch der Polizei geplante, unangekündigte, überraschende Fahndungsaktion nach verdächtigen Personen',
+      'meinstens durch die Polizei geplante, unangekündigte, überraschende Fahndungsaktion nach verdächtigen Personen',
   },
   {
     _id: 'c2hvcHBpbmcuaXRlbTo4',
@@ -57,7 +57,7 @@ export const vocabulary = [
     example:
       '"Ermittler aus Osnabrück, Nordrhein-Westfalen, Hamburg und Berlin haben einen Cybercrime-Ring zerschlagen"',
     explanation:
-      'übertragen: eine gegnerische Gruppe von Menschen unschädlich machen',
+      'übertragen: Eine gegnerische Gruppe von Menschen unschädlich machen',
   },
   {
     _id: 'c2hvcHBpbmcuaXRlbTo5',
