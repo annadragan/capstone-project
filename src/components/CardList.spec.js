@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import CardList from './CardList.js';
+import CardList from './CardList';
 
 describe('CardList', () => {
   it('Render a list of vocabulary cards', () => {

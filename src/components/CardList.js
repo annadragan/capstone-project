@@ -6,7 +6,7 @@ export default function CardList() {
   return (
     <>
       <Wrapper>
-        <Cards role="list" aria-label="vocabulary cards" rows={3}>
+        <AllCards role="list" aria-label="vocabulary cards" rows={3}>
           {vocabulary.map(({ _id, word, example, explanation }) => {
             return (
               <Card
@@ -17,14 +17,14 @@ export default function CardList() {
               />
             );
           })}
-        </Cards>
+        </AllCards>
       </Wrapper>
     </>
   );
 }
 
 const Wrapper = styled.div``;
-const Cards = styled.ul`
+const AllCards = styled.ul`
   display: grid;
   grid-template-columns: repeat(${props => props.rows}, 1fr);
   padding: 20px;

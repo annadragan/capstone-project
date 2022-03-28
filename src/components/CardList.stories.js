@@ -1,7 +1,7 @@
-import CardList from './components/CardList';
+import CardList from './CardList';
 
 export default {
-  title: 'components/List',
+  title: '/CardList',
   component: CardList,
 };
 
