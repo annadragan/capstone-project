@@ -7,14 +7,13 @@ export default function Input({
   minLength,
   onChange,
   name,
-  id,
   value,
 }) {
   return (
     <>
-      <StyledLabel htmlFor="new_word">{labelText}</StyledLabel>
+      <StyledLabel htmlFor={name}>{labelText}</StyledLabel>
       <StyledInput
-        id={id}
+        id={name}
         name={name}
         placeholder={placeholder}
         type="text"
