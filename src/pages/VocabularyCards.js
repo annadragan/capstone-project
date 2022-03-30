@@ -7,7 +7,7 @@ import Header from '../components/Header';
 export default function VocabularyCards({ vocabulary }) {
   return (
     <>
-      <Wrapper>
+      <div>
         <Header>Vocabulary Cards</Header>
         <CardList />
         {/* <ul>
@@ -19,12 +19,10 @@ export default function VocabularyCards({ vocabulary }) {
           {' '}
           <PlusButton type="button" />
         </Link>
-      </Wrapper>
+      </div>
     </>
   );
 }
-
-const Wrapper = styled.section``;
 
 const PlusButton = styled.button.attrs(() => ({
   children: <BsPatchPlusFill style={{ width: '35px', height: '35px' }} />,

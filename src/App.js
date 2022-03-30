@@ -5,7 +5,7 @@ import CardList from './components/CardList';
 import Form from './components/Form';
 import Navigation from './components/Navigation';
 import VocabularyCards from './pages/VocabularyCards';
-import Archive from './pages/Archive';
+// import Archive from './pages/Archive';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 
@@ -32,7 +32,7 @@ function App() {
               />
             }
           />
-          <Route path="/archive" element={<Archive />} />
+          {/* <Route path="/archive" element={<Archive />} /> */}
         </Routes>
         <Navigation />
       </AppWrapper>

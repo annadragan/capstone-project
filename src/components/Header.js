@@ -2,11 +2,13 @@ import styled from 'styled-components';
 
 export default styled.h1`
   padding: 10px;
-  text-align: center;
   width: 100%;
-  position: sticky;
   top: 0;
   z-index: 2;
+  text-align: center;
   display: flex;
-  align-items: center;
+  height: 48px;
+  background: hsl(220, 15%, 35%);
+  position: fixed;
+  font-size: 1.4rem;
 `;

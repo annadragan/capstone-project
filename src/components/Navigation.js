@@ -5,7 +5,7 @@ export default function Navigation() {
   return (
     <Nav>
       <LinkStyled to="/vocabularycards">Vocabulary Cards</LinkStyled>
-      <LinkStyled to="/archive">Archive</LinkStyled>
+      {/* <LinkStyled to="/archive">Archive</LinkStyled> */}
     </Nav>
   );
 }
