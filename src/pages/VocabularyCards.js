@@ -1,12 +1,21 @@
 import styled from 'styled-components';
 import { BsPatchPlusFill } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
-export default function VocabularyCards() {
+export default function VocabularyCards({ vocabulary }) {
   return (
     <>
       <Wrapper>
         This is my future vocabulary page
-        <PlusButton type="button" />
+        <ul>
+          {vocabulary?.map(singleVoc => (
+            <li key={singleVoc._id}> {singleVoc.word}</li>
+          ))}
+        </ul>
+        <Link to={'/form'}>
+          {' '}
+          <PlusButton type="button" />
+        </Link>
       </Wrapper>
     </>
   );

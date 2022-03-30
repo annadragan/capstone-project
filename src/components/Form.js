@@ -2,11 +2,13 @@ import styled from 'styled-components';
 import Input from './Input';
 import Button from './Button';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Form({ onCreateTerm }) {
   const [newWord, setNewWord] = useState('');
   const [newExample, setNewExample] = useState('');
   const [newExplanation, setNewExplanation] = useState('');
+  const navigate = useNavigate();
 
   const disabled = newWord === '' || newExample === '' || newExplanation === '';
 
@@ -67,6 +69,7 @@ export default function Form({ onCreateTerm }) {
       setNewWord('');
       setNewExample('');
       setNewExplanation('');
+      navigate('/cards');
       form.reset();
     }
   }

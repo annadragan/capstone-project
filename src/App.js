@@ -10,18 +10,26 @@ import { Routes, Route } from 'react-router-dom';
 
 function App() {
   const [vocabulary, setVocabulary] = useState([]);
-  // const [switchPage, setSwitchPage] = useState(true);
 
   return (
     <>
       <AppWrapper>
         <h1>📚 Hello Capstone</h1>
-        <CardList vocabulary={vocabulary} />
-        <Form onCreateTerm={handleSubmitTerm} />
+
         <Routes>
+          <Route path="/cards" element={<CardList vocabulary={vocabulary} />} />
           <Route
-            path="/"
-            element={<VocabularyCards onCreateTerm={handleSubmitTerm} />}
+            path="/form"
+            element={<Form onCreateTerm={handleSubmitTerm} />}
+          />
+          <Route
+            path="/vocabularycards"
+            element={
+              <VocabularyCards
+                onCreateTerm={handleSubmitTerm}
+                vocabulary={vocabulary}
+              />
+            }
           />
           <Route path="/archive" element={<Archive />} />
         </Routes>
@@ -40,9 +48,6 @@ function App() {
 
     setVocabulary([...vocabulary, newWord]);
   }
-  // function handleSwitchPage() {
-  //   setSwitchPage(!switchPage);
-  // }
 }
 
 export default App;

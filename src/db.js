@@ -1,4 +1,4 @@
-export const vocabulary = [
+export const initialVocabulary = [
   {
     _id: 'c2hvcHBpbmcuaXRlbTox',
     word: 'Aufflackern',
