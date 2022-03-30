@@ -1,8 +1,15 @@
 import styled from 'styled-components';
 import Input from './Input';
 import Button from './Button';
+import { useState } from 'react';
 
 export default function Form({ onCreateTerm }) {
+  const [newWord, setNewWord] = useState('');
+  const [newExample, setNewExample] = useState('');
+  const [newExplanation, setNewExplanation] = useState('');
+
+  const disabled = newWord === '' || newExample === '' || newExplanation === '';
+
   return (
     <>
       <FormWrapper
@@ -17,6 +24,7 @@ export default function Form({ onCreateTerm }) {
           minLength="2"
           id="new_word"
           name="new_word"
+          value={newWord}
           // required
         />
         <Input
@@ -26,6 +34,7 @@ export default function Form({ onCreateTerm }) {
           minLength="4"
           id="new_example"
           name="new_example"
+          value={newExample}
         />
         <Input
           labelText="Explanation:"
@@ -34,8 +43,11 @@ export default function Form({ onCreateTerm }) {
           minLength="4"
           id="new_explanation"
           name="new_explanation"
+          value={newExplanation}
         />
-        <Button type="submit">Create a card</Button>
+        <Button disabled={disabled} type="submit">
+          Create a card
+        </Button>
       </FormWrapper>
     </>
   );
@@ -52,6 +64,9 @@ export default function Form({ onCreateTerm }) {
       (newExplanation.length >= 4)
     ) {
       onCreateTerm(newWord, newExample, newExplanation);
+      setNewWord('');
+      setNewExample('');
+      setNewExplanation('');
       form.reset();
     }
   }

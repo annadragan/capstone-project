@@ -33,4 +33,5 @@ const StyledLabel = styled.label`
 const StyledInput = styled.input`
   padding: 7px;
   font-size: 1rem;
+  margin: 5px;
 `;

@@ -3,16 +3,29 @@ import { useState } from 'react';
 import { nanoid } from 'nanoid';
 import CardList from './components/CardList';
 import Form from './components/Form';
+import Navigation from './components/Navigation';
+import VocabularyCards from './pages/VocabularyCards';
+import Archive from './pages/Archive';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   const [vocabulary, setVocabulary] = useState([]);
+  // const [switchPage, setSwitchPage] = useState(true);
 
   return (
     <>
       <AppWrapper>
-        <h1>📚 Hello Capstone Project</h1>
+        <h1>📚 Hello Capstone</h1>
         <CardList vocabulary={vocabulary} />
         <Form onCreateTerm={handleSubmitTerm} />
+        <Routes>
+          <Route
+            path="/"
+            element={<VocabularyCards onCreateTerm={handleSubmitTerm} />}
+          />
+          <Route path="/archive" element={<Archive />} />
+        </Routes>
+        <Navigation />
       </AppWrapper>
     </>
   );
@@ -27,6 +40,9 @@ function App() {
 
     setVocabulary([...vocabulary, newWord]);
   }
+  // function handleSwitchPage() {
+  //   setSwitchPage(!switchPage);
+  // }
 }
 
 export default App;
