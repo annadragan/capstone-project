@@ -17,10 +17,12 @@ function App() {
     </>
   );
 
-  function handleSubmitTerm(word) {
+  function handleSubmitTerm(word, example, explanation) {
     const newWord = {
       _id: nanoid(),
       word,
+      example,
+      explanation,
     };
 
     setVocabulary([...vocabulary, newWord]);

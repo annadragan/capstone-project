@@ -13,12 +13,29 @@ export default function Form({ onCreateTerm }) {
         <Input
           labelText="New word:"
           placeholder="Enter your word..."
-          maxLength="80"
+          maxLength="20"
           minLength="2"
           id="new_word"
           name="new_word"
+          // required
         />
-        <Button type="submit">Create a word</Button>
+        <Input
+          labelText="Example:"
+          placeholder="Enter some example phrase..."
+          maxLength="80"
+          minLength="4"
+          id="new_example"
+          name="new_example"
+        />
+        <Input
+          labelText="Explanation:"
+          placeholder="Enter your explanation..."
+          maxLength="200"
+          minLength="4"
+          id="new_explanation"
+          name="new_explanation"
+        />
+        <Button type="submit">Create a card</Button>
       </FormWrapper>
     </>
   );
@@ -27,8 +44,14 @@ export default function Form({ onCreateTerm }) {
     event.preventDefault();
     const form = event.target;
     const newWord = form.elements.new_word.value.trim();
-    if (newWord.length >= 2) {
-      onCreateTerm(newWord);
+    const newExample = form.elements.new_example.value.trim();
+    const newExplanation = form.elements.new_explanation.value.trim();
+    if (
+      (newWord.length >= 2) &
+      (newExample.length >= 2) &
+      (newExplanation.length >= 4)
+    ) {
+      onCreateTerm(newWord, newExample, newExplanation);
       form.reset();
     }
   }

@@ -21,7 +21,6 @@ export default function Input({
         maxLength={maxLength}
         minLength={minLength}
         onChange={onChange}
-        required
       />
     </>
   );
