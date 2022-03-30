@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Input from './Input';
 import Button from './Button';
 
-export default function Form({ onCreateTerm, inputText }) {
+export default function Form({ onCreateTerm }) {
   return (
     <>
       <FormWrapper
@@ -17,15 +17,8 @@ export default function Form({ onCreateTerm, inputText }) {
           minLength="2"
           id="new_word"
           name="new_word"
-          value={inputText}
         />
-        <Button
-          children="Create a word"
-          aria-label="Create a word"
-          onClick={onCreateTerm}
-          type="submit"
-        />
-        <p>{inputText}</p>
+        <Button type="submit">Create a word</Button>
       </FormWrapper>
     </>
   );

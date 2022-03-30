@@ -1,8 +1,8 @@
 import Card from './Card';
 import styled from 'styled-components';
-import { vocabulary } from '../db';
+// import { vocabulary } from '../db';
 
-export default function CardList() {
+export default function CardList({ vocabulary }) {
   return (
     <>
       <ListWrapper role="list" aria-label="vocabulary cards" rows={3}>

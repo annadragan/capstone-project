@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 
-export default function Button({ onClick, children }) {
+export default function Button({ onClick }) {
   return (
     <ButtonStyled onClick={onClick} aria-label="button" role="button">
-      {children}
+      Button
     </ButtonStyled>
   );
 }

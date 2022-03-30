@@ -7,7 +7,7 @@ export default function Input({
   minLength,
   onChange,
   name,
-  value,
+  // value,
 }) {
   return (
     <>
@@ -17,7 +17,7 @@ export default function Input({
         name={name}
         placeholder={placeholder}
         type="text"
-        value={value}
+        // value={value}
         maxLength={maxLength}
         minLength={minLength}
         onChange={onChange}
