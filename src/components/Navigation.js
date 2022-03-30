@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 export default function Navigation() {
   return (
     <Nav>
-      <LinkStyled to="/vocabularycards">VocabularyCards</LinkStyled>
+      <LinkStyled to="/vocabularycards">Vocabulary Cards</LinkStyled>
       <LinkStyled to="/archive">Archive</LinkStyled>
     </Nav>
   );

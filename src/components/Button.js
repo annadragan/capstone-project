@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 export default function Button({ onClick }) {
   return (
     <ButtonStyled onClick={onClick} aria-label="button" role="button">
-      Button
+      Create a card
     </ButtonStyled>
   );
 }
@@ -16,6 +16,7 @@ const ButtonStyled = styled.button`
   margin: 5px;
   padding: 7px 12px;
   align-self: center;
+  font-size: 1.1rem;
 
   ${props =>
     props.variant === 'Delete' &&

@@ -6,7 +6,7 @@ export default function CardList({ vocabulary }) {
   return (
     <>
       <ListWrapper role="list" aria-label="vocabulary cards" rows={3}>
-        {vocabulary.map(({ _id, word, example, explanation }) => {
+        {vocabulary?.map(({ _id, word, example, explanation }) => {
           return (
             <Card
               key={_id}

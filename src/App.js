@@ -7,6 +7,7 @@ import Navigation from './components/Navigation';
 import VocabularyCards from './pages/VocabularyCards';
 import Archive from './pages/Archive';
 import { Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
 
 function App() {
   const [vocabulary, setVocabulary] = useState([]);
@@ -14,10 +15,10 @@ function App() {
   return (
     <>
       <AppWrapper>
-        <h1>📚 Hello Capstone</h1>
-
+        <Header />
+        <CardList vocabulary={vocabulary} />
         <Routes>
-          <Route path="/cards" element={<CardList vocabulary={vocabulary} />} />
+          {/* <Route path="/cards" element={} /> */}
           <Route
             path="/form"
             element={<Form onCreateTerm={handleSubmitTerm} />}

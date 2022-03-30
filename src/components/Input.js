@@ -34,4 +34,9 @@ const StyledInput = styled.input`
   padding: 7px;
   font-size: 1rem;
   margin: 5px;
+  border-radius: 5px;
+  border-color: crimson;
+  /* &:focus {
+    outline: none;
+  } */
 `;

@@ -3,6 +3,7 @@ import Input from './Input';
 import Button from './Button';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Header from './Header';
 
 export default function Form({ onCreateTerm }) {
   const [newWord, setNewWord] = useState('');
@@ -19,36 +20,43 @@ export default function Form({ onCreateTerm }) {
         onSubmit={handleSubmitTerm}
         autoComplete="off"
       >
-        <Input
-          labelText="New word:"
-          placeholder="Enter your word..."
-          maxLength="20"
-          minLength="2"
-          id="new_word"
-          name="new_word"
-          value={newWord}
-          // required
-        />
-        <Input
-          labelText="Example:"
-          placeholder="Enter some example phrase..."
-          maxLength="80"
-          minLength="4"
-          id="new_example"
-          name="new_example"
-          value={newExample}
-        />
-        <Input
-          labelText="Explanation:"
-          placeholder="Enter your explanation..."
-          maxLength="200"
-          minLength="4"
-          id="new_explanation"
-          name="new_explanation"
-          value={newExplanation}
-        />
+        <Header>Create card</Header>
+        <InputWrapper>
+          <Input
+            labelText="New word:"
+            placeholder="Enter your word..."
+            maxLength="20"
+            minLength="2"
+            id="new_word"
+            name="new_word"
+            value={newWord}
+            // required
+          />
+        </InputWrapper>
+        <InputWrapper>
+          <Input
+            labelText="Example:"
+            placeholder="Enter some example phrase..."
+            maxLength="80"
+            minLength="4"
+            id="new_example"
+            name="new_example"
+            value={newExample}
+          />
+        </InputWrapper>
+        <InputWrapper>
+          <Input
+            labelText="Explanation:"
+            placeholder="Enter your explanation..."
+            maxLength="200"
+            minLength="4"
+            id="new_explanation"
+            name="new_explanation"
+            value={newExplanation}
+          />
+        </InputWrapper>
         <Button disabled={disabled} type="submit">
-          Create a card
+          {' '}
         </Button>
       </FormWrapper>
     </>
@@ -69,9 +77,19 @@ export default function Form({ onCreateTerm }) {
       setNewWord('');
       setNewExample('');
       setNewExplanation('');
-      navigate('/cards');
+      navigate('/vocabularycards');
       form.reset();
     }
   }
 }
-const FormWrapper = styled.form``;
+const FormWrapper = styled.form`
+  display: grid;
+  gap: 15px;
+  margin-bottom: 80px;
+`;
+
+const InputWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+`;
