@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import Input from './Input';
-import Button from './Button';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import Button from './Button';
 import Header from './Header';
+import Input from './Input';
 
 export default function Form({ onCreateTerm }) {
   const [newWord, setNewWord] = useState('');
@@ -20,17 +20,18 @@ export default function Form({ onCreateTerm }) {
         onSubmit={handleSubmitTerm}
         autoComplete="off"
       >
-        <Header>Create card</Header>
+        <Header>Card form</Header>
         <InputWrapper>
           <Input
             labelText="New word:"
+            textarea
             placeholder="Enter your word..."
             maxLength="20"
             minLength="2"
             id="new_word"
             name="new_word"
             value={newWord}
-            // required
+            type="text"
           />
         </InputWrapper>
         <InputWrapper>
@@ -39,9 +40,11 @@ export default function Form({ onCreateTerm }) {
             placeholder="Enter some example phrase..."
             maxLength="80"
             minLength="4"
+            rows={3}
             id="new_example"
             name="new_example"
             value={newExample}
+            type="text"
           />
         </InputWrapper>
         <InputWrapper>
@@ -50,9 +53,11 @@ export default function Form({ onCreateTerm }) {
             placeholder="Enter your explanation..."
             maxLength="200"
             minLength="4"
+            rows={5}
             id="new_explanation"
             name="new_explanation"
             value={newExplanation}
+            type="text"
           />
         </InputWrapper>
         <Button disabled={disabled} type="submit">
@@ -86,6 +91,12 @@ const FormWrapper = styled.form`
   display: grid;
   gap: 15px;
   margin-bottom: 80px;
+  /* @media (max-width: 650px) {
+    form {
+      height: 100%;
+      width: 100%;
+    }
+  } */
 `;
 
 const InputWrapper = styled.div`

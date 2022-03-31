@@ -1,13 +1,11 @@
-import styled from 'styled-components';
-import { useState } from 'react';
 import { nanoid } from 'nanoid';
-import CardList from './components/CardList';
+import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import styled from 'styled-components';
 import Form from './components/Form';
+import Header from './components/Header';
 import Navigation from './components/Navigation';
 import VocabularyCards from './pages/VocabularyCards';
-// import Archive from './pages/Archive';
-import { Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
 
 function App() {
   const [vocabulary, setVocabulary] = useState([]);
@@ -16,23 +14,15 @@ function App() {
     <>
       <AppWrapper>
         <Header />
-        <CardList vocabulary={vocabulary} />
         <Routes>
-          {/* <Route path="/cards" element={} /> */}
           <Route
             path="/form"
             element={<Form onCreateTerm={handleSubmitTerm} />}
           />
           <Route
             path="/vocabularycards"
-            element={
-              <VocabularyCards
-                onCreateTerm={handleSubmitTerm}
-                vocabulary={vocabulary}
-              />
-            }
+            element={<VocabularyCards vocabulary={vocabulary} />}
           />
-          {/* <Route path="/archive" element={<Archive />} /> */}
         </Routes>
         <Navigation />
       </AppWrapper>
@@ -57,4 +47,5 @@ const AppWrapper = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 60px 0;
 `;

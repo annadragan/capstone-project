@@ -1,6 +1,5 @@
-import Card from './Card';
 import styled from 'styled-components';
-// import { vocabulary } from '../db';
+import Card from './Card';
 
 export default function CardList({ vocabulary }) {
   return (

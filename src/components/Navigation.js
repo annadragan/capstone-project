@@ -1,11 +1,10 @@
-import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 
 export default function Navigation() {
   return (
     <Nav>
       <LinkStyled to="/vocabularycards">Vocabulary Cards</LinkStyled>
-      {/* <LinkStyled to="/archive">Archive</LinkStyled> */}
     </Nav>
   );
 }

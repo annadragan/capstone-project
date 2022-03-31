@@ -9,15 +9,13 @@ export default function VocabularyCards({ vocabulary }) {
     <>
       <div>
         <Header>Vocabulary Cards</Header>
-        <CardList />
-        {/* <ul>
-          {vocabulary?.map(singleVoc => (
-            <li key={singleVoc._id}> {singleVoc.word}</li>
-          ))}
-        </ul> */}
+        <CardList vocabulary={vocabulary} />
         <Link to={'/form'}>
           {' '}
-          <PlusButton type="button" />
+          <PlusButton
+            type="button"
+            aria-label="go to create a card form button"
+          />
         </Link>
       </div>
     </>

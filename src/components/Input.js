@@ -6,21 +6,21 @@ export default function Input({
   maxLength,
   minLength,
   onChange,
+  rows,
   name,
-  // value,
 }) {
   return (
     <>
       <StyledLabel htmlFor={name}>{labelText}</StyledLabel>
-      <StyledInput
+      <StyledTextarea
         id={name}
         name={name}
         placeholder={placeholder}
         type="text"
-        // value={value}
         maxLength={maxLength}
         minLength={minLength}
         onChange={onChange}
+        rows={rows}
       />
     </>
   );
@@ -30,13 +30,22 @@ const StyledLabel = styled.label`
   margin: 6px;
 `;
 
-const StyledInput = styled.input`
+const StyledTextarea = styled.textarea`
   padding: 7px;
   font-size: 1rem;
   margin: 5px;
   border-radius: 5px;
+  width: 90%;
   border-color: crimson;
-  /* &:focus {
+  &:focus {
     outline: none;
-  } */
+    background-color: pink;
+    width: 100%;
+  }
+  &::placeholder {
+    color: rgb(159, 161, 190);
+  }
+  &:hover {
+    background-color: azure;
+  }
 `;
