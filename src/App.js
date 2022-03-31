@@ -1,14 +1,15 @@
 import { nanoid } from 'nanoid';
-import { useState } from 'react';
+// import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import styled from 'styled-components';
 import Form from './components/Form';
 import Header from './components/Header';
 import Navigation from './components/Navigation';
 import VocabularyCards from './pages/VocabularyCards';
+import useLocalStorage from './hooks/useLocalStorage';
 
 function App() {
-  const [vocabulary, setVocabulary] = useState([]);
+  const [vocabulary, setVocabulary] = useLocalStorage('dictionary', []);
 
   return (
     <>
