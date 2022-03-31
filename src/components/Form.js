@@ -91,12 +91,6 @@ const FormWrapper = styled.form`
   display: grid;
   gap: 15px;
   margin-bottom: 80px;
-  /* @media (max-width: 650px) {
-    form {
-      height: 100%;
-      width: 100%;
-    }
-  } */
 `;
 
 const InputWrapper = styled.div`

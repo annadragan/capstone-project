@@ -7,17 +7,15 @@ import Header from '../components/Header';
 export default function VocabularyCards({ vocabulary }) {
   return (
     <>
-      <div>
-        <Header>Vocabulary Cards</Header>
-        <CardList vocabulary={vocabulary} />
-        <Link to={'/form'}>
-          {' '}
-          <PlusButton
-            type="button"
-            aria-label="go to create a card form button"
-          />
-        </Link>
-      </div>
+      <Header>Vocabulary Cards</Header>
+      <CardList vocabulary={vocabulary} />
+      <Link to={'/form'}>
+        {' '}
+        <PlusButton
+          type="button"
+          aria-label="go to create a card form button"
+        />
+      </Link>
     </>
   );
 }

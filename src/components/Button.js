@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
 
-export default function Button({ onClick }) {
+export default function Button() {
   return (
-    <ButtonStyled onClick={onClick} aria-label="button" role="button">
+    <ButtonStyled aria-label="button" role="button">
       Create a card
     </ButtonStyled>
   );

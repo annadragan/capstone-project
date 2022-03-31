@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export default styled.h1`
+export default styled.header`
   padding: 10px;
   width: 100%;
   top: 0;
