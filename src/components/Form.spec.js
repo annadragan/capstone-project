@@ -22,7 +22,7 @@ describe('Form', () => {
     userEvent.type(explanationTextarea, '{enter}');
 
     const saveButton = screen.getByRole('button');
-    const title = screen.getByText('Vocabulary Cards');
+    const title = screen.getByText('Card form');
 
     expect(title).toBeInTheDocument();
     expect(wordTextare).toBeInTheDocument();
