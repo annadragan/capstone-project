@@ -6,7 +6,6 @@ export default styled.header`
   top: 0;
   z-index: 2;
   text-align: center;
-  display: flex;
   height: 48px;
   background-color: #d70761;
   color: white;

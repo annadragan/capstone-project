@@ -13,7 +13,10 @@ export default function Card({ word, example, explanation }) {
 const CardWrapper = styled.li`
   background-color: hsl(220, 15%, 35%);
   display: flex;
+  /* flex-wrap: wrap; */
+  overflow-x: auto;
   flex-direction: column;
+  width: 300px;
   gap: 10px;
   padding: 20px;
   border-radius: 14px;
