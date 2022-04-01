@@ -82,7 +82,7 @@ export default function Form({ onCreateTerm }) {
       setNewWord('');
       setNewExample('');
       setNewExplanation('');
-      navigate('/vocabularycards');
+      navigate('/');
       form.reset();
     }
   }

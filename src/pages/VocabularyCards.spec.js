@@ -9,9 +9,10 @@ it('has a title and one link and it renders a button', () => {
     </MemoryRouter>
   );
   const title = screen.getByText('Vocabulary Cards');
-  expect(title).toBeInTheDocument();
   const button = screen.getByRole('button');
-  expect(button).toBeInTheDocument();
   const links = screen.getAllByRole('link');
+
+  expect(title).toBeInTheDocument();
+  expect(button).toBeInTheDocument();
   expect(links.length).toBeGreaterThan(0);
 });

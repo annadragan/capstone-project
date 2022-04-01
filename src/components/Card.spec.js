@@ -1,5 +1,5 @@
-import Card from './Card';
 import { render, screen } from '@testing-library/react';
+import Card from './Card';
 
 describe('Card', () => {
   it('renders a word, example and explanation', () => {
@@ -17,6 +17,7 @@ describe('Card', () => {
     const explanation = screen.getByText(
       'an Heftigkeit gewinnen, auflodern, heftiger werden. Übertragen: immer mal wieder kurz an intensität gewinnen'
     );
+
     expect(word).toBeInTheDocument();
     expect(example).toBeInTheDocument();
     expect(explanation).toBeInTheDocument();

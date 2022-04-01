@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export default function Navigation() {
   return (
     <Nav>
-      <LinkStyled to="/vocabularycards">Vocabulary Cards</LinkStyled>
+      <LinkStyled to="/">Vocabulary Cards</LinkStyled>
     </Nav>
   );
 }

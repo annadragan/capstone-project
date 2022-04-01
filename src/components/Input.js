@@ -5,7 +5,6 @@ export default function Input({
   placeholder,
   maxLength,
   minLength,
-  onChange,
   rows,
   name,
 }) {
@@ -19,7 +18,6 @@ export default function Input({
         type="text"
         maxLength={maxLength}
         minLength={minLength}
-        onChange={onChange}
         rows={rows}
       />
     </>

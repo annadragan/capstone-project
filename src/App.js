@@ -1,12 +1,11 @@
 import { nanoid } from 'nanoid';
-// import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import styled from 'styled-components';
 import Form from './components/Form';
 import Header from './components/Header';
 import Navigation from './components/Navigation';
-import VocabularyCards from './pages/VocabularyCards';
 import useLocalStorage from './hooks/useLocalStorage';
+import VocabularyCards from './pages/VocabularyCards';
 
 function App() {
   const [vocabulary, setVocabulary] = useLocalStorage('dictionary', []);
@@ -17,12 +16,12 @@ function App() {
         <Header />
         <Routes>
           <Route
-            path="/form"
-            element={<Form onCreateTerm={handleSubmitTerm} />}
+            path="/"
+            element={<VocabularyCards vocabulary={vocabulary} />}
           />
           <Route
-            path="/vocabularycards"
-            element={<VocabularyCards vocabulary={vocabulary} />}
+            path="/form"
+            element={<Form onCreateTerm={handleSubmitTerm} />}
           />
         </Routes>
         <Navigation />
