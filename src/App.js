@@ -17,7 +17,12 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<VocabularyCards vocabulary={vocabulary} />}
+            element={
+              <VocabularyCards
+                vocabulary={vocabulary}
+                onDeleteCard={handleDeleteTerm}
+              />
+            }
           />
           <Route
             path="/form"
@@ -38,6 +43,10 @@ function App() {
     };
 
     setVocabulary([...vocabulary, newWord]);
+  }
+
+  function handleDeleteTerm(lexemId) {
+    setVocabulary(vocabulary.filter(phrase => phrase._id !== lexemId));
   }
 }
 

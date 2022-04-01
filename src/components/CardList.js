@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Card from './Card';
 
-export default function CardList({ vocabulary }) {
+export default function CardList({ vocabulary, onDeleteCard }) {
   return (
     <>
       <ListWrapper role="list" aria-label="vocabulary cards">
@@ -12,6 +12,8 @@ export default function CardList({ vocabulary }) {
               word={word}
               example={example}
               explanation={explanation}
+              onDeleteCard={onDeleteCard}
+              _id={_id}
             />
           );
         })}

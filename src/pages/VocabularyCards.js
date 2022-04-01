@@ -4,11 +4,11 @@ import styled from 'styled-components';
 import CardList from '../components/CardList';
 import Header from '../components/Header';
 
-export default function VocabularyCards({ vocabulary }) {
+export default function VocabularyCards({ vocabulary, onDeleteCard }) {
   return (
     <>
       <Header>Vocabulary Cards</Header>
-      <CardList vocabulary={vocabulary} />
+      <CardList vocabulary={vocabulary} onDeleteCard={onDeleteCard} />
       <Link to={'/form'}>
         <PlusButton
           type="button"
