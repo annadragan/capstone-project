@@ -1,5 +1,5 @@
+import { MemoryRouter } from 'react-router-dom';
 import GlobalStyle from "../src/GlobalStyle";
-import {MemoryRouter} from 'react-router-dom';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

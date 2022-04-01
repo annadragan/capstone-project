@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import Form from './Form';
 
 describe('Form', () => {
-  it('renders a form with three inputs and a submit button, does not submit wenn the input is empty or wenn there are only whitespaces and it has a title', () => {
+  it('renders a form with three inputs and a submit button, does not submit when the input is empty or wenn there are only whitespaces and it has a title', () => {
     const neverCalled = jest.fn();
     render(
       <MemoryRouter>

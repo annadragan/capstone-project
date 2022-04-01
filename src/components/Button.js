@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 
-export default function Button() {
+export default function Button({ category }) {
   return (
     <ButtonStyled aria-label="button" role="button">
-      Create a card
+      {category}
     </ButtonStyled>
   );
 }

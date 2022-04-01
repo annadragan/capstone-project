@@ -10,7 +10,6 @@ export default function VocabularyCards({ vocabulary }) {
       <Header>Vocabulary Cards</Header>
       <CardList vocabulary={vocabulary} />
       <Link to={'/form'}>
-        {' '}
         <PlusButton
           type="button"
           aria-label="go to create a card form button"

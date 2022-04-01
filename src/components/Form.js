@@ -24,7 +24,6 @@ export default function Form({ onCreateTerm }) {
         <InputWrapper>
           <Input
             labelText="New word:"
-            textarea
             placeholder="Enter your word..."
             maxLength="20"
             minLength="2"
@@ -60,9 +59,11 @@ export default function Form({ onCreateTerm }) {
             type="text"
           />
         </InputWrapper>
-        <Button disabled={disabled} type="submit">
-          {' '}
-        </Button>
+        <Button
+          category="Create a card"
+          disabled={disabled}
+          aria-label="Create a card Button"
+        ></Button>
       </FormWrapper>
     </>
   );
