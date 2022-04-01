@@ -1,4 +1,5 @@
-import GlobalStyle from "../src/GlobalStyle"
+import { MemoryRouter } from 'react-router-dom';
+import GlobalStyle from "../src/GlobalStyle";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -10,10 +11,11 @@ export const parameters = {
   },
 }
 export const decorators = [
-  Story => (
-    <>
-    <GlobalStyle />
+  Story => <>
+    <GlobalStyle/>
     <Story />
-    </>
-  ),
-];
+  </>,
+  Story => <MemoryRouter>
+    <Story />
+  </MemoryRouter>
+]
