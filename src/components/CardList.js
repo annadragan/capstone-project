@@ -22,7 +22,7 @@ export default function CardList({ vocabulary, onDeleteCard }) {
   );
 }
 
-const ListWrapper = styled.ul`
+const ListWrapper = styled.div`
   display: grid;
   justify-items: center;
   padding-left: 0;

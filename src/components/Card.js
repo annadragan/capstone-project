@@ -22,11 +22,11 @@ export default function Card({
   );
 }
 
-const CardWrapper = styled.li`
+const CardWrapper = styled.dl`
   background-color: hsl(220, 15%, 35%);
   display: flex;
-  overflow-x: auto;
   flex-direction: column;
+  word-wrap: break-word;
   width: 300px;
   gap: 10px;
   padding: 20px;
@@ -36,18 +36,25 @@ const CardWrapper = styled.li`
   position: relative;
 `;
 
-const CardWord = styled.p`
+const CardWord = styled.dt`
+  display: flex;
+  justify-content: center;
   font-weight: bold;
   color: azure;
+  font-size: 1.2rem;
 `;
 
-const CardExample = styled.p`
+const CardExample = styled.dd`
   color: white;
+  margin-left: 0;
   font-style: italic;
+  padding: 4px;
 `;
 
-const CardExplanation = styled.p`
+const CardExplanation = styled.dd`
   color: white;
+  margin-left: 0;
+  padding: 4px;
 `;
 
 const DeleteButton = styled.button.attrs(() => ({
@@ -58,6 +65,7 @@ const DeleteButton = styled.button.attrs(() => ({
   right: 5px;
   background: transparent;
   border: transparent;
+  margin: 4px;
   &:hover {
     color: crimson;
   }
