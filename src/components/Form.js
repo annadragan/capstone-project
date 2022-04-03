@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Button from './Button';
 import Header from './Header';
 import Input from './Input';
+import React from 'react';
 
 export default function Form({ onCreateTerm }) {
   const [newWord, setNewWord] = useState('');
@@ -13,6 +14,10 @@ export default function Form({ onCreateTerm }) {
 
   const disabled = newWord === '' || newExample === '' || newExplanation === '';
 
+  const [textAreaCount, ChangeTextAreaCount] = React.useState(0);
+  const recalculate = e => {
+    ChangeTextAreaCount(e.target.value.length);
+  };
   return (
     <>
       <FormWrapper
@@ -24,40 +29,48 @@ export default function Form({ onCreateTerm }) {
         <InputWrapper>
           <Input
             labelText="New word:"
-            placeholder="Enter your word..."
+            placeholder="Type to add a word..."
             maxLength="20"
             minLength="2"
             id="new_word"
             name="new_word"
             value={newWord}
             type="text"
+            onChange={recalculate}
           />
+          <small>{textAreaCount}/20</small>
         </InputWrapper>
         <InputWrapper>
           <Input
             labelText="Example:"
-            placeholder="Enter some example phrase..."
+            placeholder="Type to add some example phrase..."
             maxLength="80"
             minLength="4"
             rows={3}
+            columns={10}
             id="new_example"
             name="new_example"
             value={newExample}
             type="text"
+            onChange={recalculate}
           />
+          <small>{textAreaCount}/80</small>
         </InputWrapper>
         <InputWrapper>
           <Input
             labelText="Explanation:"
-            placeholder="Enter your explanation..."
+            placeholder="Type your explanation..."
             maxLength="200"
             minLength="4"
             rows={5}
+            columns={10}
             id="new_explanation"
             name="new_explanation"
             value={newExplanation}
             type="text"
+            onChange={recalculate}
           />
+          <small>{textAreaCount}/200</small>
         </InputWrapper>
         <Button
           category="Create a card"

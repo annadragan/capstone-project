@@ -4,15 +4,23 @@ import styled from 'styled-components';
 import CardList from '../components/CardList';
 import Header from '../components/Header';
 
-export default function VocabularyCards({ vocabulary, onDeleteCard }) {
+export default function VocabularyCards({
+  vocabulary,
+  onDeleteCard,
+  onBookmarkCard,
+}) {
   return (
     <>
       <Header>Vocabulary Cards</Header>
-      <CardList vocabulary={vocabulary} onDeleteCard={onDeleteCard} />
+      <CardList
+        vocabulary={vocabulary}
+        onDeleteCard={onDeleteCard}
+        onBookmarkCard={onBookmarkCard}
+      />
       <Link to={'/form'}>
         <PlusButton
           type="button"
-          aria-label="go to create a card form button"
+          aria-label="go to create a card-form button"
         />
       </Link>
     </>

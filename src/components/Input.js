@@ -7,6 +7,7 @@ export default function Input({
   minLength,
   rows,
   name,
+  onChange,
 }) {
   return (
     <>
@@ -14,6 +15,7 @@ export default function Input({
       <StyledTextarea
         id={name}
         name={name}
+        onChange={onChange}
         placeholder={placeholder}
         type="text"
         maxLength={maxLength}
