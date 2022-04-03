@@ -1,5 +1,6 @@
+import { BsFillBookmarkCheckFill, BsTrash } from 'react-icons/bs';
 import styled from 'styled-components';
-import { BsTrash, BsFillBookmarkCheckFill } from 'react-icons/bs';
+import ScreenReaderOnly from './ScreenReaderOnly';
 
 export default function Card({
   word,
@@ -20,12 +21,16 @@ export default function Card({
         aria-label="bookmark this card"
         onClick={() => onBookmarkCard(_id)}
         isBookmarked={isBookmarked}
-      ></BookmarkButton>
+      >
+        <ScreenReaderOnly>bookmark this card</ScreenReaderOnly>
+      </BookmarkButton>
       <DeleteButton
         type="button"
         aria-label="delete this card"
         onClick={() => onDeleteCard(_id)}
-      />
+      >
+        <ScreenReaderOnly>delete this card</ScreenReaderOnly>
+      </DeleteButton>
     </CardWrapper>
   );
 }
@@ -90,8 +95,8 @@ const BookmarkButton = styled.button.attrs(() => ({
   background: transparent;
   border: transparent;
   margin: 4px;
-  color: ${props => (props.isBookmarked ? 'green' : 'gray')};
-  /* &:hover {
+  color: ${props => (props.isBookmarked ? 'palevioletred' : 'linen')};
+  &:hover {
     color: crimson;
-  } */
+  }
 `;

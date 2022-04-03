@@ -1,11 +1,14 @@
-import Header from '../components/Header';
 import Card from '../components/Card';
+import Header from '../components/Header';
 
-export default function BookmarkPage({ vocabulary, onBookmarkCard }) {
+export default function BookmarkArchive({
+  vocabulary,
+  onBookmarkCard,
+  onDeleteCard,
+}) {
   return (
     <>
-      <Header>Bookmark Page</Header>
-      <h2>hallo</h2>
+      <Header>Archive</Header>
 
       {vocabulary?.map(
         ({ _id, word, example, explanation, isBookmarked }) =>
@@ -18,6 +21,7 @@ export default function BookmarkPage({ vocabulary, onBookmarkCard }) {
               _id={_id}
               onBookmarkCard={onBookmarkCard}
               isBookmarked={isBookmarked}
+              onDeleteCard={onDeleteCard}
             />
           )
       )}

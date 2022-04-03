@@ -1,10 +1,9 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from './Button';
 import Header from './Header';
 import Input from './Input';
-import React from 'react';
 
 export default function Form({ onCreateTerm }) {
   const [newWord, setNewWord] = useState(0);

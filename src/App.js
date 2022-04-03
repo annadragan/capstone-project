@@ -5,7 +5,7 @@ import { useLocalStorage } from 'usehooks-ts';
 import Form from './components/Form';
 import Header from './components/Header';
 import Navigation from './components/Navigation';
-import BookmarkPage from './pages/BookmarkPage';
+import BookmarkArchive from './pages/BookmarkArchive';
 import VocabularyCards from './pages/VocabularyCards';
 
 function App() {
@@ -33,8 +33,9 @@ function App() {
           <Route
             path="/archive"
             element={
-              <BookmarkPage
+              <BookmarkArchive
                 vocabulary={vocabulary}
+                onDeleteCard={handleDeleteTerm}
                 onBookmarkCard={handleBookmarkTerm}
               />
             }

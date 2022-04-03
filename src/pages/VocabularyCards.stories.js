@@ -1,7 +1,7 @@
 import VocabularyCards from './VocabularyCards';
 
 export default {
-  title: 'components/VocabularyCards',
+  title: 'pages/VocabularyCards',
   component: VocabularyCards,
   argTypes: {},
 };

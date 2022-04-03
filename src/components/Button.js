@@ -24,13 +24,13 @@ const ButtonStyled = styled.button`
   }
 
   ${props =>
-    props.variant === 'Delete' &&
+    props.variant === 'delete' &&
     css`
       background-color: hotpink;
     `}
 
   ${props =>
-    props.variant === 'Toggle' &&
+    props.variant === 'toggle' &&
     css`
       background-color: midnightblue;
     `}
