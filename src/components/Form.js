@@ -24,12 +24,12 @@ export default function Form({ onCreateTerm }) {
   };
   return (
     <>
+      <Header>Card form</Header>
       <FormWrapper
         aria-describedby="Create a new word"
         onSubmit={handleSubmitTerm}
         autoComplete="off"
       >
-        <Header>Card form</Header>
         <InputWrapper>
           <Input
             labelText="New word:"
@@ -109,7 +109,6 @@ export default function Form({ onCreateTerm }) {
 const FormWrapper = styled.form`
   display: grid;
   gap: 15px;
-  margin-bottom: 80px;
 `;
 
 const InputWrapper = styled.div`

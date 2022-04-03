@@ -82,5 +82,5 @@ const AppWrapper = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 60px 0;
+  padding: 100px 0;
 `;
