@@ -12,17 +12,5 @@ describe('Navigation', () => {
 
     const navigation = screen.getByRole('navigation');
     expect(navigation).toBeInTheDocument();
-
-    // const vocabularycardsLink = screen.getByRole('link', {
-    //   name: /vocabularycards/i,
-    // });
-
-    // expect(vocabularycardsLink).toBeInTheDocument();
-
-    // const vocabularyLink = screen.getByRole('link');
-    // const archiveLink = screen.getByRole('link', { name: /archive/i });
-
-    // expect(vocabularyLink).toBeInTheDocument();
-    // expect(archiveLink).toBeInTheDocument();
   });
 });
