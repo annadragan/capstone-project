@@ -7,16 +7,22 @@ import Input from './Input';
 import React from 'react';
 
 export default function Form({ onCreateTerm }) {
-  const [newWord, setNewWord] = useState('');
-  const [newExample, setNewExample] = useState('');
-  const [newExplanation, setNewExplanation] = useState('');
+  const [newWord, setNewWord] = useState(0);
+  const [newExample, setNewExample] = useState(0);
+  const [newExplanation, setNewExplanation] = useState(0);
   const navigate = useNavigate();
 
   const disabled = newWord === '' || newExample === '' || newExplanation === '';
 
-  const [textAreaCount, ChangeTextAreaCount] = React.useState(0);
-  const recalculate = e => {
-    ChangeTextAreaCount(e.target.value.length);
+  // const [textAreaCount, ChangeTextAreaCount] = useState(0);
+  const recalculateWordCharacter = e => {
+    setNewWord(e.target.value.length);
+  };
+  const recalculateExampleCharacter = e => {
+    setNewExample(e.target.value.length);
+  };
+  const recalculateExplanationCharacter = e => {
+    setNewExplanation(e.target.value.length);
   };
   return (
     <>
@@ -36,9 +42,9 @@ export default function Form({ onCreateTerm }) {
             name="new_word"
             value={newWord}
             type="text"
-            onChange={recalculate}
+            onChange={recalculateWordCharacter}
           />
-          <small>{textAreaCount}/20</small>
+          <small>{newWord}/20</small>
         </InputWrapper>
         <InputWrapper>
           <Input
@@ -52,9 +58,9 @@ export default function Form({ onCreateTerm }) {
             name="new_example"
             value={newExample}
             type="text"
-            onChange={recalculate}
+            onChange={recalculateExampleCharacter}
           />
-          <small>{textAreaCount}/80</small>
+          <small>{newExample}/80</small>
         </InputWrapper>
         <InputWrapper>
           <Input
@@ -68,9 +74,9 @@ export default function Form({ onCreateTerm }) {
             name="new_explanation"
             value={newExplanation}
             type="text"
-            onChange={recalculate}
+            onChange={recalculateExplanationCharacter}
           />
-          <small>{textAreaCount}/200</small>
+          <small>{newExplanation}/200</small>
         </InputWrapper>
         <Button
           category="Create a card"
