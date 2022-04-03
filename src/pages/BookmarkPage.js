@@ -1,11 +1,26 @@
 import Header from '../components/Header';
-import CardList from '../components/CardList';
+import Card from '../components/Card';
 
 export default function BookmarkPage({ vocabulary, onBookmarkCard }) {
   return (
     <>
       <Header>Bookmark Page</Header>
-      <CardList onBookmarkCard={onBookmarkCard} />
+      <h2>hallo</h2>
+
+      {vocabulary?.map(
+        ({ _id, word, example, explanation, isBookmarked }) =>
+          isBookmarked && (
+            <Card
+              key={_id}
+              word={word}
+              example={example}
+              explanation={explanation}
+              _id={_id}
+              onBookmarkCard={onBookmarkCard}
+              isBookmarked={isBookmarked}
+            />
+          )
+      )}
     </>
   );
 }

@@ -14,7 +14,6 @@ export default function Form({ onCreateTerm }) {
 
   const disabled = newWord === '' || newExample === '' || newExplanation === '';
 
-  // const [textAreaCount, ChangeTextAreaCount] = useState(0);
   const recalculateWordCharacter = e => {
     setNewWord(e.target.value.length);
   };
@@ -44,7 +43,7 @@ export default function Form({ onCreateTerm }) {
             type="text"
             onChange={recalculateWordCharacter}
           />
-          <small>{newWord}/20</small>
+          <Counter>{newWord}/20</Counter>
         </InputWrapper>
         <InputWrapper>
           <Input
@@ -60,7 +59,7 @@ export default function Form({ onCreateTerm }) {
             type="text"
             onChange={recalculateExampleCharacter}
           />
-          <small>{newExample}/80</small>
+          <Counter>{newExample}/80</Counter>
         </InputWrapper>
         <InputWrapper>
           <Input
@@ -76,7 +75,7 @@ export default function Form({ onCreateTerm }) {
             type="text"
             onChange={recalculateExplanationCharacter}
           />
-          <small>{newExplanation}/200</small>
+          <Counter>{newExplanation}/200</Counter>
         </InputWrapper>
         <Button
           category="Create a card"
@@ -107,6 +106,7 @@ export default function Form({ onCreateTerm }) {
     }
   }
 }
+
 const FormWrapper = styled.form`
   display: grid;
   gap: 15px;
@@ -117,4 +117,9 @@ const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+`;
+
+const Counter = styled.small`
+  display: flex;
+  justify-content: right;
 `;

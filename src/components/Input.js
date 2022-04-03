@@ -27,7 +27,7 @@ export default function Input({
 }
 
 const StyledLabel = styled.label`
-  margin: 6px;
+  margin: -4px;
 `;
 
 const StyledTextarea = styled.textarea`

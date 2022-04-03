@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { BsTrash, BsFillBookmarkCheckFill } from 'react-icons/bs';
-// import useToggle from '..hooks/useToggle';
 
 export default function Card({
   word,
@@ -11,8 +10,6 @@ export default function Card({
   onBookmarkCard,
   isBookmarked,
 }) {
-  // const [bookmarked, toggleBookmarked] = useToggle(false);
-
   return (
     <CardWrapper isBookmaked={isBookmarked}>
       <CardWord>{word}</CardWord>
@@ -22,6 +19,7 @@ export default function Card({
         type="button"
         aria-label="bookmark this card"
         onClick={() => onBookmarkCard(_id)}
+        isBookmarked={isBookmarked}
       ></BookmarkButton>
       <DeleteButton
         type="button"
@@ -92,8 +90,8 @@ const BookmarkButton = styled.button.attrs(() => ({
   background: transparent;
   border: transparent;
   margin: 4px;
-  color: gray;
-  &:hover {
+  color: ${props => (props.isBookmarked ? 'green' : 'gray')};
+  /* &:hover {
     color: crimson;
-  }
+  } */
 `;

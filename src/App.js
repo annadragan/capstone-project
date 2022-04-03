@@ -31,7 +31,7 @@ function App() {
             element={<Form onCreateTerm={handleSubmitTerm} />}
           />
           <Route
-            path="/bookmarkpage"
+            path="/archive"
             element={
               <BookmarkPage
                 vocabulary={vocabulary}
