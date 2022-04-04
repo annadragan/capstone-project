@@ -3,17 +3,17 @@ import { MemoryRouter } from 'react-router-dom';
 import Navigation from './Navigation';
 
 describe('Navigation', () => {
-  it('renders a navigation with one link', () => {
+  it('renders a navigation with two links', () => {
     render(
       <MemoryRouter>
         <Navigation />
       </MemoryRouter>
     );
 
-    const vocabularycardsLink = screen.getByRole('link', {
-      name: /Vocabulary Cards/i,
-    });
+    const navigation = screen.getByRole('navigation');
+    expect(navigation).toBeInTheDocument();
 
-    expect(vocabularycardsLink).toBeInTheDocument();
+    const NavLinks = screen.getAllByRole('link');
+    expect(NavLinks).toHaveLength(2);
   });
 });

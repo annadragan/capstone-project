@@ -6,58 +6,75 @@ import Header from './Header';
 import Input from './Input';
 
 export default function Form({ onCreateTerm }) {
-  const [newWord, setNewWord] = useState('');
-  const [newExample, setNewExample] = useState('');
-  const [newExplanation, setNewExplanation] = useState('');
+  const [newWord, setNewWord] = useState(0);
+  const [newExample, setNewExample] = useState(0);
+  const [newExplanation, setNewExplanation] = useState(0);
   const navigate = useNavigate();
 
   const disabled = newWord === '' || newExample === '' || newExplanation === '';
 
+  const recalculateWordCharacter = e => {
+    setNewWord(e.target.value.length);
+  };
+  const recalculateExampleCharacter = e => {
+    setNewExample(e.target.value.length);
+  };
+  const recalculateExplanationCharacter = e => {
+    setNewExplanation(e.target.value.length);
+  };
   return (
     <>
+      <Header>Card form</Header>
       <FormWrapper
         aria-describedby="Create a new word"
         onSubmit={handleSubmitTerm}
         autoComplete="off"
       >
-        <Header>Card form</Header>
         <InputWrapper>
           <Input
             labelText="New word:"
-            placeholder="Enter your word..."
+            placeholder="Type to add a word..."
             maxLength="20"
             minLength="2"
             id="new_word"
             name="new_word"
             value={newWord}
             type="text"
+            onChange={recalculateWordCharacter}
           />
+          <Counter>{newWord}/20</Counter>
         </InputWrapper>
         <InputWrapper>
           <Input
             labelText="Example:"
-            placeholder="Enter some example phrase..."
+            placeholder="Type to add some example phrase..."
             maxLength="80"
             minLength="4"
             rows={3}
+            columns={10}
             id="new_example"
             name="new_example"
             value={newExample}
             type="text"
+            onChange={recalculateExampleCharacter}
           />
+          <Counter>{newExample}/80</Counter>
         </InputWrapper>
         <InputWrapper>
           <Input
             labelText="Explanation:"
-            placeholder="Enter your explanation..."
+            placeholder="Type your explanation..."
             maxLength="200"
             minLength="4"
             rows={5}
+            columns={10}
             id="new_explanation"
             name="new_explanation"
             value={newExplanation}
             type="text"
+            onChange={recalculateExplanationCharacter}
           />
+          <Counter>{newExplanation}/200</Counter>
         </InputWrapper>
         <Button
           category="Create a card"
@@ -88,14 +105,19 @@ export default function Form({ onCreateTerm }) {
     }
   }
 }
+
 const FormWrapper = styled.form`
   display: grid;
   gap: 15px;
-  margin-bottom: 80px;
 `;
 
 const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+`;
+
+const Counter = styled.small`
+  display: flex;
+  justify-content: right;
 `;

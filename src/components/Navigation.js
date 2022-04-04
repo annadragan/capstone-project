@@ -1,10 +1,22 @@
+import { IconContext } from 'react-icons';
+import { BsFillBookmarkCheckFill } from 'react-icons/bs';
+import { GiCardRandom } from 'react-icons/gi';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export default function Navigation() {
   return (
     <Nav>
-      <LinkStyled to="/">Vocabulary Cards</LinkStyled>
+      <LinkStyled to="/">
+        <IconContext.Provider value={{ size: '40px' }}>
+          <GiCardRandom />
+        </IconContext.Provider>
+      </LinkStyled>
+      <LinkStyled to="/archive">
+        <IconContext.Provider value={{ size: '32px' }}>
+          <BsFillBookmarkCheckFill />
+        </IconContext.Provider>
+      </LinkStyled>
     </Nav>
   );
 }

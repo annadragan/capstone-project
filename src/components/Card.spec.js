@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import Card from './Card';
 
 describe('Card', () => {
-  it('renders a word, example and explanation and a delete button', () => {
+  it('renders a word, example and explanation', () => {
     render(
       <MemoryRouter>
         <Card
@@ -27,17 +27,21 @@ describe('Card', () => {
     expect(explanation).toBeInTheDocument();
   });
 
-  it('calls onClick when clicking the delete icon', () => {
-    const callback = jest.fn();
+  it('calls onClick when clicking the delete or bookmark icon', () => {
+    const bookmarkCard = jest.fn();
+    const deleteCard = jest.fn();
     render(
       <MemoryRouter>
-        <Card onDeleteCard={callback} />
+        <Card onDeleteCard={deleteCard} onBookmarkCard={bookmarkCard} />
       </MemoryRouter>
     );
+    const bookmarkButton = screen.getByRole('button', { name: /bookmark/i });
+    const deleteButton = screen.getByRole('button', { name: /delete/i });
 
-    const deleteButton = screen.getByRole('button');
+    userEvent.click(bookmarkButton);
     userEvent.click(deleteButton);
-    expect(deleteButton).toBeInTheDocument();
-    expect(callback).toHaveBeenCalled();
+
+    expect(deleteCard).toHaveBeenCalled();
+    expect(bookmarkCard).toHaveBeenCalled();
   });
 });

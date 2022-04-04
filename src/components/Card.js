@@ -1,5 +1,6 @@
+import { BsFillBookmarkCheckFill, BsTrash } from 'react-icons/bs';
 import styled from 'styled-components';
-import { BsTrash } from 'react-icons/bs';
+import ScreenReaderOnly from './ScreenReaderOnly';
 
 export default function Card({
   word,
@@ -7,17 +8,29 @@ export default function Card({
   explanation,
   onDeleteCard,
   _id,
+  onBookmarkCard,
+  isBookmarked,
 }) {
   return (
-    <CardWrapper>
+    <CardWrapper isBookmaked={isBookmarked}>
       <CardWord>{word}</CardWord>
       <CardExample>{example}</CardExample>
       <CardExplanation>{explanation}</CardExplanation>
+      <BookmarkButton
+        type="button"
+        aria-label="bookmark this card"
+        onClick={() => onBookmarkCard(_id)}
+        isBookmarked={isBookmarked}
+      >
+        <ScreenReaderOnly>bookmark this card</ScreenReaderOnly>
+      </BookmarkButton>
       <DeleteButton
         type="button"
-        aria-label="delete a card"
+        aria-label="delete this card"
         onClick={() => onDeleteCard(_id)}
-      />
+      >
+        <ScreenReaderOnly>delete this card</ScreenReaderOnly>
+      </DeleteButton>
     </CardWrapper>
   );
 }
@@ -62,10 +75,27 @@ const DeleteButton = styled.button.attrs(() => ({
 }))`
   position: absolute;
   bottom: 5px;
-  right: 5px;
+  right: 1px;
   background: transparent;
   border: transparent;
   margin: 4px;
+  &:hover {
+    color: crimson;
+  }
+`;
+
+const BookmarkButton = styled.button.attrs(() => ({
+  children: (
+    <BsFillBookmarkCheckFill style={{ width: '25px', height: '25px' }} />
+  ),
+}))`
+  position: absolute;
+  top: -9px;
+  right: 1px;
+  background: transparent;
+  border: transparent;
+  margin: 4px;
+  color: ${props => (props.isBookmarked ? 'palevioletred' : 'linen')};
   &:hover {
     color: crimson;
   }
