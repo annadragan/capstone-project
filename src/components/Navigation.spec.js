@@ -12,5 +12,8 @@ describe('Navigation', () => {
 
     const navigation = screen.getByRole('navigation');
     expect(navigation).toBeInTheDocument();
+
+    const NavLinks = screen.getAllByRole('link');
+    expect(NavLinks).toHaveLength(2);
   });
 });
