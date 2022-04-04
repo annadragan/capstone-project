@@ -63,7 +63,6 @@ function App() {
   }
 
   function handleBookmarkTerm(bookmarkId) {
-    console.log(vocabulary);
     setVocabulary(
       vocabulary.map(card => {
         if (card._id === bookmarkId) {
