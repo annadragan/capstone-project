@@ -16,6 +16,7 @@ export default function VocabularyCards({
         vocabulary={vocabulary}
         onDeleteCard={onDeleteCard}
         onBookmarkCard={onBookmarkCard}
+        // onConfirmDelete={onDeleteCard}
       />
       <Link to={'/form'}>
         <PlusButton
