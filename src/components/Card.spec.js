@@ -27,17 +27,17 @@ describe('Card', () => {
     expect(explanation).toBeInTheDocument();
   });
 
-  it('calls onClick when clicking the bookmark icon', () => {
-    const bookmarkCard = jest.fn();
+  it('calls Callback when clicking the bookmark icon', () => {
+    const Callback = jest.fn();
     render(
       <MemoryRouter>
-        <Card onBookmarkCard={bookmarkCard} />
+        <Card onBookmarkCard={Callback} />
       </MemoryRouter>
     );
     const bookmarkButton = screen.getByRole('button', { name: /bookmark/i });
 
     userEvent.click(bookmarkButton);
 
-    expect(bookmarkCard).toHaveBeenCalled();
+    expect(Callback).toHaveBeenCalled();
   });
 });

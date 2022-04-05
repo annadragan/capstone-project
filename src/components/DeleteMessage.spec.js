@@ -17,7 +17,7 @@ describe('DeleteMessage', () => {
     expect(buttonCancel).toBeInTheDocument();
   });
 
-  it('calls onClick when clicking the "yes" or "no" word', () => {
+  it('calls onClick when clicking the cancel or confirm delete button', () => {
     const cancelBtn = jest.fn();
     const deleteBtn = jest.fn();
     render(
