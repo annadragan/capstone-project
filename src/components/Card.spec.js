@@ -32,7 +32,7 @@ describe('Card', () => {
     const deleteCard = jest.fn();
     render(
       <MemoryRouter>
-        <Card onDeleteCard={deleteCard} onBookmarkCard={bookmarkCard} />
+        <Card onConfirmDelete={deleteCard} onBookmarkCard={bookmarkCard} />
       </MemoryRouter>
     );
     const bookmarkButton = screen.getByRole('button', { name: /bookmark/i });

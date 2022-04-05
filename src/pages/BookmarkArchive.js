@@ -22,7 +22,6 @@ export default function BookmarkArchive({
               onBookmarkCard={onBookmarkCard}
               isBookmarked={isBookmarked}
               onDeleteCard={() => onDeleteCard(_id)}
-              // onConfirmDelete={onDeleteCard}
             />
           )
       )}

@@ -1,8 +1,8 @@
+import { useState } from 'react';
 import { BsFillBookmarkCheckFill, BsTrash } from 'react-icons/bs';
 import styled from 'styled-components';
-import ScreenReaderOnly from './ScreenReaderOnly';
 import DeleteMessage from './DeleteMessage';
-import { useState } from 'react';
+import ScreenReaderOnly from './ScreenReaderOnly';
 
 export default function Card({
   word,
@@ -14,7 +14,7 @@ export default function Card({
   isBookmarked,
 }) {
   const [showMessage, setShowMessage] = useState(false);
-  console.log(showMessage);
+
   return (
     <CardWrapper isBookmaked={isBookmarked}>
       <CardWord>{word}</CardWord>
@@ -38,10 +38,8 @@ export default function Card({
       </DeleteButton>
       {showMessage && (
         <DeleteMessage
-          showMesssage={showMessage}
           onConfirmDelete={() => onDeleteCard(_id)}
           onCancelDelete={() => setShowMessage(false)}
-          setShowMessage={setShowMessage}
         />
       )}
     </CardWrapper>
