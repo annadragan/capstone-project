@@ -27,21 +27,17 @@ describe('Card', () => {
     expect(explanation).toBeInTheDocument();
   });
 
-  it('calls onClick when clicking the delete or bookmark icon', () => {
+  it('calls onClick when clicking the bookmark icon', () => {
     const bookmarkCard = jest.fn();
-    const deleteCard = jest.fn();
     render(
       <MemoryRouter>
-        <Card onDeleteCard={deleteCard} onBookmarkCard={bookmarkCard} />
+        <Card onBookmarkCard={bookmarkCard} />
       </MemoryRouter>
     );
-    const bookmarkButton = screen.getByRole('button', { name: '/bookmark/i' });
-    const deleteButton = screen.getByRole('button', { name: /delete/i });
+    const bookmarkButton = screen.getByRole('button', { name: /bookmark/i });
 
     userEvent.click(bookmarkButton);
-    userEvent.click(deleteButton);
 
-    expect(deleteCard).toHaveBeenCalled();
     expect(bookmarkCard).toHaveBeenCalled();
   });
 });
