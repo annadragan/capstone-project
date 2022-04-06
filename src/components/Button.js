@@ -22,16 +22,4 @@ const ButtonStyled = styled.button`
   &:hover {
     width: 170px;
   }
-
-  ${props =>
-    props.variant === 'delete' &&
-    css`
-      background-color: hotpink;
-    `}
-
-  ${props =>
-    props.variant === 'toggle' &&
-    css`
-      background-color: midnightblue;
-    `}
 `;

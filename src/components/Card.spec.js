@@ -29,6 +29,7 @@ describe('Card', () => {
 
   it('calls Callback when clicking the bookmark icon', () => {
     const Callback = jest.fn();
+
     render(
       <MemoryRouter>
         <Card onBookmarkCard={Callback} />
