@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { BsFillBookmarkCheckFill, BsTrash } from 'react-icons/bs';
 import styled from 'styled-components';
+import DeleteMessage from './DeleteMessage';
 import ScreenReaderOnly from './ScreenReaderOnly';
 
 export default function Card({
@@ -11,6 +13,8 @@ export default function Card({
   onBookmarkCard,
   isBookmarked,
 }) {
+  const [showMessage, setShowMessage] = useState(false);
+
   return (
     <CardWrapper isBookmaked={isBookmarked}>
       <CardWord>{word}</CardWord>
@@ -27,10 +31,17 @@ export default function Card({
       <DeleteButton
         type="button"
         aria-label="delete this card"
-        onClick={() => onDeleteCard(_id)}
+        _id={_id}
+        onClick={() => setShowMessage(true)}
       >
         <ScreenReaderOnly>delete this card</ScreenReaderOnly>
       </DeleteButton>
+      {showMessage && (
+        <DeleteMessage
+          onConfirmDelete={() => onDeleteCard(_id)}
+          onCancelDelete={() => setShowMessage(false)}
+        />
+      )}
     </CardWrapper>
   );
 }
