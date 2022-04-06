@@ -5,6 +5,7 @@ export default function BookmarkArchive({
   vocabulary,
   onBookmarkCard,
   onDeleteCard,
+  onEditCard,
 }) {
   return (
     <>
@@ -22,6 +23,7 @@ export default function BookmarkArchive({
               onBookmarkCard={onBookmarkCard}
               isBookmarked={isBookmarked}
               onDeleteCard={() => onDeleteCard(_id)}
+              onEditCard={onEditCard}
             />
           )
       )}

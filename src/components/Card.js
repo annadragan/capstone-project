@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { BsFillBookmarkCheckFill, BsTrash } from 'react-icons/bs';
+import { GrEdit } from 'react-icons/gr';
 import styled from 'styled-components';
 import DeleteMessage from './DeleteMessage';
 import ScreenReaderOnly from './ScreenReaderOnly';
@@ -12,8 +13,11 @@ export default function Card({
   _id,
   onBookmarkCard,
   isBookmarked,
+  onEditCard,
+  vocabulary,
 }) {
   const [showMessage, setShowMessage] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
 
   return (
     <CardWrapper isBookmaked={isBookmarked}>
@@ -28,6 +32,13 @@ export default function Card({
       >
         <ScreenReaderOnly>bookmark this card</ScreenReaderOnly>
       </BookmarkButton>
+      {/* {setIsEditing ? (
+      <EditButton type="button" onClick={()=>setIsEditing(!isEditing)}>
+        <ScreenReaderOnly>edit this card</ScreenReaderOnly>
+      </EditButton>
+      ) : (
+      )} */}
+
       <DeleteButton
         type="button"
         aria-label="delete this card"
@@ -44,6 +55,11 @@ export default function Card({
       )}
     </CardWrapper>
   );
+
+  function handleChange(event) {
+    const newExpression = { ...vocabulary, word: event.target.value };
+    onEditCard(newExpression);
+  }
 }
 
 const CardWrapper = styled.dl`
@@ -107,6 +123,20 @@ const BookmarkButton = styled.button.attrs(() => ({
   border: transparent;
   margin: 4px;
   color: ${props => (props.isBookmarked ? 'palevioletred' : 'linen')};
+  &:hover {
+    color: crimson;
+  }
+`;
+
+const EditButton = styled.button.attrs(() => ({
+  children: <GrEdit style={{ width: '25px', height: '25px' }} />,
+}))`
+  position: absolute;
+  bottom: 50%;
+  right: 1px;
+  background: transparent;
+  border: transparent;
+  margin: 4px;
   &:hover {
     color: crimson;
   }

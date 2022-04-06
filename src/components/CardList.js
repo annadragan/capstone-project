@@ -1,12 +1,17 @@
 import styled from 'styled-components';
 import Card from './Card';
 
-export default function CardList({ vocabulary, onDeleteCard, onBookmarkCard }) {
+export default function CardList({
+  vocabulary,
+  onDeleteCard,
+  onBookmarkCard,
+  onEditCard,
+}) {
   return (
     <>
       <ListWrapper role="list" aria-label="vocabulary cards">
         {vocabulary?.map(
-          ({ _id, word, example, explanation, isBookmarked }) => {
+          ({ _id, word, example, explanation, isBookmarked, card }) => {
             return (
               <Card
                 key={_id}
@@ -17,6 +22,8 @@ export default function CardList({ vocabulary, onDeleteCard, onBookmarkCard }) {
                 _id={_id}
                 onBookmarkCard={onBookmarkCard}
                 isBookmarked={isBookmarked}
+                onEditCard={onEditCard}
+                card={card}
               />
             );
           }

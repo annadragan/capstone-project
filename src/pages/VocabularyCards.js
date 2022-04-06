@@ -8,6 +8,7 @@ export default function VocabularyCards({
   vocabulary,
   onDeleteCard,
   onBookmarkCard,
+  onEditCard,
 }) {
   return (
     <>
@@ -16,6 +17,7 @@ export default function VocabularyCards({
         vocabulary={vocabulary}
         onDeleteCard={onDeleteCard}
         onBookmarkCard={onBookmarkCard}
+        onEditCard={onEditCard}
         // onConfirmDelete={onDeleteCard}
       />
       <Link to={'/form'}>
