@@ -11,7 +11,7 @@ export default function CardList({
     <>
       <ListWrapper role="list" aria-label="vocabulary cards">
         {vocabulary?.map(
-          ({ _id, word, example, explanation, isBookmarked, card }) => {
+          ({ _id, word, example, explanation, isBookmarked }) => {
             return (
               <Card
                 key={_id}
@@ -23,7 +23,6 @@ export default function CardList({
                 onBookmarkCard={onBookmarkCard}
                 isBookmarked={isBookmarked}
                 onEditCard={onEditCard}
-                card={card}
               />
             );
           }

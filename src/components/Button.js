@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export default function Button({ category }) {
   return (
@@ -22,13 +22,4 @@ const ButtonStyled = styled.button`
   &:hover {
     width: 170px;
   }
-
-  ${props =>
-    props.variant === 'save' &&
-    css`
-      background-color: green;
-      &:hover {
-        background-color: #3d9816;
-      }
-    `}
 `;

@@ -23,22 +23,38 @@ export default function Card({
   return (
     <>
       {isEditing ? (
-        <EditForm onSubmit={handleSubmitEdit}>
+        <EditForm onSubmit={handleSubmitEdit} autoComplete="off">
           <EditInputWrapper>
-            <EditLabel htmlFor="word">Edit word</EditLabel>
-            <EditInput id="word" defaultValue={word} />
+            <EditLabel htmlFor="word">edit word</EditLabel>
+            <EditInput
+              id="word"
+              defaultValue={word}
+              maxLength="20"
+              minLength="2"
+              type="text"
+            />
           </EditInputWrapper>
           <EditInputWrapper>
-            <EditLabel htmlFor="example">Edit example</EditLabel>
-            <EditInput id="example" defaultValue={example} />
+            <EditLabel htmlFor="example">edit example</EditLabel>
+            <EditInput
+              id="example"
+              defaultValue={example}
+              maxLength="80"
+              minLength="4"
+              type="text"
+            />
           </EditInputWrapper>
           <EditInputWrapper>
-            <EditLabel htmlFor="explanation">Edit explanation</EditLabel>
-            <EditInput id="explanation" defaultValue={explanation} />
+            <EditLabel htmlFor="explanation">edit explanation</EditLabel>
+            <EditInput
+              id="explanation"
+              defaultValue={explanation}
+              maxLength="200"
+              minLength="4"
+              type="text"
+            />
           </EditInputWrapper>
-          <Button variant={'save'} category="Save changes" type="submit">
-            <ScreenReaderOnly> save changes</ScreenReaderOnly>
-          </Button>
+          <Button category="Save changes" type="submit"></Button>
         </EditForm>
       ) : (
         <CardWrapper isBookmaked={isBookmarked}>
@@ -60,7 +76,7 @@ export default function Card({
           <IconButton
             type="button"
             onClick={() => setIsEditing(!isEditing)}
-            variant="edit"
+            variant="pen"
           >
             <GrEdit style={{ width: '25px', height: '25px' }} />
             <ScreenReaderOnly>edit this card</ScreenReaderOnly>
@@ -70,7 +86,7 @@ export default function Card({
             aria-label="delete this card"
             _id={_id}
             onClick={() => setShowMessage(true)}
-            variant="delete"
+            variant="trash"
           >
             <BsTrash style={{ width: '25px', height: '25px' }} />
             <ScreenReaderOnly>delete this card</ScreenReaderOnly>
@@ -138,6 +154,7 @@ const EditForm = styled.form`
   display: grid;
   gap: 10px;
 `;
+
 const EditInputWrapper = styled.div`
   display: flex;
   flex-direction: column;

@@ -13,7 +13,7 @@ export default function IconButton({ buttonText, children, ...buttonProps }) {
 const ButtonStyled = styled.button`
   background: transparent;
   border: transparent;
-  margin: 4px;
+  margin: 2px;
   position: absolute;
   right: 1px;
   &:hover {
@@ -21,21 +21,21 @@ const ButtonStyled = styled.button`
   }
 
   ${props =>
-    props.variant === 'delete' &&
+    props.variant === 'trash' &&
     css`
       bottom: 5px;
     `}
 
   ${props =>
-    props.variant === 'edit' &&
+    props.variant === 'pen' &&
     css`
-      bottom: 50%;
+      bottom: 45%;
     `}
 
     ${props =>
     props.variant === 'bookmark' &&
     css`
       top: -9px;
-      color: ${props => (props.isBookmarked ? 'palevioletred' : 'linen')};
+      color: ${props => (props.isBookmarked ? '#E4717A' : '#9F9191')};
     `}
 `;

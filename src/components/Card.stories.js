@@ -3,6 +3,10 @@ import Card from './Card';
 export default {
   title: 'components/Card',
   component: Card,
+  argTypes: {
+    showMessage: { type: 'boolean' },
+    isEditing: { type: 'boolean' },
+  },
 };
 
 const Template = args => <Card {...args} />;
