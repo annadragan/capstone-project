@@ -4,6 +4,7 @@ import { GrEdit } from 'react-icons/gr';
 import styled from 'styled-components';
 import DeleteMessage from './DeleteMessage';
 import ScreenReaderOnly from './ScreenReaderOnly';
+import Button from './Button';
 
 export default function Card({
   word,
@@ -14,7 +15,6 @@ export default function Card({
   onBookmarkCard,
   isBookmarked,
   onEditCard,
-  vocabulary,
 }) {
   const [showMessage, setShowMessage] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
@@ -23,24 +23,16 @@ export default function Card({
     <div>
       {isEditing ? (
         <Form onSubmit={handleSubmitEdit}>
-          <CardWord htmlFor="word" id="word" defaultValue={vocabulary.word}>
-            {word}
-          </CardWord>
-          <CardExample
-            htmlFor="example"
-            id="example"
-            defaultValue={vocabulary.example}
-          >
-            {example}
-          </CardExample>
-          <CardExplanation
-            htmlFor="explanation"
-            id="explanation"
-            defaultValue={vocabulary.explanation}
-          >
-            {explanation}
-          </CardExplanation>
-          <button type="submit">Save</button>
+          <EditLabel htmlFor="word">Edit word</EditLabel>
+          <EditInput id="word" defaultValue={word} />
+          <EditLabel htmlFor="example">Edit example</EditLabel>
+          <EditInput id="example" defaultValue={example} />
+          <EditLabel htmlFor="explanation">Edit explanation</EditLabel>
+          <EditInput id="explanation" defaultValue={explanation} />
+
+          <Button variant={'save'} category="Save" type="submit">
+            Save
+          </Button>
         </Form>
       ) : (
         <CardWrapper isBookmaked={isBookmarked}>
@@ -176,3 +168,28 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
 `;
+
+const EditLabel = styled.label`
+  margin: -4px;
+`;
+const EditInput = styled.textarea`
+  padding: 7px;
+  font-size: 1rem;
+  margin: 5px;
+  border-radius: 5px;
+  width: 90%;
+  border-color: crimson;
+  &:focus {
+    outline: none;
+    background-color: pink;
+    width: 100%;
+  }
+  &::placeholder {
+    color: rgb(159, 161, 190);
+  }
+  &:hover {
+    background-color: azure;
+  }
+`;
+
+const EditSaveButton = styled.button``;
