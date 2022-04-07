@@ -21,7 +21,7 @@ export default function Card({
 
   return (
     <div>
-      {isEditinig ? (
+      {isEditing ? (
         <Form onSubmit={handleSubmitEdit}>
           <CardWord htmlFor="word" id="word" defaultValue={vocabulary.word}>
             {word}
