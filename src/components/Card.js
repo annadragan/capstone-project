@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import DeleteMessage from './DeleteMessage';
 import ScreenReaderOnly from './ScreenReaderOnly';
 import Button from './Button';
-import ButtonStyled from './IconButton';
 
 export default function Card({
   word,
@@ -169,10 +168,6 @@ const EditButton = styled.button.attrs(() => ({
 `;
 
 const EditForm = styled.form`
-  /* display: flex;
-  flex-direction: column; */
-  /* width: 300px; */
-
   display: grid;
   gap: 10px;
 `;
