@@ -79,7 +79,8 @@ function App() {
   function handleEditTerm(updatedTerm) {
     const newTerm = vocabulary.map(card => {
       if (card._id === updatedTerm._id) {
-        return updatedTerm;
+        const newCardTerm = { ...card, ...updatedTerm };
+        return newCardTerm;
       }
       return card;
     });

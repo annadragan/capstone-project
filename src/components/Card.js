@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import DeleteMessage from './DeleteMessage';
 import ScreenReaderOnly from './ScreenReaderOnly';
 import Button from './Button';
+import ButtonStyled from './IconButton';
 
 export default function Card({
   word,
@@ -20,20 +21,23 @@ export default function Card({
   const [isEditing, setIsEditing] = useState(false);
 
   return (
-    <div>
+    <>
       {isEditing ? (
-        <Form onSubmit={handleSubmitEdit}>
-          <EditLabel htmlFor="word">Edit word</EditLabel>
-          <EditInput id="word" defaultValue={word} />
-          <EditLabel htmlFor="example">Edit example</EditLabel>
-          <EditInput id="example" defaultValue={example} />
-          <EditLabel htmlFor="explanation">Edit explanation</EditLabel>
-          <EditInput id="explanation" defaultValue={explanation} />
-
-          <Button variant={'save'} category="Save" type="submit">
-            Save
-          </Button>
-        </Form>
+        <EditForm onSubmit={handleSubmitEdit}>
+          <EditInputWrapper>
+            <EditLabel htmlFor="word">Edit word</EditLabel>
+            <EditInput id="word" defaultValue={word} />
+          </EditInputWrapper>
+          <EditInputWrapper>
+            <EditLabel htmlFor="example">Edit example</EditLabel>
+            <EditInput id="example" defaultValue={example} />
+          </EditInputWrapper>
+          <EditInputWrapper>
+            <EditLabel htmlFor="explanation">Edit explanation</EditLabel>
+            <EditInput id="explanation" defaultValue={explanation} />
+          </EditInputWrapper>
+          <Button variant={'save'} category="Save changes" type="submit" />
+        </EditForm>
       ) : (
         <CardWrapper isBookmaked={isBookmarked}>
           <CardWord>{word}</CardWord>
@@ -68,7 +72,7 @@ export default function Card({
           )}
         </CardWrapper>
       )}
-    </div>
+    </>
   );
 
   function handleSubmitEdit(event) {
@@ -164,20 +168,29 @@ const EditButton = styled.button.attrs(() => ({
   }
 `;
 
-const Form = styled.form`
+const EditForm = styled.form`
+  /* display: flex;
+  flex-direction: column; */
+  /* width: 300px; */
+
+  display: grid;
+  gap: 10px;
+`;
+const EditInputWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 `;
 
 const EditLabel = styled.label`
-  margin: -4px;
+  margin: -4px 4px;
 `;
+
 const EditInput = styled.textarea`
   padding: 7px;
   font-size: 1rem;
   margin: 5px;
   border-radius: 5px;
-  width: 90%;
   border-color: crimson;
   &:focus {
     outline: none;
@@ -191,5 +204,3 @@ const EditInput = styled.textarea`
     background-color: azure;
   }
 `;
-
-const EditSaveButton = styled.button``;

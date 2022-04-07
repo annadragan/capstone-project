@@ -29,7 +29,7 @@ export default function Input({
 }
 
 const StyledLabel = styled.label`
-  margin: -4px;
+  margin: -4px 4px;
 `;
 
 const StyledTextarea = styled.textarea`
