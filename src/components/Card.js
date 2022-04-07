@@ -20,45 +20,75 @@ export default function Card({
   const [isEditing, setIsEditing] = useState(false);
 
   return (
-    <CardWrapper isBookmaked={isBookmarked}>
-      <CardWord>{word}</CardWord>
-      <CardExample>{example}</CardExample>
-      <CardExplanation>{explanation}</CardExplanation>
-      <BookmarkButton
-        type="button"
-        aria-label="bookmark this card"
-        onClick={() => onBookmarkCard(_id)}
-        isBookmarked={isBookmarked}
-      >
-        <ScreenReaderOnly>bookmark this card</ScreenReaderOnly>
-      </BookmarkButton>
-      {/* {setIsEditing ? (
-      <EditButton type="button" onClick={()=>setIsEditing(!isEditing)}>
-        <ScreenReaderOnly>edit this card</ScreenReaderOnly>
-      </EditButton>
+    <div>
+      {isEditinig ? (
+        <Form onSubmit={handleSubmitEdit}>
+          <CardWord htmlFor="word" id="word" defaultValue={vocabulary.word}>
+            {word}
+          </CardWord>
+          <CardExample
+            htmlFor="example"
+            id="example"
+            defaultValue={vocabulary.example}
+          >
+            {example}
+          </CardExample>
+          <CardExplanation
+            htmlFor="explanation"
+            id="explanation"
+            defaultValue={vocabulary.explanation}
+          >
+            {explanation}
+          </CardExplanation>
+          <button type="submit">Save</button>
+        </Form>
       ) : (
-      )} */}
+        <CardWrapper isBookmaked={isBookmarked}>
+          <CardWord>{word}</CardWord>
+          <CardExample>{example}</CardExample>
+          <CardExplanation>{explanation}</CardExplanation>
+          <BookmarkButton
+            type="button"
+            aria-label="bookmark this card"
+            onClick={() => onBookmarkCard(_id)}
+            isBookmarked={isBookmarked}
+          >
+            <ScreenReaderOnly>bookmark this card</ScreenReaderOnly>
+          </BookmarkButton>
 
-      <DeleteButton
-        type="button"
-        aria-label="delete this card"
-        _id={_id}
-        onClick={() => setShowMessage(true)}
-      >
-        <ScreenReaderOnly>delete this card</ScreenReaderOnly>
-      </DeleteButton>
-      {showMessage && (
-        <DeleteMessage
-          onConfirmDelete={() => onDeleteCard(_id)}
-          onCancelDelete={() => setShowMessage(false)}
-        />
+          <EditButton type="button" onClick={() => setIsEditing(!isEditing)}>
+            <ScreenReaderOnly>edit this card</ScreenReaderOnly>
+          </EditButton>
+
+          <DeleteButton
+            type="button"
+            aria-label="delete this card"
+            _id={_id}
+            onClick={() => setShowMessage(true)}
+          >
+            <ScreenReaderOnly>delete this card</ScreenReaderOnly>
+          </DeleteButton>
+          {showMessage && (
+            <DeleteMessage
+              onConfirmDelete={() => onDeleteCard(_id)}
+              onCancelDelete={() => setShowMessage(false)}
+            />
+          )}
+        </CardWrapper>
       )}
-    </CardWrapper>
+    </div>
   );
 
-  function handleChange(event) {
-    const newExpression = { ...vocabulary, word: event.target.value };
-    onEditCard(newExpression);
+  function handleSubmitEdit(event) {
+    event.preventDefault();
+    const { word, example, explanation } = event.target.elements;
+    onEditCard({
+      _id: _id,
+      word: word.value,
+      example: example.value,
+      explanation: explanation.value,
+    });
+    setIsEditing(false);
   }
 }
 
@@ -140,4 +170,9 @@ const EditButton = styled.button.attrs(() => ({
   &:hover {
     color: crimson;
   }
+`;
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
 `;

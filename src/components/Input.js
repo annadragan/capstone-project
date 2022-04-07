@@ -8,6 +8,7 @@ export default function Input({
   rows,
   name,
   onChange,
+  defaultValue,
 }) {
   return (
     <>
@@ -21,6 +22,7 @@ export default function Input({
         maxLength={maxLength}
         minLength={minLength}
         rows={rows}
+        defaultValue={defaultValue}
       />
     </>
   );
