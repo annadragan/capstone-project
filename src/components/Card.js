@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { BsFillBookmarkCheckFill, BsTrash } from 'react-icons/bs';
 import { GrEdit } from 'react-icons/gr';
 import styled from 'styled-components';
-import DeleteMessage from './DeleteMessage';
-import ScreenReaderOnly from './ScreenReaderOnly';
 import Button from './Button';
+import DeleteMessage from './DeleteMessage';
+import IconButton from './IconButton';
+import ScreenReaderOnly from './ScreenReaderOnly';
 
 export default function Card({
   word,
@@ -35,34 +36,45 @@ export default function Card({
             <EditLabel htmlFor="explanation">Edit explanation</EditLabel>
             <EditInput id="explanation" defaultValue={explanation} />
           </EditInputWrapper>
-          <Button variant={'save'} category="Save changes" type="submit" />
+          <Button variant={'save'} category="Save changes" type="submit">
+            <ScreenReaderOnly> save changes</ScreenReaderOnly>
+          </Button>
         </EditForm>
       ) : (
         <CardWrapper isBookmaked={isBookmarked}>
           <CardWord>{word}</CardWord>
           <CardExample>{example}</CardExample>
           <CardExplanation>{explanation}</CardExplanation>
-          <BookmarkButton
+          <IconButton
             type="button"
             aria-label="bookmark this card"
             onClick={() => onBookmarkCard(_id)}
             isBookmarked={isBookmarked}
+            variant="bookmark"
           >
+            <BsFillBookmarkCheckFill
+              style={{ width: '25px', height: '25px' }}
+            />
             <ScreenReaderOnly>bookmark this card</ScreenReaderOnly>
-          </BookmarkButton>
-
-          <EditButton type="button" onClick={() => setIsEditing(!isEditing)}>
+          </IconButton>
+          <IconButton
+            type="button"
+            onClick={() => setIsEditing(!isEditing)}
+            variant="edit"
+          >
+            <GrEdit style={{ width: '25px', height: '25px' }} />
             <ScreenReaderOnly>edit this card</ScreenReaderOnly>
-          </EditButton>
-
-          <DeleteButton
+          </IconButton>
+          <IconButton
             type="button"
             aria-label="delete this card"
             _id={_id}
             onClick={() => setShowMessage(true)}
+            variant="delete"
           >
+            <BsTrash style={{ width: '25px', height: '25px' }} />
             <ScreenReaderOnly>delete this card</ScreenReaderOnly>
-          </DeleteButton>
+          </IconButton>
           {showMessage && (
             <DeleteMessage
               onConfirmDelete={() => onDeleteCard(_id)}
@@ -120,51 +132,6 @@ const CardExplanation = styled.dd`
   color: white;
   margin-left: 0;
   padding: 4px;
-`;
-
-const DeleteButton = styled.button.attrs(() => ({
-  children: <BsTrash style={{ width: '25px', height: '25px' }} />,
-}))`
-  position: absolute;
-  bottom: 5px;
-  right: 1px;
-  background: transparent;
-  border: transparent;
-  margin: 4px;
-  &:hover {
-    color: crimson;
-  }
-`;
-
-const BookmarkButton = styled.button.attrs(() => ({
-  children: (
-    <BsFillBookmarkCheckFill style={{ width: '25px', height: '25px' }} />
-  ),
-}))`
-  position: absolute;
-  top: -9px;
-  right: 1px;
-  background: transparent;
-  border: transparent;
-  margin: 4px;
-  color: ${props => (props.isBookmarked ? 'palevioletred' : 'linen')};
-  &:hover {
-    color: crimson;
-  }
-`;
-
-const EditButton = styled.button.attrs(() => ({
-  children: <GrEdit style={{ width: '25px', height: '25px' }} />,
-}))`
-  position: absolute;
-  bottom: 50%;
-  right: 1px;
-  background: transparent;
-  border: transparent;
-  margin: 4px;
-  &:hover {
-    color: crimson;
-  }
 `;
 
 const EditForm = styled.form`

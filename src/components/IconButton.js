@@ -1,7 +1,13 @@
 import styled, { css } from 'styled-components';
+import ScreenReaderOnly from './ScreenReaderOnly';
 
-export default function IconButton() {
-  return <ButtonStyled aria-label="icon button" role="button"></ButtonStyled>;
+export default function IconButton({ buttonText, children, ...buttonProps }) {
+  return (
+    <ButtonStyled {...buttonProps}>
+      {children}
+      <ScreenReaderOnly>{buttonText}</ScreenReaderOnly>
+    </ButtonStyled>
+  );
 }
 
 const ButtonStyled = styled.button`
