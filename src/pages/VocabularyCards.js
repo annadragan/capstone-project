@@ -8,16 +8,19 @@ export default function VocabularyCards({
   vocabulary,
   onDeleteCard,
   onBookmarkCard,
+  onEditCard,
 }) {
   return (
     <>
       <Header>Vocabulary Cards</Header>
+
       <CardList
         vocabulary={vocabulary}
         onDeleteCard={onDeleteCard}
         onBookmarkCard={onBookmarkCard}
-        // onConfirmDelete={onDeleteCard}
+        onEditCard={onEditCard}
       />
+
       <Link to={'/form'}>
         <PlusButton
           type="button"

@@ -22,9 +22,11 @@ export default function Form({ onCreateTerm }) {
   const recalculateExplanationCharacter = e => {
     setNewExplanation(e.target.value.length);
   };
+
   return (
     <>
       <Header>Card form</Header>
+      <Title>Create your vocabulary card</Title>
       <FormWrapper
         aria-describedby="Create a new word"
         onSubmit={handleSubmitTerm}
@@ -32,7 +34,7 @@ export default function Form({ onCreateTerm }) {
       >
         <InputWrapper>
           <Input
-            labelText="New word:"
+            labelText="new word*"
             placeholder="Type to add a word..."
             maxLength="20"
             minLength="2"
@@ -46,7 +48,7 @@ export default function Form({ onCreateTerm }) {
         </InputWrapper>
         <InputWrapper>
           <Input
-            labelText="Example:"
+            labelText="example*"
             placeholder="Type to add some example phrase..."
             maxLength="80"
             minLength="4"
@@ -62,7 +64,7 @@ export default function Form({ onCreateTerm }) {
         </InputWrapper>
         <InputWrapper>
           <Input
-            labelText="Explanation:"
+            labelText="explanation*"
             placeholder="Type your explanation..."
             maxLength="200"
             minLength="4"
@@ -76,11 +78,7 @@ export default function Form({ onCreateTerm }) {
           />
           <Counter>{newExplanation}/200</Counter>
         </InputWrapper>
-        <Button
-          category="Create a card"
-          disabled={disabled}
-          aria-label="Create a card Button"
-        ></Button>
+        <Button category="Create a card" disabled={disabled}></Button>
       </FormWrapper>
     </>
   );
@@ -120,4 +118,9 @@ const InputWrapper = styled.div`
 const Counter = styled.small`
   display: flex;
   justify-content: right;
+`;
+
+const Title = styled.h2`
+  font-size: 20px;
+  font-weight: 500;
 `;

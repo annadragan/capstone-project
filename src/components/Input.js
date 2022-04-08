@@ -8,6 +8,7 @@ export default function Input({
   rows,
   name,
   onChange,
+  defaultValue,
 }) {
   return (
     <>
@@ -21,13 +22,14 @@ export default function Input({
         maxLength={maxLength}
         minLength={minLength}
         rows={rows}
+        defaultValue={defaultValue}
       />
     </>
   );
 }
 
 const StyledLabel = styled.label`
-  margin: -4px;
+  margin: -4px 4px;
 `;
 
 const StyledTextarea = styled.textarea`

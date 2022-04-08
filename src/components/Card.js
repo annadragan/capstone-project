@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import { BsFillBookmarkCheckFill, BsTrash } from 'react-icons/bs';
+import { GrEdit } from 'react-icons/gr';
 import styled from 'styled-components';
+import Button from './Button';
 import DeleteMessage from './DeleteMessage';
+import IconButton from './IconButton';
 import ScreenReaderOnly from './ScreenReaderOnly';
 
 export default function Card({
@@ -12,38 +15,104 @@ export default function Card({
   _id,
   onBookmarkCard,
   isBookmarked,
+  onEditCard,
 }) {
   const [showMessage, setShowMessage] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
 
   return (
-    <CardWrapper isBookmaked={isBookmarked}>
-      <CardWord>{word}</CardWord>
-      <CardExample>{example}</CardExample>
-      <CardExplanation>{explanation}</CardExplanation>
-      <BookmarkButton
-        type="button"
-        aria-label="bookmark this card"
-        onClick={() => onBookmarkCard(_id)}
-        isBookmarked={isBookmarked}
-      >
-        <ScreenReaderOnly>bookmark this card</ScreenReaderOnly>
-      </BookmarkButton>
-      <DeleteButton
-        type="button"
-        aria-label="delete this card"
-        _id={_id}
-        onClick={() => setShowMessage(true)}
-      >
-        <ScreenReaderOnly>delete this card</ScreenReaderOnly>
-      </DeleteButton>
-      {showMessage && (
-        <DeleteMessage
-          onConfirmDelete={() => onDeleteCard(_id)}
-          onCancelDelete={() => setShowMessage(false)}
-        />
+    <>
+      {isEditing ? (
+        <EditForm onSubmit={handleSubmitEdit} autoComplete="off">
+          <EditInputWrapper>
+            <EditLabel htmlFor="word">edit word</EditLabel>
+            <EditInput
+              id="word"
+              defaultValue={word}
+              maxLength="20"
+              minLength="2"
+              type="text"
+            />
+          </EditInputWrapper>
+          <EditInputWrapper>
+            <EditLabel htmlFor="example">edit example</EditLabel>
+            <EditInput
+              id="example"
+              defaultValue={example}
+              maxLength="80"
+              minLength="4"
+              type="text"
+            />
+          </EditInputWrapper>
+          <EditInputWrapper>
+            <EditLabel htmlFor="explanation">edit explanation</EditLabel>
+            <EditInput
+              id="explanation"
+              defaultValue={explanation}
+              maxLength="200"
+              minLength="4"
+              type="text"
+            />
+          </EditInputWrapper>
+          <Button category="Save changes" type="submit"></Button>
+        </EditForm>
+      ) : (
+        <CardWrapper isBookmaked={isBookmarked}>
+          <CardWord>{word}</CardWord>
+          <CardExample>{example}</CardExample>
+          <CardExplanation>{explanation}</CardExplanation>
+          <IconButton
+            type="button"
+            aria-label="bookmark this card"
+            onClick={() => onBookmarkCard(_id)}
+            isBookmarked={isBookmarked}
+            variant="bookmark"
+          >
+            <BsFillBookmarkCheckFill
+              style={{ width: '25px', height: '25px' }}
+            />
+            <ScreenReaderOnly>bookmark this card</ScreenReaderOnly>
+          </IconButton>
+          <IconButton
+            type="button"
+            onClick={() => setIsEditing(!isEditing)}
+            variant="pen"
+          >
+            <GrEdit style={{ width: '25px', height: '25px' }} />
+            <ScreenReaderOnly>edit this card</ScreenReaderOnly>
+          </IconButton>
+          <IconButton
+            type="button"
+            aria-label="delete this card"
+            _id={_id}
+            onClick={() => setShowMessage(true)}
+            variant="trash"
+          >
+            <BsTrash style={{ width: '25px', height: '25px' }} />
+            <ScreenReaderOnly>delete this card</ScreenReaderOnly>
+          </IconButton>
+          {showMessage && (
+            <DeleteMessage
+              onConfirmDelete={() => onDeleteCard(_id)}
+              onCancelDelete={() => setShowMessage(false)}
+            />
+          )}
+        </CardWrapper>
       )}
-    </CardWrapper>
+    </>
   );
+
+  function handleSubmitEdit(event) {
+    event.preventDefault();
+    const { word, example, explanation } = event.target.elements;
+    onEditCard({
+      _id: _id,
+      word: word.value,
+      example: example.value,
+      explanation: explanation.value,
+    });
+    setIsEditing(false);
+  }
 }
 
 const CardWrapper = styled.dl`
@@ -81,33 +150,39 @@ const CardExplanation = styled.dd`
   padding: 4px;
 `;
 
-const DeleteButton = styled.button.attrs(() => ({
-  children: <BsTrash style={{ width: '25px', height: '25px' }} />,
-}))`
-  position: absolute;
-  bottom: 5px;
-  right: 1px;
-  background: transparent;
-  border: transparent;
-  margin: 4px;
-  &:hover {
-    color: crimson;
-  }
+const EditForm = styled.form`
+  display: grid;
+  border: 1px solid black;
+  border-radius: 7px;
+  padding: 4px;
+  gap: 10px;
 `;
 
-const BookmarkButton = styled.button.attrs(() => ({
-  children: (
-    <BsFillBookmarkCheckFill style={{ width: '25px', height: '25px' }} />
-  ),
-}))`
-  position: absolute;
-  top: -9px;
-  right: 1px;
-  background: transparent;
-  border: transparent;
-  margin: 4px;
-  color: ${props => (props.isBookmarked ? 'palevioletred' : 'linen')};
+const EditInputWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+`;
+
+const EditLabel = styled.label`
+  margin: -4px 4px;
+`;
+
+const EditInput = styled.textarea`
+  padding: 7px;
+  font-size: 1rem;
+  margin: 5px;
+  border-radius: 5px;
+  border-color: crimson;
+  &:focus {
+    outline: none;
+    background-color: pink;
+    width: 100%;
+  }
+  &::placeholder {
+    color: rgb(159, 161, 190);
+  }
   &:hover {
-    color: crimson;
+    background-color: azure;
   }
 `;

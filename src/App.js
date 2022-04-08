@@ -23,6 +23,7 @@ function App() {
                 vocabulary={vocabulary}
                 onDeleteCard={handleDeleteTerm}
                 onBookmarkCard={handleBookmarkTerm}
+                onEditCard={handleEditTerm}
               />
             }
           />
@@ -37,6 +38,7 @@ function App() {
                 vocabulary={vocabulary}
                 onDeleteCard={handleDeleteTerm}
                 onBookmarkCard={handleBookmarkTerm}
+                onEditCard={handleEditTerm}
               />
             }
           />
@@ -72,6 +74,17 @@ function App() {
         }
       })
     );
+  }
+
+  function handleEditTerm(updatedTerm) {
+    const newTerm = vocabulary.map(card => {
+      if (card._id === updatedTerm._id) {
+        const newCardTerm = { ...card, ...updatedTerm };
+        return newCardTerm;
+      }
+      return card;
+    });
+    setVocabulary(newTerm);
   }
 }
 
