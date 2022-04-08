@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Button from './Button';
 import Header from './Header';
 import Input from './Input';
-import ScreenReaderOnly from './ScreenReaderOnly';
 
 export default function Form({ onCreateTerm }) {
   const [newWord, setNewWord] = useState(0);
@@ -23,6 +22,7 @@ export default function Form({ onCreateTerm }) {
   const recalculateExplanationCharacter = e => {
     setNewExplanation(e.target.value.length);
   };
+
   return (
     <>
       <Header>Card form</Header>
@@ -78,9 +78,7 @@ export default function Form({ onCreateTerm }) {
           />
           <Counter>{newExplanation}/200</Counter>
         </InputWrapper>
-        <Button category="Create a card" disabled={disabled}>
-          <ScreenReaderOnly> Create a card </ScreenReaderOnly>
-        </Button>
+        <Button category="Create a card" disabled={disabled}></Button>
       </FormWrapper>
     </>
   );

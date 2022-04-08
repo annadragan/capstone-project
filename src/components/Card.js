@@ -152,6 +152,9 @@ const CardExplanation = styled.dd`
 
 const EditForm = styled.form`
   display: grid;
+  border: 1px solid black;
+  border-radius: 7px;
+  padding: 4px;
   gap: 10px;
 `;
 

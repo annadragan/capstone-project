@@ -1,13 +1,7 @@
 import styled, { css } from 'styled-components';
-import ScreenReaderOnly from './ScreenReaderOnly';
 
-export default function IconButton({ buttonText, children, ...buttonProps }) {
-  return (
-    <ButtonStyled {...buttonProps}>
-      {children}
-      <ScreenReaderOnly>{buttonText}</ScreenReaderOnly>
-    </ButtonStyled>
-  );
+export default function IconButton({ children, ...buttonProps }) {
+  return <ButtonStyled {...buttonProps}>{children}</ButtonStyled>;
 }
 
 const ButtonStyled = styled.button`

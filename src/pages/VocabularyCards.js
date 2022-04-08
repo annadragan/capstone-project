@@ -13,19 +13,14 @@ export default function VocabularyCards({
   return (
     <>
       <Header>Vocabulary Cards</Header>
-      {vocabulary.length === 0 ? (
-        <>
-          <h2>No vocabulary cards found!</h2>
-          <p>Looks like you haven't created any vocabulary cards yet...</p>
-        </>
-      ) : (
-        <CardList
-          vocabulary={vocabulary}
-          onDeleteCard={onDeleteCard}
-          onBookmarkCard={onBookmarkCard}
-          onEditCard={onEditCard}
-        />
-      )}
+
+      <CardList
+        vocabulary={vocabulary}
+        onDeleteCard={onDeleteCard}
+        onBookmarkCard={onBookmarkCard}
+        onEditCard={onEditCard}
+      />
+
       <Link to={'/form'}>
         <PlusButton
           type="button"
