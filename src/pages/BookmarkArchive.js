@@ -10,7 +10,12 @@ export default function BookmarkArchive({
   return (
     <>
       <Header>Archive</Header>
-
+      {/* {vocabulary.length === 0 ? (
+        <>
+          <h2>No favorites found!</h2>
+          <p>Oh, snap! There's nothing here...</p>
+        </>
+      ) : ( */}
       <div>
         {vocabulary?.map(
           ({ _id, word, example, explanation, isBookmarked }) =>
@@ -29,6 +34,7 @@ export default function BookmarkArchive({
             )
         )}
       </div>
+      {/* )} */}
     </>
   );
 }

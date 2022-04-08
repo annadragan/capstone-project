@@ -41,6 +41,7 @@ export default function Form({ onCreateTerm }) {
             id="new_word"
             name="new_word"
             value={newWord}
+            // requiered
             type="text"
             onChange={recalculateWordCharacter}
           />
@@ -57,6 +58,7 @@ export default function Form({ onCreateTerm }) {
             id="new_example"
             name="new_example"
             value={newExample}
+            // requiered
             type="text"
             onChange={recalculateExampleCharacter}
           />
@@ -73,12 +75,19 @@ export default function Form({ onCreateTerm }) {
             id="new_explanation"
             name="new_explanation"
             value={newExplanation}
+            // requiered
             type="text"
             onChange={recalculateExplanationCharacter}
           />
           <Counter>{newExplanation}/200</Counter>
         </InputWrapper>
+        {/* {newWord.length === 0 ||
+        newExample.length === 0 ||
+        newExplanation.length === 0 ? (
+          <p>Fill first all fields</p>
+        ) : ( */}
         <Button category="Create a card" disabled={disabled}></Button>
+        {/* )} */}
       </FormWrapper>
     </>
   );
