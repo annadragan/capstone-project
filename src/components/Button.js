@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export default function Button({ category }) {
+export default function Button({ category, ...props }) {
   return (
-    <ButtonStyled aria-label="button" role="button">
+    <ButtonStyled {...props} aria-label="button" role="button">
       {category}
     </ButtonStyled>
   );
