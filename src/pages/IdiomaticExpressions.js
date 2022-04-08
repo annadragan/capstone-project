@@ -6,30 +6,19 @@ import { idioms } from '../data';
 
 export default function IdiomaticExpressions() {
   const [quote, setQuote] = useState('');
+  console.log(quote.expression);
 
   return (
     <>
       <Header>Idiomatic Expressions</Header>
-      {/* {quote && ( */}
-      <>
-        {idioms.map(({ _id, expression, meaning }) => {
-          return (
-            <ExpressionWrapper
-              key={_id}
-              expression={expression}
-              meaning={meaning}
-            >
-              <ExpressionContent>
-                {idioms[quote] && idioms[quote].expression}
-              </ExpressionContent>
-              <ExpressionMeaning>
-                {idioms[quote] && idioms[quote].meaning}
-              </ExpressionMeaning>
-            </ExpressionWrapper>
-          );
-        })}
-      </>
-      {/* )} */}
+      {quote && (
+        <>
+          <ExpressionWrapper>
+            <ExpressionContent>{quote.expression}</ExpressionContent>
+            <ExpressionMeaning>{quote.meaning}</ExpressionMeaning>
+          </ExpressionWrapper>
+        </>
+      )}
       <Button
         category="next expression"
         onClick={() => handleRandomeQuote()}
@@ -38,7 +27,8 @@ export default function IdiomaticExpressions() {
   );
 
   function handleRandomeQuote() {
-    const quote = Math.floor(Math.random() * idioms.length);
+    const Number = Math.floor(Math.random() * idioms.length);
+    const quote = idioms[Number];
     setQuote(quote);
   }
 }
