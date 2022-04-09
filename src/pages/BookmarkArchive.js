@@ -9,7 +9,7 @@ export default function BookmarkArchive({
 }) {
   return (
     <>
-      <Header>Archive</Header>
+      <Header>Favoriten</Header>
       {/* {vocabulary.length === 0 ? (
         <>
           <h2>No favorites found!</h2>

@@ -12,7 +12,8 @@ export default function VocabularyCards({
 }) {
   return (
     <>
-      <Header>Vocabulary Cards</Header>
+      <Header>Vocabelkärtchen</Header>
+
       {/* {vocabulary.length === 0 ? (
         <>
           <h2>No vocabulary cards found!</h2>

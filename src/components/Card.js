@@ -54,7 +54,7 @@ export default function Card({
               type="text"
             />
           </EditInputWrapper>
-          <Button category="Save changes" type="submit"></Button>
+          <EditButton category="Speichern" type="submit"></EditButton>
         </EditForm>
       ) : (
         <CardWrapper isBookmaked={isBookmarked}>
@@ -184,5 +184,13 @@ const EditInput = styled.textarea`
   }
   &:hover {
     background-color: azure;
+  }
+`;
+
+const EditButton = styled(Button)`
+  width: 90%;
+  height: 48px;
+  &:hover {
+    width: 95%;
   }
 `;
