@@ -10,8 +10,8 @@ describe('DeleteMessage', () => {
         <DeleteMessage showMessage={true} />
       </MemoryRouter>
     );
-    const buttonConfirm = screen.getByText(/Yes/i);
-    const buttonCancel = screen.getByText(/No/i);
+    const buttonConfirm = screen.getByText(/Ja/i);
+    const buttonCancel = screen.getByText(/Nein/i);
 
     expect(buttonConfirm).toBeInTheDocument();
     expect(buttonCancel).toBeInTheDocument();

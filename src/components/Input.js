@@ -23,6 +23,7 @@ export default function Input({
         minLength={minLength}
         rows={rows}
         defaultValue={defaultValue}
+        required
       />
     </>
   );

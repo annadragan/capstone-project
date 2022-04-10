@@ -8,7 +8,7 @@ it('has a title', () => {
       <BookmarkArchive />
     </MemoryRouter>
   );
-  const title = screen.getByText('Archive');
+  const title = screen.getByText('Favoriten');
 
   expect(title).toBeInTheDocument();
 });

@@ -12,17 +12,17 @@ describe('Form', () => {
       </MemoryRouter>
     );
 
-    const wordTextare = screen.getByLabelText(/New word/i);
+    const wordTextare = screen.getByLabelText(/neues Wort*/i);
     userEvent.type(wordTextare, '{enter}');
 
-    const exampleTextarea = screen.getByLabelText(/Example/i);
+    const exampleTextarea = screen.getByLabelText(/Beispielsatz*/i);
     userEvent.type(exampleTextarea, '{enter}');
 
-    const explanationTextarea = screen.getByLabelText(/Explanation/i);
+    const explanationTextarea = screen.getByLabelText(/Erklärung*/i);
     userEvent.type(explanationTextarea, '{enter}');
 
     const saveButton = screen.getByRole('button');
-    const title = screen.getByText('Card form');
+    const title = screen.getByText('Erstellen');
 
     expect(title).toBeInTheDocument();
     expect(wordTextare).toBeInTheDocument();

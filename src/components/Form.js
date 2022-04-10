@@ -35,13 +35,12 @@ export default function Form({ onCreateTerm }) {
         <InputWrapper>
           <Input
             labelText="neues Wort*"
-            placeholder="Füge das Wort..."
+            placeholder="Füge das Wort hinzu..."
             maxLength="20"
             minLength="2"
             id="new_word"
             name="new_word"
             value={newWord}
-            // requiered
             type="text"
             onChange={recalculateWordCharacter}
           />
@@ -50,7 +49,7 @@ export default function Form({ onCreateTerm }) {
         <InputWrapper>
           <Input
             labelText="Beispielsatz*"
-            placeholder="Füge der Beispielsatz hinzu..."
+            placeholder="Füge den Beispielsatz hinzu..."
             maxLength="80"
             minLength="4"
             rows={3}
@@ -58,7 +57,6 @@ export default function Form({ onCreateTerm }) {
             id="new_example"
             name="new_example"
             value={newExample}
-            // requiered
             type="text"
             onChange={recalculateExampleCharacter}
           />
@@ -75,7 +73,6 @@ export default function Form({ onCreateTerm }) {
             id="new_explanation"
             name="new_explanation"
             value={newExplanation}
-            // requiered
             type="text"
             onChange={recalculateExplanationCharacter}
           />
@@ -86,7 +83,7 @@ export default function Form({ onCreateTerm }) {
         newExplanation.length === 0 ? (
           <p>Fill first all fields</p>
         ) : ( */}
-        <FormButton category="Erstelle" disabled={disabled}></FormButton>
+        <FormButton category="Erstellen" disabled={disabled}></FormButton>
         {/* )} */}
       </FormWrapper>
     </>

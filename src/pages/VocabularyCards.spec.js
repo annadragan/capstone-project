@@ -8,7 +8,7 @@ it('has a title and one link and it renders a button', () => {
       <VocabularyCards />
     </MemoryRouter>
   );
-  const title = screen.getByText('Vocabulary Cards');
+  const title = screen.getByText('Vokabelkärtchen');
   const button = screen.getByRole('button');
   const links = screen.getAllByRole('link');
 
