@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import { RiDoubleQuotesR } from 'react-icons/ri';
 import styled from 'styled-components';
 import Button from '../components/Button';
 import Header from '../components/Header';
 import { idioms } from '../data';
-import { RiDoubleQuotesR } from 'react-icons/ri';
 
 export default function IdiomaticExpressions() {
   const [quote, setQuote] = useState('');
@@ -31,7 +31,6 @@ export default function IdiomaticExpressions() {
 }
 
 const ExpressionWrapper = styled.div`
-  /* background-image: url(https://source.unsplash.com/300x300/?mountain); */
   display: flex;
   flex-direction: column;
   justify-content: center;

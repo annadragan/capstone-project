@@ -794,11 +794,6 @@ export const idioms = [
   },
   {
     _id: nanoid(),
-    expression: '""',
-    meaning: '',
-  },
-  {
-    _id: nanoid(),
     expression: '"In China ist ein Sack Reis umgefallen"',
     meaning: 'Ausdruck des eigenen Desinteresses.    ',
   },

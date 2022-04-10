@@ -23,6 +23,12 @@ export default function ScrollToTop() {
     });
   }, []);
 
+  // useEffect(() => {
+  //   return () => {
+  //     // This is the cleanup function
+  //   }
+  // }, []);
+
   function onScrollUp() {
     window.scrollTo({
       top: 0,
