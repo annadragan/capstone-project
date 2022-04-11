@@ -78,13 +78,7 @@ export default function Form({ onCreateTerm }) {
           />
           <Counter>{newExplanation}/200</Counter>
         </InputWrapper>
-        {/* {newWord.length === 0 ||
-        newExample.length === 0 ||
-        newExplanation.length === 0 ? (
-          <p>Fill first all fields</p>
-        ) : ( */}
         <FormButton category="Erstellen" disabled={disabled}></FormButton>
-        {/* )} */}
       </FormWrapper>
     </>
   );

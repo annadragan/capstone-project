@@ -14,8 +14,7 @@ export default function BookmarkArchive({
       <Header>Favoriten</Header>
       {bookmarkedList.length === 0 && (
         <>
-          <h2>No favorites found!</h2>
-          <p>Oh, snap! There's nothing here...</p>
+          <p>Keine Favoriten gefunden</p>
         </>
       )}
       <div>
