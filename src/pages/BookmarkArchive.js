@@ -7,10 +7,16 @@ export default function BookmarkArchive({
   onDeleteCard,
   onEditCard,
 }) {
+  const bookmarkedList = vocabulary.filter(card => card.isBookmarked === true);
+
   return (
     <>
-      <Header>Archive</Header>
-
+      <Header>Favoriten</Header>
+      {bookmarkedList.length === 0 && (
+        <>
+          <p>Keine Favoriten gefunden</p>
+        </>
+      )}
       <div>
         {vocabulary?.map(
           ({ _id, word, example, explanation, isBookmarked }) =>

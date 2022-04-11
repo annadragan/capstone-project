@@ -38,7 +38,7 @@ const ListWrapper = styled.div`
   padding-left: 0;
   padding: 20px;
   list-style: none;
-  gap: 30px;
+  gap: 10px;
   opacity: 0.9;
   transition: 0.2s;
 

@@ -1,6 +1,7 @@
 import { IconContext } from 'react-icons';
 import { BsFillBookmarkCheckFill } from 'react-icons/bs';
 import { GiCardRandom } from 'react-icons/gi';
+import { GrBlockQuote } from 'react-icons/gr';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -15,6 +16,11 @@ export default function Navigation() {
       <LinkStyled to="/archive">
         <IconContext.Provider value={{ size: '32px' }}>
           <BsFillBookmarkCheckFill />
+        </IconContext.Provider>
+      </LinkStyled>
+      <LinkStyled to="/idioms">
+        <IconContext.Provider value={{ size: '32px' }}>
+          <GrBlockQuote />
         </IconContext.Provider>
       </LinkStyled>
     </Nav>

@@ -25,8 +25,8 @@ export default function Form({ onCreateTerm }) {
 
   return (
     <>
-      <Header>Card form</Header>
-      <Title>Create your vocabulary card</Title>
+      <Header>Erstelle</Header>
+      <Title>Erstelle deine Vokabelkärtchen selbst</Title>
       <FormWrapper
         aria-describedby="Create a new word"
         onSubmit={handleSubmitTerm}
@@ -34,8 +34,8 @@ export default function Form({ onCreateTerm }) {
       >
         <InputWrapper>
           <Input
-            labelText="new word*"
-            placeholder="Type to add a word..."
+            labelText="neues Wort*"
+            placeholder="Füge das Wort hinzu..."
             maxLength="20"
             minLength="2"
             id="new_word"
@@ -48,8 +48,8 @@ export default function Form({ onCreateTerm }) {
         </InputWrapper>
         <InputWrapper>
           <Input
-            labelText="example*"
-            placeholder="Type to add some example phrase..."
+            labelText="Beispielsatz*"
+            placeholder="Füge den Beispielsatz hinzu..."
             maxLength="80"
             minLength="4"
             rows={3}
@@ -64,8 +64,8 @@ export default function Form({ onCreateTerm }) {
         </InputWrapper>
         <InputWrapper>
           <Input
-            labelText="explanation*"
-            placeholder="Type your explanation..."
+            labelText="Erklärung*"
+            placeholder="Füge die Erklärung hinzu..."
             maxLength="200"
             minLength="4"
             rows={5}
@@ -78,7 +78,7 @@ export default function Form({ onCreateTerm }) {
           />
           <Counter>{newExplanation}/200</Counter>
         </InputWrapper>
-        <Button category="Create a card" disabled={disabled}></Button>
+        <FormButton category="Erstellen" disabled={disabled}></FormButton>
       </FormWrapper>
     </>
   );
@@ -107,6 +107,7 @@ export default function Form({ onCreateTerm }) {
 const FormWrapper = styled.form`
   display: grid;
   gap: 15px;
+  align-items: center;
 `;
 
 const InputWrapper = styled.div`
@@ -123,4 +124,11 @@ const Counter = styled.small`
 const Title = styled.h2`
   font-size: 20px;
   font-weight: 500;
+`;
+
+const FormButton = styled(Button)`
+  width: 85%;
+  &:hover {
+    width: 90%;
+  }
 `;

@@ -6,22 +6,22 @@ export default function DeleteMessage({ onConfirmDelete, onCancelDelete }) {
   return (
     <MessageOverlay>
       <MessageContent>
-        <h2>Confirm Delete Request</h2>
-        <p>Do you really want to delete this card?</p>
+        <h2>Bestätige das Löschen</h2>
+        <p>Möchtest du diese Karteikarte wirklich löschen?</p>
         <MessageWindowWrapper>
           <DeleteMessageButton
             variant={'cancel'}
             type="button"
             onClick={onCancelDelete}
           >
-            No <ScreenReaderOnly>cancel deleting this card</ScreenReaderOnly>
+            Nein <ScreenReaderOnly>cancel deleting this card</ScreenReaderOnly>
           </DeleteMessageButton>
           <DeleteMessageButton
             variant={'confirm'}
             type="button"
             onClick={onConfirmDelete}
           >
-            Yes <ScreenReaderOnly>confirm deleting this card</ScreenReaderOnly>
+            Ja <ScreenReaderOnly>confirm deleting this card</ScreenReaderOnly>
           </DeleteMessageButton>
         </MessageWindowWrapper>
       </MessageContent>
@@ -42,7 +42,7 @@ const MessageContent = styled.div`
   justify-content: center;
   align-items: center;
   padding: 10px;
-  width: 60%;
+  width: 80%;
   margin: 30vh auto;
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 20px;

@@ -25,7 +25,7 @@ export default function Card({
       {isEditing ? (
         <EditForm onSubmit={handleSubmitEdit} autoComplete="off">
           <EditInputWrapper>
-            <EditLabel htmlFor="word">edit word</EditLabel>
+            <EditLabel htmlFor="word">editiere das Wort</EditLabel>
             <EditInput
               id="word"
               defaultValue={word}
@@ -35,7 +35,7 @@ export default function Card({
             />
           </EditInputWrapper>
           <EditInputWrapper>
-            <EditLabel htmlFor="example">edit example</EditLabel>
+            <EditLabel htmlFor="example">editiere den Beispielsatz</EditLabel>
             <EditInput
               id="example"
               defaultValue={example}
@@ -45,7 +45,7 @@ export default function Card({
             />
           </EditInputWrapper>
           <EditInputWrapper>
-            <EditLabel htmlFor="explanation">edit explanation</EditLabel>
+            <EditLabel htmlFor="explanation">editiere die Erklärung</EditLabel>
             <EditInput
               id="explanation"
               defaultValue={explanation}
@@ -54,7 +54,7 @@ export default function Card({
               type="text"
             />
           </EditInputWrapper>
-          <Button category="Save changes" type="submit"></Button>
+          <EditSaveButton category="Speichern" type="submit"></EditSaveButton>
         </EditForm>
       ) : (
         <CardWrapper isBookmaked={isBookmarked}>
@@ -184,5 +184,13 @@ const EditInput = styled.textarea`
   }
   &:hover {
     background-color: azure;
+  }
+`;
+
+const EditSaveButton = styled(Button)`
+  width: 90%;
+  height: 48px;
+  &:hover {
+    width: 95%;
   }
 `;
