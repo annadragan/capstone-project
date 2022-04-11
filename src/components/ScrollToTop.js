@@ -7,27 +7,18 @@ export default function ScrollToTop() {
   const [backToTop, setBackToTop] = useState(true);
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
+    function setButtonVisible() {
       if (window.pageYOffset > 100) {
         setBackToTop(false);
       } else {
         setBackToTop(true);
       }
-      return () => {
-        if (window.pageYOffset > 100) {
-          setBackToTop(false);
-        } else {
-          setBackToTop(true);
-        }
-      };
-    });
+    }
+    window.addEventListener('scroll', setButtonVisible);
+    return function cleanup() {
+      window.removeEventListener('scroll', setButtonVisible);
+    };
   }, []);
-
-  // useEffect(() => {
-  //   return () => {
-  //     // This is the cleanup function
-  //   }
-  // }, []);
 
   function onScrollUp() {
     window.scrollTo({
