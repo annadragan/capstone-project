@@ -20,7 +20,10 @@ export default function VocabularyCards({
 
       {vocabulary.length === 0 ? (
         <>
-          <p>Es sind noch keine Vokabelkärtchen da</p>
+          <p>
+            Es sind noch keine Vokabelkärtchen da. Um eine zu erstellen klicke
+            auf den Plus
+          </p>
         </>
       ) : (
         <CardList

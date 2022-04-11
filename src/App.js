@@ -8,6 +8,8 @@ import Navigation from './components/Navigation';
 import BookmarkArchive from './pages/BookmarkArchive';
 import VocabularyCards from './pages/VocabularyCards';
 import IdiomaticExpressions from './pages/IdiomaticExpressions';
+import Traditions from './pages/Traditions';
+import ImageForm from './components/ImageForm';
 
 function App() {
   const [vocabulary, setVocabulary] = useLocalStorage('dictionary', []);
@@ -44,6 +46,12 @@ function App() {
             }
           />
           <Route path="/idioms" element={<IdiomaticExpressions />} />
+
+          <Route
+            path="/create"
+            element={<ImageForm onCreateTradition={handleSubmitTerm} />}
+          />
+          <Route path="/traditions" element={<Traditions />} />
         </Routes>
         <Navigation />
       </AppWrapper>
