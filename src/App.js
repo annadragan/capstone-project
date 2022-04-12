@@ -4,12 +4,12 @@ import styled from 'styled-components';
 import { useLocalStorage } from 'usehooks-ts';
 import Form from './components/Form';
 import Header from './components/Header';
-import ImageForm from './components/ImageForm';
 import Navigation from './components/Navigation';
 import BookmarkArchive from './pages/BookmarkArchive';
+import VocabularyCards from './pages/VocabularyCards';
 import IdiomaticExpressions from './pages/IdiomaticExpressions';
 import Traditions from './pages/Traditions';
-import VocabularyCards from './pages/VocabularyCards';
+import ImageForm from './components/ImageForm';
 
 function App() {
   const [vocabulary, setVocabulary] = useLocalStorage('dictionary', []);
