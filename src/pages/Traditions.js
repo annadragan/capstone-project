@@ -3,9 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import AsideButton from '../components/AsideButton';
 import Header from '../components/Header';
 import ScreenReaderOnly from '../components/ScreenReaderOnly';
+import ImageCardList from '../components/ImageCardList';
 
-export default function Traditions() {
+export default function Traditions({ stories }) {
   const navigate = useNavigate();
+
   return (
     <>
       <Header>Traditionen</Header>
@@ -13,6 +15,7 @@ export default function Traditions() {
         <TiArrowBackOutline style={{ width: '35px', height: '35px' }} />{' '}
         <ScreenReaderOnly>go to create a tradition form</ScreenReaderOnly>
       </AsideButton>
+      <ImageCardList stories={stories} />
     </>
   );
 }

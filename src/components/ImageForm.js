@@ -9,9 +9,8 @@ import Input from './Input';
 const CLOUDNAME = process.env.REACT_APP_CLOUDINARY_CLOUDNAME;
 const PRESET = process.env.REACT_APP_CLOUDINARY_PRESET;
 
-export default function ImageForm({ onSubmit, onCreateTradition }) {
+export default function ImageForm({ onCreateTradition }) {
   const [photo, setPhoto] = useState('');
-  const [tradition, setTradition] = useState({});
 
   const navigate = useNavigate();
 
@@ -43,17 +42,17 @@ export default function ImageForm({ onSubmit, onCreateTradition }) {
           )}
         </ImageUpload>
         <Input
-          onChange={handleOnChange}
+          //   onChange={handleOnChange}
           requiered
           type="text"
           name="tradition"
           labelText="neue Tradition*"
           placeholder="Füge die Tradition hinzu..."
           maxLength="300"
-          minLength="2"
+          minLength="4"
           id="tradition"
         />
-        <Button category="Save" type="button" />
+        <Button category="Save" />
       </Form>
     </>
   );
@@ -78,24 +77,13 @@ export default function ImageForm({ onSubmit, onCreateTradition }) {
     setPhoto(response.data.url);
   }
 
-  function handleOnChange(event) {
-    const { name, value } = event.target;
-    setTradition({
-      ...tradition,
-      [name]: value,
-    });
-  }
-
   function handleSubmitTradition(event) {
     event.preventDefault();
     const form = event.target;
     const newTradition = form.elements.tradition.value.trim();
 
-    if (newTradition.length >= 2) {
-      onCreateTradition(newTradition);
-      setTradition('');
-
-      onSubmit(tradition, photo);
+    if (newTradition.length >= 4) {
+      onCreateTradition(photo, newTradition);
       navigate('/traditions');
       form.reset();
     }
