@@ -4,14 +4,12 @@ import styled from 'styled-components';
 import Button from '../components/Button';
 import Header from '../components/Header';
 import { idioms } from '../data';
-import { useEffect } from 'react';
 
 export default function IdiomaticExpressions() {
-  const [quote, setQuote] = useState('');
+  const [quote, setQuote] = useState(
+    idioms[Math.floor(Math.random() * idioms.length)]
+  );
 
-  useEffect(() => {
-    handleRandomeQuote();
-  });
   return (
     <>
       <Header>Redewendungen</Header>
