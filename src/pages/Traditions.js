@@ -1,11 +1,10 @@
 import { BsPatchPlusFill } from 'react-icons/bs';
-
+import { Link } from 'react-router-dom';
 import AsideButton from '../components/AsideButton';
 import Header from '../components/Header';
 import ImageCardList from '../components/ImageCardList';
 import ScreenReaderOnly from '../components/ScreenReaderOnly';
 import ScrollToTop from '../components/ScrollToTop.js';
-import { Link } from 'react-router-dom';
 
 export default function Stories({ stories, onScrollUp, backToTop }) {
   return (
@@ -13,8 +12,15 @@ export default function Stories({ stories, onScrollUp, backToTop }) {
       <Header>Traditionen</Header>
       <Link to={'/create'}>
         <AsideButton variant="plus">
-          <BsPatchPlusFill style={{ width: '35px', height: '35px' }} />
-          <ScreenReaderOnly>go to create a tradition form</ScreenReaderOnly>
+          <BsPatchPlusFill
+            style={{
+              width: '35px',
+              height: '35px',
+            }}
+          />
+          <ScreenReaderOnly>
+            gehe zu der Erstelle eine Tradition Form
+          </ScreenReaderOnly>
         </AsideButton>
       </Link>
       <ImageCardList stories={stories} />

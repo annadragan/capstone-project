@@ -41,7 +41,7 @@ export default function ImageForm({ onCreateTradition }) {
                 onChange={upload}
                 id="files"
               />
-              <label for="files">
+              <label htmlFor="files">
                 Foto hochladen{' '}
                 <FaCloudUploadAlt style={{ width: '25px', height: '25px' }} />
                 <ScreenReaderOnly>upload your image</ScreenReaderOnly>
