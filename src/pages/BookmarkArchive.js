@@ -1,11 +1,14 @@
 import Card from '../components/Card';
 import Header from '../components/Header';
+import ScrollToTop from '../components/ScrollToTop.js';
 
 export default function BookmarkArchive({
   vocabulary,
   onBookmarkCard,
   onDeleteCard,
   onEditCard,
+  onScrollUp,
+  backToTop,
 }) {
   const bookmarkedList = vocabulary.filter(card => card.isBookmarked === true);
 
@@ -35,6 +38,7 @@ export default function BookmarkArchive({
             )
         )}
       </div>
+      <ScrollToTop onClick={onScrollUp} hidden={backToTop} />
     </>
   );
 }

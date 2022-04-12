@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export default function ImageCard({ tradition, photo }) {
   return (
     <>
-      <CardWrapper role="list">
+      <CardWrapper>
         <CardPhoto src={photo}></CardPhoto>
         <CardTradition>{tradition}</CardTradition>
       </CardWrapper>
@@ -26,11 +26,7 @@ const CardWrapper = styled.ul`
 `;
 
 const CardPhoto = styled.img`
-  color: white;
-  margin-left: 0;
-  font-style: italic;
-  padding: 4px;
-  border-radius: 15px;
+  border-radius: 12px;
 `;
 
 const CardTradition = styled.li`

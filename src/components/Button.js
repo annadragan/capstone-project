@@ -12,7 +12,7 @@ const ButtonStyled = styled.button`
   background-color: #d70761;
   color: whitesmoke;
   border-radius: 1000px;
-  height: 58px;
+  height: 45px;
   width: 140px;
   border: none;
   margin: 5px;

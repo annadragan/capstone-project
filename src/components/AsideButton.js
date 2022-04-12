@@ -28,11 +28,4 @@ const ButtonStyled = styled.button`
       right: 16px;
       bottom: 56px;
     `}
-    
-    ${props =>
-    props.variant === 'back' &&
-    css`
-      left: 16px;
-      top: 56px;
-    `}
 `;
