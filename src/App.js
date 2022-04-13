@@ -106,9 +106,10 @@ function App() {
     setVocabulary(newTerm);
   }
 
-  function handleSubmitTradition(photo, tradition) {
+  function handleSubmitTradition(title, photo, tradition) {
     const newStory = {
       _id: nanoid(),
+      title: title,
       photo,
       tradition,
     };

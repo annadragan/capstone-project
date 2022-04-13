@@ -6,17 +6,21 @@ import ScreenReaderOnly from './ScreenReaderOnly';
 import { BsTrash } from 'react-icons/bs';
 
 export default function ImageCard({
+  title,
   tradition,
   photo,
   onDeleteTradition,
   _id,
 }) {
   const [showMessage, setShowMessage] = useState(false);
+
   return (
     <>
       <CardWrapper>
+        <CardTitle>{title}</CardTitle>
         <CardPhoto src={photo}></CardPhoto>
         <CardTradition>{tradition}</CardTradition>
+
         <IconButton
           type="button"
           aria-label="delete this card"
@@ -52,14 +56,22 @@ const CardWrapper = styled.li`
   position: relative;
 `;
 
+const CardTitle = styled.h2`
+  color: white;
+  margin-left: 0;
+  padding: 4px;
+  font-weight: bold;
+  font-size: 1.4rem;
+`;
+
 const CardPhoto = styled.img`
   border-radius: 12px;
+  width: 100%;
+  margin: 10px 0;
 `;
 
 const CardTradition = styled.p`
   color: white;
   margin-left: 0;
-  font-style: italic;
   padding: 4px;
-  list-style: none;
 `;

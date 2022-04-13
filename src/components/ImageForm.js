@@ -24,31 +24,13 @@ export default function ImageForm({ onCreateTradition }) {
         onSubmit={handleSubmitTradition}
         aria-describedby="Describe a new tradition"
       >
-        <ImageUpload>
-          {photo ? (
-            <img
-              src={photo}
-              alt=""
-              style={{
-                width: '70%',
-              }}
-            />
-          ) : (
-            <div>
-              <input
-                type="file"
-                aria-label="upload your photo"
-                onChange={upload}
-                id="files"
-              />
-              <label htmlFor="files">
-                Foto hochladen{' '}
-                <FaCloudUploadAlt style={{ width: '25px', height: '25px' }} />
-                <ScreenReaderOnly>upload your image</ScreenReaderOnly>
-              </label>
-            </div>
-          )}
-        </ImageUpload>
+        <Input
+          type="text"
+          name="title"
+          placeholder="Nenne die Tradition..."
+          maxLength="20"
+          id="title"
+        />
         <Input
           requiered
           type="text"
@@ -58,6 +40,33 @@ export default function ImageForm({ onCreateTradition }) {
           minLength="4"
           id="tradition"
         />
+        <ImageWrapper>
+          <ImageUpload>
+            {photo ? (
+              <img
+                src={photo}
+                alt=""
+                style={{
+                  width: '70%',
+                }}
+              />
+            ) : (
+              <div>
+                <input
+                  type="file"
+                  aria-label="upload your photo"
+                  onChange={upload}
+                  id="files"
+                />
+                <label htmlFor="files">
+                  Foto hochladen{' '}
+                  <FaCloudUploadAlt style={{ width: '25px', height: '25px' }} />
+                  <ScreenReaderOnly>upload your image</ScreenReaderOnly>
+                </label>
+              </div>
+            )}
+          </ImageUpload>
+        </ImageWrapper>
         <Button category="Save" />
       </Form>
     </>
@@ -87,9 +96,10 @@ export default function ImageForm({ onCreateTradition }) {
     event.preventDefault();
     const form = event.target;
     const newTradition = form.elements.tradition.value.trim();
+    const newTitle = form.elements.tradition.value.trim();
 
     if (newTradition.length >= 4) {
-      onCreateTradition(photo, newTradition);
+      onCreateTradition(newTitle, photo, newTradition);
       navigate('/traditions');
       form.reset();
     }
@@ -128,4 +138,14 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 30px;
+`;
+
+const ImageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 3px;
+  background-color: azure;
+  border: 1px solid crimson;
+  border-radius: 10px;
+  width: 300px;
 `;

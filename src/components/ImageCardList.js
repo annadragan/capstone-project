@@ -9,10 +9,11 @@ export default function ImageCardList({
   return (
     <>
       <ListWrapper role="list" aria-label="tradition cards list">
-        {stories?.map(({ _id, tradition, photo }) => {
+        {stories?.map(({ _id, title, tradition, photo }) => {
           return (
             <ImageCard
               key={_id}
+              title={title}
               tradition={tradition}
               photo={photo}
               _id={_id}
