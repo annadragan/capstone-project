@@ -25,7 +25,7 @@ export default function Form({ onCreateTerm }) {
 
   return (
     <>
-      <Header>Erstelle</Header>
+      <Header>Form</Header>
       <Title>Erstelle deine Vokabelkärtchen selbst</Title>
       <FormWrapper
         aria-describedby="Create a new word"

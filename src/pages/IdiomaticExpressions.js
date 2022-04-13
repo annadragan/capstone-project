@@ -6,15 +6,17 @@ import Header from '../components/Header';
 import { idioms } from '../data';
 
 export default function IdiomaticExpressions() {
-  const [quote, setQuote] = useState('');
+  const [quote, setQuote] = useState(
+    idioms[Math.floor(Math.random() * idioms.length)]
+  );
 
   return (
     <>
       <Header>Redewendungen</Header>
-      <Button
+      <IdiomaticButton
         category="nächste Redewendung"
         onClick={() => handleRandomeQuote()}
-      ></Button>
+      ></IdiomaticButton>
       <ExpressionWrapper>
         <QuoteIcon />
         <ExpressionContent>{quote.expression}</ExpressionContent>
@@ -61,4 +63,8 @@ const QuoteIcon = styled.div.attrs(() => ({
   border: none;
   padding: 6px;
   margin: 0 10px;
+`;
+
+const IdiomaticButton = styled(Button)`
+  height: 58px;
 `;

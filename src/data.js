@@ -307,7 +307,7 @@ export const idioms = [
   },
   {
     _id: nanoid(),
-    expression: '"ch bin mit meinem Latein am Ende"',
+    expression: '"Ich bin mit meinem Latein am Ende"',
     meaning: 'hier weiß ich nicht mehr weiter, das kenne ich zu wenig.',
   },
   {
@@ -424,7 +424,7 @@ export const idioms = [
     _id: nanoid(),
     expression: '"Einen Metzgersgang machen"',
     meaning:
-      'twas erfolglos unternehmen. Fleischer gingen früher von Hof zu Hof auf der Suche nach Arbeit. Kehrten sie am Abend ohne Auftrag zurück, hatten sie einen „Metzgersgang“ gemacht.    ',
+      'etwas erfolglos unternehmen. Fleischer gingen früher von Hof zu Hof auf der Suche nach Arbeit. Kehrten sie am Abend ohne Auftrag zurück, hatten sie einen „Metzgersgang“ gemacht.    ',
   },
   {
     _id: nanoid(),

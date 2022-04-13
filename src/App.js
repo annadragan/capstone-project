@@ -8,9 +8,12 @@ import Navigation from './components/Navigation';
 import BookmarkArchive from './pages/BookmarkArchive';
 import VocabularyCards from './pages/VocabularyCards';
 import IdiomaticExpressions from './pages/IdiomaticExpressions';
+import Traditions from './pages/Traditions';
+import ImageForm from './components/ImageForm';
 
 function App() {
   const [vocabulary, setVocabulary] = useLocalStorage('dictionary', []);
+  const [stories, setStories] = useLocalStorage('chronicle', []);
 
   return (
     <>
@@ -44,6 +47,15 @@ function App() {
             }
           />
           <Route path="/idioms" element={<IdiomaticExpressions />} />
+
+          <Route
+            path="/create"
+            element={<ImageForm onCreateTradition={handleSubmitTradition} />}
+          />
+          <Route
+            path="/traditions"
+            element={<Traditions stories={stories} />}
+          />
         </Routes>
         <Navigation />
       </AppWrapper>
@@ -87,6 +99,16 @@ function App() {
       return card;
     });
     setVocabulary(newTerm);
+  }
+
+  function handleSubmitTradition(photo, tradition) {
+    const newStory = {
+      _id: nanoid(),
+      photo,
+      tradition,
+    };
+
+    setStories([...stories, newStory]);
   }
 }
 

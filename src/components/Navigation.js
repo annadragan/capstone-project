@@ -1,6 +1,6 @@
 import { IconContext } from 'react-icons';
 import { BsFillBookmarkCheckFill } from 'react-icons/bs';
-import { GiCardRandom } from 'react-icons/gi';
+import { GiCardRandom, GiDreamCatcher } from 'react-icons/gi';
 import { GrBlockQuote } from 'react-icons/gr';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
@@ -21,6 +21,11 @@ export default function Navigation() {
       <LinkStyled to="/idioms">
         <IconContext.Provider value={{ size: '32px' }}>
           <GrBlockQuote />
+        </IconContext.Provider>
+      </LinkStyled>
+      <LinkStyled to="/traditions">
+        <IconContext.Provider value={{ size: '32px' }}>
+          <GiDreamCatcher />
         </IconContext.Provider>
       </LinkStyled>
     </Nav>
