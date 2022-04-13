@@ -11,7 +11,7 @@ export default function ImageCard({ tradition, photo }) {
   );
 }
 
-const CardWrapper = styled.ul`
+const CardWrapper = styled.li`
   background-color: hsl(220, 15%, 35%);
   display: flex;
   flex-direction: column;
@@ -29,7 +29,7 @@ const CardPhoto = styled.img`
   border-radius: 12px;
 `;
 
-const CardTradition = styled.li`
+const CardTradition = styled.p`
   color: white;
   margin-left: 0;
   font-style: italic;

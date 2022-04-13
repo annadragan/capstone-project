@@ -27,28 +27,30 @@ describe('Card', () => {
     expect(explanation).toBeInTheDocument();
   });
 
-  it('calls Callback when clicking the bookmark icon and it renders three buttons', () => {
-    const onBookmarkCard = jest.fn();
-    const onEditCard = jest.fn();
-    const onDeleteCard = jest.fn();
+  describe('Card', () => {
+    it('calls Callback when clicking the bookmark icon and it renders three buttons', () => {
+      const onBookmarkCard = jest.fn();
+      const onEditCard = jest.fn();
+      const onDeleteCard = jest.fn();
 
-    render(
-      <MemoryRouter>
-        <Card
-          onBookmarkCard={onBookmarkCard}
-          onEditCard={onEditCard}
-          onConfirmDelete={onDeleteCard}
-        />
-      </MemoryRouter>
-    );
-    const bookmarkButton = screen.getByRole('button', { name: /bookmark/i });
+      render(
+        <MemoryRouter>
+          <Card
+            onBookmarkCard={onBookmarkCard}
+            onEditCard={onEditCard}
+            onConfirmDelete={onDeleteCard}
+          />
+        </MemoryRouter>
+      );
+      const bookmarkButton = screen.getByRole('button', { name: /bookmark/i });
 
-    userEvent.click(bookmarkButton);
+      userEvent.click(bookmarkButton);
 
-    expect(onBookmarkCard).toHaveBeenCalled();
+      expect(onBookmarkCard).toHaveBeenCalled();
 
-    const buttons = screen.getAllByRole('button');
-    expect(buttons).toHaveLength(3);
-    userEvent.click(buttons[0]);
+      const buttons = screen.getAllByRole('button');
+      expect(buttons).toHaveLength(3);
+      userEvent.click(buttons[0]);
+    });
   });
 });

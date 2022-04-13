@@ -2,10 +2,9 @@ import styled from 'styled-components';
 import ImageCard from './ImageCard';
 
 export default function ImageCardList({ stories, onCreateTradition }) {
-  console.log(stories);
   return (
     <>
-      <ListWrapper role="list" aria-label="tradition cards">
+      <ListWrapper role="list" aria-label="tradition cards list">
         {stories?.map(({ _id, tradition, photo }) => {
           return (
             <ImageCard
@@ -22,7 +21,7 @@ export default function ImageCardList({ stories, onCreateTradition }) {
   );
 }
 
-const ListWrapper = styled.div`
+const ListWrapper = styled.ul`
   display: grid;
   justify-items: center;
   padding-left: 0;

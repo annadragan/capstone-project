@@ -17,21 +17,26 @@ describe('DeleteMessage', () => {
     expect(buttonCancel).toBeInTheDocument();
   });
 
-  it('calls onClick when clicking the cancel or confirm delete button', () => {
-    const cancelBtn = jest.fn();
-    const deleteBtn = jest.fn();
-    render(
-      <MemoryRouter>
-        <DeleteMessage onConfirmDelete={deleteBtn} onCancelDelete={cancelBtn} />
-      </MemoryRouter>
-    );
-    const cancelButton = screen.getByRole('button', { name: /cancel/i });
-    const deleteButton = screen.getByRole('button', { name: /confirm/i });
+  describe('DeleteMessage', () => {
+    it('calls onClick when clicking the cancel or confirm delete button', () => {
+      const cancelBtn = jest.fn();
+      const deleteBtn = jest.fn();
+      render(
+        <MemoryRouter>
+          <DeleteMessage
+            onConfirmDelete={deleteBtn}
+            onCancelDelete={cancelBtn}
+          />
+        </MemoryRouter>
+      );
+      const cancelButton = screen.getByRole('button', { name: /cancel/i });
+      const deleteButton = screen.getByRole('button', { name: /confirm/i });
 
-    userEvent.click(cancelButton);
-    userEvent.click(deleteButton);
+      userEvent.click(cancelButton);
+      userEvent.click(deleteButton);
 
-    expect(deleteBtn).toHaveBeenCalled();
-    expect(cancelBtn).toHaveBeenCalled();
+      expect(deleteBtn).toHaveBeenCalled();
+      expect(cancelBtn).toHaveBeenCalled();
+    });
   });
 });

@@ -1,10 +1,11 @@
 import { BsPatchPlusFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import AsideButton from '../components/AsideButton';
 import CardList from '../components/CardList';
 import Header from '../components/Header';
-import ScrollToTop from '../components/ScrollToTop.js';
-import AsideButton from '../components/AsideButton';
 import ScreenReaderOnly from '../components/ScreenReaderOnly';
+import ScrollToTop from '../components/ScrollToTop.js';
 
 export default function VocabularyCards({
   vocabulary,
@@ -17,13 +18,15 @@ export default function VocabularyCards({
   return (
     <>
       <Header>Vokabelkärtchen</Header>
-
       {vocabulary.length === 0 ? (
         <>
-          <p>
-            Es sind noch keine Vokabelkärtchen da. Um eine zu erstellen klicke
-            auf den Plus
-          </p>
+          <Text>
+            Das ist ein besonderer Ort, da du diesen nach eigenen Vorliben
+            gestallten kannst. Hier kannst du die für dich wichtigen Vokabeln
+            und Sätze aufbewahren und trainieren. Die Vokabelkärtchen mit den
+            für dich persönlich interessanten und spanennden Wörtern sind beim
+            perfektionieren einer anderen Sprache der Schlüssel zum Erfolg!
+          </Text>
         </>
       ) : (
         <CardList
@@ -47,3 +50,8 @@ export default function VocabularyCards({
     </>
   );
 }
+
+const Text = styled.p`
+  text-align: center;
+  padding: 20px;
+`;

@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import Card from '../components/Card';
 import Header from '../components/Header';
 import ScrollToTop from '../components/ScrollToTop.js';
@@ -17,7 +18,14 @@ export default function BookmarkArchive({
       <Header>Favoriten</Header>
       {bookmarkedList.length === 0 && (
         <>
-          <p>Keine Favoriten gefunden</p>
+          <Text>
+            Das machst du gut! Hierher kannst du die Vokabelkärtchen verschieben
+            die du dir bereits gut merkst um sie nicht zu verlieren. Wenn du
+            eine Abwechslung brauchst lerne ein paar Redewendungen auf der
+            nächsten Seite kennen. Sie werden haüfig in Gesprächen, Filmen und
+            Büchern benutzt und sie zu verstehen gehört bei der
+            Sprachentwicklung einfach dazu!
+          </Text>
         </>
       )}
       <div>
@@ -42,3 +50,8 @@ export default function BookmarkArchive({
     </>
   );
 }
+
+const Text = styled.p`
+  padding: 20px;
+  text-align: center;
+`;
