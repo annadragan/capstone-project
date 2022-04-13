@@ -48,18 +48,14 @@ const CardWrapper = styled.li`
   flex-direction: column;
   word-wrap: break-word;
   width: 300px;
-  gap: 10px;
   padding: 20px;
   border-radius: 14px;
-  margin-top: 50px;
   border-top: 16px solid #d70761;
   position: relative;
 `;
 
 const CardTitle = styled.h2`
   color: white;
-  margin-left: 0;
-  padding: 4px;
   font-weight: bold;
   font-size: 1.4rem;
   display: flex;
@@ -69,11 +65,8 @@ const CardTitle = styled.h2`
 const CardPhoto = styled.img`
   border-radius: 12px;
   width: 100%;
-  margin: 10px 0;
 `;
 
 const CardTradition = styled.p`
   color: white;
-  margin-left: 0;
-  padding: 4px;
 `;

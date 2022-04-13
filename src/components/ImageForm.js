@@ -60,16 +60,18 @@ export default function ImageForm({ onCreateTradition }) {
                   onChange={upload}
                   id="files"
                 />
-                <label htmlFor="files">
+                <ImageLabel htmlFor="files">
                   Foto hochladen {loading && <p>{process}%</p>}
                   <FaCloudUploadAlt
                     style={{
                       width: '25px',
                       height: '25px',
+                      position: 'relative',
+                      bottom: '-4px',
                     }}
                   />
                   <ScreenReaderOnly>upload your image</ScreenReaderOnly>
-                </label>
+                </ImageLabel>
               </Wrapper>
             )}
           </ImageUpload>
@@ -181,4 +183,8 @@ const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
+`;
+
+const ImageLabel = styled.label`
+  position: absolute;
 `;

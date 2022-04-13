@@ -29,6 +29,5 @@ describe('Traditions', () => {
     const buttons = screen.getAllByRole('button');
     expect(buttons).toHaveLength(2);
     userEvent.click(buttons[0]);
-    // expect(onScrollUp).toHaveBeenCalled();
   });
 });
