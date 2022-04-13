@@ -17,8 +17,8 @@ export default function ImageCard({
   return (
     <>
       <CardWrapper>
-        <CardTitle>{title}</CardTitle>
         <CardPhoto src={photo}></CardPhoto>
+        <CardTitle>{title}</CardTitle>
         <CardTradition>{tradition}</CardTradition>
 
         <IconButton
@@ -62,6 +62,8 @@ const CardTitle = styled.h2`
   padding: 4px;
   font-weight: bold;
   font-size: 1.4rem;
+  display: flex;
+  justify-content: center;
 `;
 
 const CardPhoto = styled.img`

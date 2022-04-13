@@ -26,32 +26,34 @@ export default function ImageForm({ onCreateTradition }) {
         onSubmit={handleSubmitTradition}
         aria-describedby="Describe a new tradition"
       >
-        <Input
-          labelText="Überschrift"
-          type="text"
-          name="title"
-          placeholder="Nenne die Tradition..."
-          maxLength="20"
-          id="title"
-        />
-        <Input
-          required
-          labelText="Beschreibung der Tradition*"
-          type="text"
-          name="tradition"
-          placeholder="Beschreibe die Tradition..."
-          maxLength="300"
-          minLength="4"
-          id="tradition"
-        />
+        <InputWrapper>
+          <Input
+            labelText="Überschrift"
+            type="text"
+            name="title"
+            placeholder="Nenne die Tradition..."
+            maxLength="20"
+            id="title"
+          />
+          <Input
+            required
+            labelText="Beschreibung der Tradition*"
+            type="text"
+            name="tradition"
+            placeholder="Beschreibe die Tradition..."
+            maxLength="300"
+            minLength="4"
+            id="tradition"
+          />
+        </InputWrapper>
         <ImageWrapper>
           <ImageUpload>
             {photo ? (
-              <Div>
+              <UploadedImageWrapper>
                 <Image src={photo} alt="" />
-              </Div>
+              </UploadedImageWrapper>
             ) : (
-              <Test>
+              <Wrapper>
                 <input
                   type="file"
                   aria-label="upload your photo"
@@ -59,8 +61,7 @@ export default function ImageForm({ onCreateTradition }) {
                   id="files"
                 />
                 <label htmlFor="files">
-                  Foto hochladen{' '}
-                  {loading && <UploadingText>{process}%</UploadingText>}
+                  Foto hochladen {loading && <p>{process}%</p>}
                   <FaCloudUploadAlt
                     style={{
                       width: '25px',
@@ -69,7 +70,7 @@ export default function ImageForm({ onCreateTradition }) {
                   />
                   <ScreenReaderOnly>upload your image</ScreenReaderOnly>
                 </label>
-              </Test>
+              </Wrapper>
             )}
           </ImageUpload>
         </ImageWrapper>
@@ -147,6 +148,7 @@ const ImageUpload = styled.div`
 const Form = styled.form`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 30px;
 `;
 
@@ -160,18 +162,23 @@ const ImageWrapper = styled.div`
 `;
 
 const Image = styled.img`
-  width: 70%;
+  width: 60vw;
+  height: auto;
 `;
 
-const Test = styled.label`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const UploadingText = styled.p``;
-
-const Div = styled.div`
+const UploadedImageWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+const InputWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 `;

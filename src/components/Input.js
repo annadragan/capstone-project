@@ -39,7 +39,7 @@ const StyledTextarea = styled.textarea`
   font-size: 1rem;
   margin: 5px;
   border-radius: 5px;
-  width: 90%;
+  width: 300px;
   border-color: crimson;
   &:focus {
     outline: none;
