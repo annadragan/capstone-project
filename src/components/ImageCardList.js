@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 import ImageCard from './ImageCard';
 
-export default function ImageCardList({ stories, onCreateTradition }) {
+export default function ImageCardList({
+  stories,
+  onCreateTradition,
+  onDeleteTradition,
+}) {
   return (
     <>
       <ListWrapper role="list" aria-label="tradition cards list">
@@ -13,6 +17,7 @@ export default function ImageCardList({ stories, onCreateTradition }) {
               photo={photo}
               _id={_id}
               onCreateTradition={onCreateTradition}
+              onDeleteTradition={onDeleteTradition}
             />
           );
         })}

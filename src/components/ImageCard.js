@@ -1,11 +1,38 @@
 import styled from 'styled-components';
+import { useState } from 'react';
+import DeleteMessage from './DeleteMessage';
+import IconButton from './IconButton';
+import ScreenReaderOnly from './ScreenReaderOnly';
+import { BsTrash } from 'react-icons/bs';
 
-export default function ImageCard({ tradition, photo }) {
+export default function ImageCard({
+  tradition,
+  photo,
+  onDeleteTradition,
+  _id,
+}) {
+  const [showMessage, setShowMessage] = useState(false);
   return (
     <>
       <CardWrapper>
         <CardPhoto src={photo}></CardPhoto>
         <CardTradition>{tradition}</CardTradition>
+        <IconButton
+          type="button"
+          aria-label="delete this card"
+          _id={_id}
+          onClick={() => setShowMessage(true)}
+          variant="trash"
+        >
+          <BsTrash style={{ width: '25px', height: '25px' }} />
+          <ScreenReaderOnly>delete this card</ScreenReaderOnly>
+        </IconButton>
+        {showMessage && (
+          <DeleteMessage
+            onConfirmDelete={() => onDeleteTradition(_id)}
+            onCancelDelete={() => setShowMessage(false)}
+          />
+        )}
       </CardWrapper>
     </>
   );

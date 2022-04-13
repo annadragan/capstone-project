@@ -54,7 +54,12 @@ function App() {
           />
           <Route
             path="/traditions"
-            element={<Traditions stories={stories} />}
+            element={
+              <Traditions
+                stories={stories}
+                onDeleteTradition={handleDeleteTradition}
+              />
+            }
           />
         </Routes>
         <Navigation />
@@ -109,6 +114,10 @@ function App() {
     };
 
     setStories([...stories, newStory]);
+  }
+
+  function handleDeleteTradition(customId) {
+    setStories(stories.filter(story => story._id !== customId));
   }
 }
 
