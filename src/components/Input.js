@@ -9,6 +9,7 @@ export default function Input({
   name,
   onChange,
   defaultValue,
+  required,
 }) {
   return (
     <>
@@ -23,7 +24,7 @@ export default function Input({
         minLength={minLength}
         rows={rows}
         defaultValue={defaultValue}
-        required
+        required={required}
       />
     </>
   );

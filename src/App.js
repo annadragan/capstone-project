@@ -76,7 +76,7 @@ function App() {
       isBookmarked: false,
     };
 
-    setVocabulary([...vocabulary, newWord]);
+    setVocabulary([newWord, ...vocabulary]);
   }
 
   function handleDeleteTerm(lexemId) {
@@ -114,7 +114,7 @@ function App() {
       tradition,
     };
 
-    setStories([...stories, newStory]);
+    setStories([newStory, ...stories]);
   }
 
   function handleDeleteTradition(customId) {
