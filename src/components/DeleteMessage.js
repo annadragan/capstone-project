@@ -1,11 +1,16 @@
+import { MdCancel } from 'react-icons/md';
 import styled from 'styled-components';
-import ScreenReaderOnly from './ScreenReaderOnly';
 import DeleteMessageButton from './DeleteMessageButton';
+import ScreenReaderOnly from './ScreenReaderOnly';
 
 export default function DeleteMessage({ onConfirmDelete, onCancelDelete }) {
   return (
     <MessageOverlay>
       <MessageContent>
+        <CloseMessageButton type="button" onClick={onCancelDelete}>
+          <ScreenReaderOnly>close this message</ScreenReaderOnly>
+        </CloseMessageButton>
+
         <h2>Bestätige das Löschen</h2>
         <p>Möchtest du diese Karteikarte wirklich löschen?</p>
         <MessageWindowWrapper>
@@ -46,6 +51,7 @@ const MessageContent = styled.div`
   margin: 30vh auto;
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
+  position: relative;
 
   h2 {
     padding-top: 5px;
@@ -61,4 +67,22 @@ const MessageWindowWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 50%;
+`;
+const CloseMessageButton = styled.button.attrs(() => ({
+  children: (
+    <>
+      <ScreenReaderOnly>toggle the card</ScreenReaderOnly>
+      <MdCancel />
+    </>
+  ),
+}))`
+  all: unset;
+  background: transparent;
+  border: transparent;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  &:hover {
+    color: crimson;
+  }
 `;

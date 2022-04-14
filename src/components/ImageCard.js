@@ -84,6 +84,7 @@ const ToggleButtonWrapper = styled.button.attrs(() => ({
   all: unset;
   background: transparent;
   border: transparent;
+
   padding-top: 3px;
   margin-bottom: -20px;
   &:hover {
