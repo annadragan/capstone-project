@@ -5,11 +5,12 @@ export default function ImageCardList({
   stories,
   onCreateTradition,
   onDeleteTradition,
+  onToggleTradition,
 }) {
   return (
     <>
       <ListWrapper role="list" aria-label="tradition cards list">
-        {stories?.map(({ _id, title, tradition, photo }) => {
+        {stories?.map(({ _id, title, tradition, photo, isToggled }) => {
           return (
             <ImageCard
               key={_id}
@@ -19,6 +20,8 @@ export default function ImageCardList({
               _id={_id}
               onCreateTradition={onCreateTradition}
               onDeleteTradition={onDeleteTradition}
+              onToggleTradition={onToggleTradition}
+              isToggled={isToggled}
             />
           );
         })}

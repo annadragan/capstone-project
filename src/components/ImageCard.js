@@ -4,12 +4,15 @@ import styled from 'styled-components';
 import DeleteMessage from './DeleteMessage';
 import IconButton from './IconButton';
 import ScreenReaderOnly from './ScreenReaderOnly';
+import { FaChevronCircleDown } from 'react-icons/fa';
 
 export default function ImageCard({
   title,
   tradition,
   photo,
   onDeleteTradition,
+  onToggleTradition,
+  isToggled,
   _id,
 }) {
   const [showMessage, setShowMessage] = useState(false);
@@ -17,22 +20,31 @@ export default function ImageCard({
   return (
     <CardWrapper>
       <CardPhoto src={photo}></CardPhoto>
-      <CardTitle>{title}</CardTitle>
-      <CardTradition>{tradition}</CardTradition>
-      <IconButton
-        type="button"
-        onClick={() => setShowMessage(true)}
-        variant="trash"
-      >
-        <BsTrash style={{ width: '25px', height: '25px' }} />
-        <ScreenReaderOnly>delete this card</ScreenReaderOnly>
-      </IconButton>
-      {showMessage && (
-        <DeleteMessage
-          onConfirmDelete={() => onDeleteTradition(_id)}
-          onCancelDelete={() => setShowMessage(false)}
-        />
+      {!isToggled && (
+        <ToggleWrapper isToggled={isToggled}>
+          <CardTitle>{title}</CardTitle>
+          <CardTradition>{tradition}</CardTradition>
+          <IconButton
+            type="button"
+            onClick={() => setShowMessage(true)}
+            variant="trash"
+          >
+            <BsTrash style={{ width: '25px', height: '25px' }} />
+            <ScreenReaderOnly>delete this card</ScreenReaderOnly>
+          </IconButton>
+          {showMessage && (
+            <DeleteMessage
+              onConfirmDelete={() => onDeleteTradition(_id)}
+              onCancelDelete={() => setShowMessage(false)}
+            />
+          )}
+        </ToggleWrapper>
       )}
+      <ToggleButton
+        type="button"
+        onClick={() => onToggleTradition(_id)}
+        isToggled={isToggled}
+      />
     </CardWrapper>
   );
 }
@@ -65,3 +77,24 @@ const CardPhoto = styled.img`
 const CardTradition = styled.p`
   color: white;
 `;
+
+const ToggleButton = styled.button.attrs(() => ({
+  children: (
+    <>
+      <ScreenReaderOnly>toggle the card</ScreenReaderOnly>
+      <FaChevronCircleDown />
+    </>
+  ),
+}))`
+  all: unset;
+  background: transparent;
+  border: transparent;
+  padding-top: 2px;
+  &:hover {
+    color: crimson;
+  }
+  &:focus:focus-visible {
+    outline: 2px dashed;
+  }
+`;
+const ToggleWrapper = styled.div``;

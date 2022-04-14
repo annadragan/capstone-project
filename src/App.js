@@ -14,6 +14,7 @@ import ImageForm from './components/ImageForm';
 function App() {
   const [vocabulary, setVocabulary] = useLocalStorage('dictionary', []);
   const [stories, setStories] = useLocalStorage('chronicle', []);
+  const [about, setAbout] = useLocalStorage('description', []);
 
   return (
     <>
@@ -58,6 +59,7 @@ function App() {
               <Traditions
                 stories={stories}
                 onDeleteTradition={handleDeleteTradition}
+                onToggleTradition={handleToggleTradition}
               />
             }
           />
@@ -119,6 +121,18 @@ function App() {
 
   function handleDeleteTradition(customId) {
     setStories(stories.filter(story => story._id !== customId));
+  }
+
+  function handleToggleTradition(textId) {
+    setAbout(
+      about.map(content => {
+        if (content._id === textId) {
+          return { ...content, isToggled: !content.isToggled };
+        } else {
+          return content;
+        }
+      })
+    );
   }
 }
 

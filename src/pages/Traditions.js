@@ -12,6 +12,7 @@ export default function Stories({
   onScrollUp,
   backToTop,
   onDeleteTradition,
+  onToggleTradition,
 }) {
   return (
     <>
@@ -44,6 +45,7 @@ export default function Stories({
         <ImageCardList
           stories={stories}
           onDeleteTradition={onDeleteTradition}
+          onToggleTradition={onToggleTradition}
         />
       )}
       <ScrollToTop onClick={onScrollUp} hidden={backToTop} />
