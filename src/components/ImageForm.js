@@ -94,7 +94,7 @@ export default function ImageForm({ onCreateTradition }) {
         },
         onUploadProgress: progressEvent => {
           setLoading(true);
-          let percent = Math.round(
+          const percent = Math.round(
             (progressEvent.loaded * 100) / progressEvent.total
           );
           setProcess(percent);

@@ -109,7 +109,7 @@ function App() {
   function handleSubmitTradition(title, photo, tradition) {
     const newStory = {
       _id: nanoid(),
-      title: title,
+      title,
       photo,
       tradition,
     };

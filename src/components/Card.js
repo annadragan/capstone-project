@@ -124,7 +124,6 @@ const CardWrapper = styled.dl`
   gap: 10px;
   padding: 20px;
   border-radius: 14px;
-  margin-top: 50px;
   border-top: 16px solid #d70761;
   position: relative;
 `;

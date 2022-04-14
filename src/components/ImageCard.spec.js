@@ -6,6 +6,7 @@ import ImageCard from './ImageCard.js';
 describe('ImageCard', () => {
   it('renders a tradition with an image', () => {
     const onDeleteTradition = jest.fn();
+
     render(
       <MemoryRouter>
         <ImageCard
