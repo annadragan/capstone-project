@@ -7,10 +7,11 @@ export default function CardList({
   onBookmarkCard,
   onEditCard,
 }) {
+  const bookmarkedList = vocabulary.filter(card => card.isBookmarked === false);
   return (
     <>
       <ListWrapper role="list" aria-label="vocabulary cards">
-        {vocabulary?.map(
+        {bookmarkedList?.map(
           ({ _id, word, example, explanation, isBookmarked }) => {
             return (
               <Card
