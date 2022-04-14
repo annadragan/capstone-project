@@ -26,7 +26,6 @@ export default function Form({ onCreateTerm }) {
   return (
     <>
       <Header>Form</Header>
-      <Title>Erstelle deine Vokabelkärtchen selbst</Title>
       <FormWrapper
         aria-describedby="Create a new word"
         onSubmit={handleSubmitTerm}
@@ -38,6 +37,7 @@ export default function Form({ onCreateTerm }) {
             placeholder="Füge das Wort hinzu..."
             maxLength="20"
             minLength="2"
+            required
             id="new_word"
             name="new_word"
             value={newWord}
@@ -52,6 +52,7 @@ export default function Form({ onCreateTerm }) {
             placeholder="Füge den Beispielsatz hinzu..."
             maxLength="80"
             minLength="4"
+            required
             rows={3}
             columns={10}
             id="new_example"
@@ -68,6 +69,7 @@ export default function Form({ onCreateTerm }) {
             placeholder="Füge die Erklärung hinzu..."
             maxLength="200"
             minLength="4"
+            required
             rows={5}
             columns={10}
             id="new_explanation"
@@ -119,11 +121,6 @@ const InputWrapper = styled.div`
 const Counter = styled.small`
   display: flex;
   justify-content: right;
-`;
-
-const Title = styled.h2`
-  font-size: 20px;
-  font-weight: 500;
 `;
 
 const FormButton = styled(Button)`

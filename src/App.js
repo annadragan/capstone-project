@@ -54,7 +54,12 @@ function App() {
           />
           <Route
             path="/traditions"
-            element={<Traditions stories={stories} />}
+            element={
+              <Traditions
+                stories={stories}
+                onDeleteTradition={handleDeleteTradition}
+              />
+            }
           />
         </Routes>
         <Navigation />
@@ -71,7 +76,7 @@ function App() {
       isBookmarked: false,
     };
 
-    setVocabulary([...vocabulary, newWord]);
+    setVocabulary([newWord, ...vocabulary]);
   }
 
   function handleDeleteTerm(lexemId) {
@@ -101,14 +106,19 @@ function App() {
     setVocabulary(newTerm);
   }
 
-  function handleSubmitTradition(photo, tradition) {
+  function handleSubmitTradition(title, photo, tradition) {
     const newStory = {
       _id: nanoid(),
+      title,
       photo,
       tradition,
     };
 
-    setStories([...stories, newStory]);
+    setStories([newStory, ...stories]);
+  }
+
+  function handleDeleteTradition(customId) {
+    setStories(stories.filter(story => story._id !== customId));
   }
 }
 

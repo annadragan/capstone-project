@@ -36,9 +36,8 @@ const ListWrapper = styled.ul`
   display: grid;
   justify-items: center;
   padding-left: 0;
-  padding: 20px;
   list-style: none;
-  gap: 10px;
+  gap: 30px;
   opacity: 0.9;
   transition: 0.2s;
 

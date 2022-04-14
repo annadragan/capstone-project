@@ -9,6 +9,7 @@ export default function Input({
   name,
   onChange,
   defaultValue,
+  required,
 }) {
   return (
     <>
@@ -23,7 +24,7 @@ export default function Input({
         minLength={minLength}
         rows={rows}
         defaultValue={defaultValue}
-        required
+        required={required}
       />
     </>
   );
@@ -38,7 +39,7 @@ const StyledTextarea = styled.textarea`
   font-size: 1rem;
   margin: 5px;
   border-radius: 5px;
-  width: 90%;
+  width: 300px;
   border-color: crimson;
   &:focus {
     outline: none;

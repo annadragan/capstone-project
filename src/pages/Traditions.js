@@ -7,7 +7,12 @@ import ImageCardList from '../components/ImageCardList';
 import ScreenReaderOnly from '../components/ScreenReaderOnly';
 import ScrollToTop from '../components/ScrollToTop.js';
 
-export default function Stories({ stories, onScrollUp, backToTop }) {
+export default function Stories({
+  stories,
+  onScrollUp,
+  backToTop,
+  onDeleteTradition,
+}) {
   return (
     <>
       <Header>Traditionen</Header>
@@ -36,7 +41,10 @@ export default function Stories({ stories, onScrollUp, backToTop }) {
           </Text>
         </>
       ) : (
-        <ImageCardList stories={stories} />
+        <ImageCardList
+          stories={stories}
+          onDeleteTradition={onDeleteTradition}
+        />
       )}
       <ScrollToTop onClick={onScrollUp} hidden={backToTop} />
     </>
