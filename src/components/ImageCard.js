@@ -1,27 +1,26 @@
 import { useState } from 'react';
 import { BsTrash } from 'react-icons/bs';
+import { FaChevronCircleDown } from 'react-icons/fa';
 import styled from 'styled-components';
 import DeleteMessage from './DeleteMessage';
 import IconButton from './IconButton';
 import ScreenReaderOnly from './ScreenReaderOnly';
-import { FaChevronCircleDown } from 'react-icons/fa';
 
 export default function ImageCard({
   title,
   tradition,
   photo,
   onDeleteTradition,
-  onToggleTradition,
-  isToggled,
   _id,
 }) {
   const [showMessage, setShowMessage] = useState(false);
+  const [about, setAbout] = useState(false);
 
   return (
     <CardWrapper>
       <CardPhoto src={photo}></CardPhoto>
-      {!isToggled && (
-        <ToggleWrapper isToggled={isToggled}>
+      {about && (
+        <div>
           <CardTitle>{title}</CardTitle>
           <CardTradition>{tradition}</CardTradition>
           <IconButton
@@ -29,7 +28,7 @@ export default function ImageCard({
             onClick={() => setShowMessage(true)}
             variant="trash"
           >
-            <BsTrash style={{ width: '25px', height: '25px' }} />
+            <BsTrash style={{ width: '35px', height: '35px' }} />
             <ScreenReaderOnly>delete this card</ScreenReaderOnly>
           </IconButton>
           {showMessage && (
@@ -38,13 +37,9 @@ export default function ImageCard({
               onCancelDelete={() => setShowMessage(false)}
             />
           )}
-        </ToggleWrapper>
+        </div>
       )}
-      <ToggleButton
-        type="button"
-        onClick={() => onToggleTradition(_id)}
-        isToggled={isToggled}
-      />
+      <ToggleButtonWrapper type="button" onClick={() => setAbout(!about)} />
     </CardWrapper>
   );
 }
@@ -78,7 +73,7 @@ const CardTradition = styled.p`
   color: white;
 `;
 
-const ToggleButton = styled.button.attrs(() => ({
+const ToggleButtonWrapper = styled.button.attrs(() => ({
   children: (
     <>
       <ScreenReaderOnly>toggle the card</ScreenReaderOnly>
@@ -89,7 +84,8 @@ const ToggleButton = styled.button.attrs(() => ({
   all: unset;
   background: transparent;
   border: transparent;
-  padding-top: 2px;
+  padding-top: 3px;
+  margin-bottom: -20px;
   &:hover {
     color: crimson;
   }
@@ -97,4 +93,3 @@ const ToggleButton = styled.button.attrs(() => ({
     outline: 2px dashed;
   }
 `;
-const ToggleWrapper = styled.div``;

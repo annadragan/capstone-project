@@ -5,7 +5,6 @@ export default function ImageCardList({
   stories,
   onCreateTradition,
   onDeleteTradition,
-  onToggleTradition,
 }) {
   return (
     <>
@@ -20,8 +19,6 @@ export default function ImageCardList({
               _id={_id}
               onCreateTradition={onCreateTradition}
               onDeleteTradition={onDeleteTradition}
-              onToggleTradition={onToggleTradition}
-              isToggled={isToggled}
             />
           );
         })}
