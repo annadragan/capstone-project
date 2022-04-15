@@ -58,7 +58,7 @@ const CardWrapper = styled.li`
   display: flex;
   flex-direction: column;
   word-wrap: break-word;
-  width: 330px;
+  width: 300px;
   padding: 20px;
   border-radius: 14px;
   border-top: 16px solid #d70761;

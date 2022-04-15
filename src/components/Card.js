@@ -122,12 +122,16 @@ const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   word-wrap: break-word;
-  width: 330px;
+  width: 300px;
   gap: 10px;
-  padding: 20px;
+  padding: 20px 30px 20px 20px;
   border-radius: 14px;
   border-top: 16px solid #d70761;
   position: relative;
+`;
+
+const TestList = styled.dl`
+  margin: 0;
 `;
 
 const CardWord = styled.dt`
@@ -195,4 +199,3 @@ const EditSaveButton = styled(Button)`
     width: 95%;
   }
 `;
-const TestList = styled.dl``;

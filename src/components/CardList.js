@@ -35,18 +35,11 @@ export default function CardList({
 }
 
 const ListWrapper = styled.ul`
+  list-style: none;
   display: grid;
   justify-items: center;
   padding-left: 0;
-  list-style: none;
   gap: 30px;
   opacity: 0.9;
   transition: 0.2s;
-
-  @media (min-width: 640px) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @media (min-width: 1024px) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
 `;

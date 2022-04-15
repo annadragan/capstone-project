@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Card from '../components/Card';
 import Header from '../components/Header';
-import ScrollToTop from '../components/ScrollToTop.js';
+import ScrollToTop from '../components/ScrollToTop';
 
 export default function BookmarkArchive({
   vocabulary,
@@ -28,7 +28,7 @@ export default function BookmarkArchive({
           </Text>
         </>
       )}
-      <div>
+      <ListWrapper>
         {vocabulary?.map(
           ({ _id, word, example, explanation, isBookmarked }) =>
             isBookmarked && (
@@ -45,7 +45,7 @@ export default function BookmarkArchive({
               />
             )
         )}
-      </div>
+      </ListWrapper>
       <ScrollToTop onClick={onScrollUp} hidden={backToTop} />
     </>
   );
@@ -54,4 +54,20 @@ export default function BookmarkArchive({
 const Text = styled.p`
   padding: 20px;
   text-align: center;
+`;
+const ListWrapper = styled.ul`
+  display: grid;
+  justify-items: center;
+  padding-left: 0;
+  list-style: none;
+  gap: 30px;
+  opacity: 0.9;
+  transition: 0.2s;
+
+  @media (min-width: 640px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 `;

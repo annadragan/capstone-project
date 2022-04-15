@@ -47,37 +47,35 @@ export default function ImageForm({ onCreateTradition }) {
           />
         </InputWrapper>
         <ImageWrapper>
-          <ImageUpload>
-            {photo ? (
-              <UploadedImageWrapper>
-                <Image
-                  src={photo}
-                  alt=""
-                  srcset="large.jpg 1024w, medium.jpg 512w, small.jpg 256w"
-                  sizes="(max-width: 30em) 30em, 100vw"
+          {photo ? (
+            <UploadedImageWrapper>
+              <Image
+                src={photo}
+                alt=""
+                srcset="large.jpg 1024w, medium.jpg 512w, small.jpg 256w"
+                sizes="(max-width: 30em) 30em, 100vw"
+              />
+            </UploadedImageWrapper>
+          ) : (
+            <Wrapper>
+              <ImageInput
+                type="file"
+                aria-label="preview of uploaded photo"
+                onChange={upload}
+                id="files"
+              />
+              <ImageLabel htmlFor="files">
+                Foto hochladen {loading && <p>{process}%</p>}
+                <FaCloudUploadAlt
+                  style={{
+                    width: '25px',
+                    height: '25px',
+                  }}
                 />
-              </UploadedImageWrapper>
-            ) : (
-              <Wrapper>
-                <input
-                  type="file"
-                  aria-label="preview of uploaded photo"
-                  onChange={upload}
-                  id="files"
-                />
-                <label htmlFor="files">
-                  Foto hochladen {loading && <p>{process}%</p>}
-                  <FaCloudUploadAlt
-                    style={{
-                      width: '25px',
-                      height: '25px',
-                    }}
-                  />
-                  <ScreenReaderOnly>upload your image</ScreenReaderOnly>
-                </label>
-              </Wrapper>
-            )}
-          </ImageUpload>
+                <ScreenReaderOnly>upload your image</ScreenReaderOnly>
+              </ImageLabel>
+            </Wrapper>
+          )}
         </ImageWrapper>
         <Button category="Save" />
       </Form>
@@ -125,27 +123,25 @@ export default function ImageForm({ onCreateTradition }) {
   }
 }
 
-const ImageUpload = styled.div`
-  input[type='file'] {
-    opacity: 0;
-    z-index: -1;
-    position: absolute;
-    top: -1px;
-    left: 0;
-    width: 0.1px;
-    height: 0.1px;
-    user-select: none;
-  }
+const ImageInput = styled.input`
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 0.1px;
+  height: 0.1px;
+  user-select: none;
+`;
 
-  label[for='files'] {
-    background-color: hsl(220, 15%, 35%);
-    padding: 10px;
-    color: #fff;
-    border-radius: 8px;
-    position: relative;
-  }
+const ImageLabel = styled.label`
+  background-color: hsl(220, 15%, 35%);
+  padding: 10px;
+  color: #fff;
+  border-radius: 8px;
+  position: relative;
 
-  label[for='files']:hover {
+  :hover {
     background-color: #d70761;
   }
 `;
