@@ -58,9 +58,11 @@ export default function Card({
         </EditForm>
       ) : (
         <CardWrapper isBookmaked={isBookmarked}>
-          <CardWord>{word}</CardWord>
-          <CardExample>{example}</CardExample>
-          <CardExplanation>{explanation}</CardExplanation>
+          <TestList>
+            <CardWord>{word}</CardWord>
+            <CardExample>{example}</CardExample>
+            <CardExplanation>{explanation}</CardExplanation>
+          </TestList>
           <IconButton
             type="button"
             aria-label="bookmark this card"
@@ -115,12 +117,12 @@ export default function Card({
   }
 }
 
-const CardWrapper = styled.dl`
+const CardWrapper = styled.div`
   background-color: hsl(220, 15%, 35%);
   display: flex;
   flex-direction: column;
   word-wrap: break-word;
-  width: 300px;
+  width: 330px;
   gap: 10px;
   padding: 20px;
   border-radius: 14px;
@@ -193,3 +195,4 @@ const EditSaveButton = styled(Button)`
     width: 95%;
   }
 `;
+const TestList = styled.dl``;

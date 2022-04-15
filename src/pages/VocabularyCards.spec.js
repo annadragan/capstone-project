@@ -4,11 +4,8 @@ import { MemoryRouter } from 'react-router-dom';
 import VocabularyCards from './VocabularyCards';
 
 describe('VocabularyCards', () => {
-  it('has a title and one link and it renders a four button', () => {
+  it('has a title and one link and it renders a one buttons', () => {
     const onScrollUp = jest.fn();
-    const onBookmarkCard = jest.fn();
-    const onEditCard = jest.fn();
-    const onDeleteCard = jest.fn();
 
     const data = [
       {
@@ -21,13 +18,7 @@ describe('VocabularyCards', () => {
     ];
     render(
       <MemoryRouter>
-        <VocabularyCards
-          vocabulary={data}
-          onScrollUp={onScrollUp}
-          onDeleteCard={onDeleteCard}
-          onBookmarkCard={onBookmarkCard}
-          onEditCard={onEditCard}
-        />
+        <VocabularyCards vocabulary={data} onScrollUp={onScrollUp} />
       </MemoryRouter>
     );
 
@@ -37,8 +28,8 @@ describe('VocabularyCards', () => {
     expect(title).toBeInTheDocument();
     expect(links.length).toBeGreaterThan(0);
 
-    const buttons = screen.getAllByRole('button');
-    expect(buttons).toHaveLength(4);
-    userEvent.click(buttons[0]);
+    const button = screen.getAllByRole('button');
+    expect(button).toHaveLength(1);
+    userEvent.click(button[0]);
   });
 });

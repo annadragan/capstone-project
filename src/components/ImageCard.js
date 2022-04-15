@@ -18,10 +18,15 @@ export default function ImageCard({
 
   return (
     <CardWrapper>
-      <CardPhoto src={photo}></CardPhoto>
+      <CardPhoto
+        src={photo}
+        srcset="large.jpg 1024w, medium.jpg 512w, small.jpg 256w"
+        sizes="(max-width: 30em) 30em, 100vw"
+        alt=""
+      ></CardPhoto>
+      <CardTitle>{title}</CardTitle>
       {about && (
         <div>
-          <CardTitle>{title}</CardTitle>
           <CardTradition>{tradition}</CardTradition>
           <IconButton
             type="button"
@@ -39,7 +44,11 @@ export default function ImageCard({
           )}
         </div>
       )}
-      <ToggleButtonWrapper type="button" onClick={() => setAbout(!about)} />
+      <ToggleButton
+        type="button"
+        onClick={() => setAbout(!about)}
+        aria-label="toggle the card"
+      />
     </CardWrapper>
   );
 }
@@ -49,7 +58,7 @@ const CardWrapper = styled.li`
   display: flex;
   flex-direction: column;
   word-wrap: break-word;
-  width: 300px;
+  width: 330px;
   padding: 20px;
   border-radius: 14px;
   border-top: 16px solid #d70761;
@@ -73,24 +82,22 @@ const CardTradition = styled.p`
   color: white;
 `;
 
-const ToggleButtonWrapper = styled.button.attrs(() => ({
+const ToggleButton = styled.button.attrs(() => ({
   children: (
     <>
       <ScreenReaderOnly>toggle the card</ScreenReaderOnly>
-      <FaChevronCircleDown />
+      <FaChevronCircleDown style={{ width: '20px', height: '20px' }} />
     </>
   ),
 }))`
   all: unset;
   background: transparent;
   border: transparent;
-
-  padding-top: 3px;
-  margin-bottom: -20px;
+  position: absolute;
+  bottom: 12px;
+  left: 150px;
+  margin-bottom: -18px;
   &:hover {
     color: crimson;
-  }
-  &:focus:focus-visible {
-    outline: 2px dashed;
   }
 `;

@@ -14,17 +14,18 @@ export default function CardList({
         {bookmarkedList?.map(
           ({ _id, word, example, explanation, isBookmarked }) => {
             return (
-              <Card
-                key={_id}
-                word={word}
-                example={example}
-                explanation={explanation}
-                onDeleteCard={onDeleteCard}
-                _id={_id}
-                onBookmarkCard={onBookmarkCard}
-                isBookmarked={isBookmarked}
-                onEditCard={onEditCard}
-              />
+              <li key={_id}>
+                <Card
+                  word={word}
+                  example={example}
+                  explanation={explanation}
+                  onDeleteCard={onDeleteCard}
+                  _id={_id}
+                  onBookmarkCard={onBookmarkCard}
+                  isBookmarked={isBookmarked}
+                  onEditCard={onEditCard}
+                />
+              </li>
             );
           }
         )}

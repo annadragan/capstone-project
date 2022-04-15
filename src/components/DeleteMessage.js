@@ -72,7 +72,7 @@ const CloseMessageButton = styled.button.attrs(() => ({
   children: (
     <>
       <ScreenReaderOnly>toggle the card</ScreenReaderOnly>
-      <MdCancel />
+      <MdCancel style={{ width: '30px', height: '30px' }} />
     </>
   ),
 }))`

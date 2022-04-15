@@ -50,28 +50,31 @@ export default function ImageForm({ onCreateTradition }) {
           <ImageUpload>
             {photo ? (
               <UploadedImageWrapper>
-                <Image src={photo} alt="" />
+                <Image
+                  src={photo}
+                  alt=""
+                  srcset="large.jpg 1024w, medium.jpg 512w, small.jpg 256w"
+                  sizes="(max-width: 30em) 30em, 100vw"
+                />
               </UploadedImageWrapper>
             ) : (
               <Wrapper>
                 <input
                   type="file"
-                  aria-label="upload your photo"
+                  aria-label="preview of uploaded photo"
                   onChange={upload}
                   id="files"
                 />
-                <ImageLabel htmlFor="files">
+                <label htmlFor="files">
                   Foto hochladen {loading && <p>{process}%</p>}
                   <FaCloudUploadAlt
                     style={{
                       width: '25px',
                       height: '25px',
-                      position: 'relative',
-                      bottom: '-4px',
                     }}
                   />
                   <ScreenReaderOnly>upload your image</ScreenReaderOnly>
-                </ImageLabel>
+                </label>
               </Wrapper>
             )}
           </ImageUpload>
@@ -171,6 +174,7 @@ const Image = styled.img`
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  position: relative;
 `;
 
 const UploadedImageWrapper = styled.div`
@@ -183,8 +187,4 @@ const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
-`;
-
-const ImageLabel = styled.label`
-  position: absolute;
 `;

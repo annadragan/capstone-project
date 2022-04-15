@@ -4,6 +4,7 @@ import { GiCardRandom, GiDreamCatcher } from 'react-icons/gi';
 import { GrBlockQuote } from 'react-icons/gr';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import ScreenReaderOnly from '../components/ScreenReaderOnly';
 
 export default function Navigation() {
   return (
@@ -11,21 +12,25 @@ export default function Navigation() {
       <LinkStyled to="/">
         <IconContext.Provider value={{ size: '40px' }}>
           <GiCardRandom />
+          <ScreenReaderOnly>Vokabelkärtchen Seite</ScreenReaderOnly>
         </IconContext.Provider>
       </LinkStyled>
       <LinkStyled to="/archive">
         <IconContext.Provider value={{ size: '32px' }}>
           <BsFillBookmarkCheckFill />
+          <ScreenReaderOnly>Archive Seite</ScreenReaderOnly>
         </IconContext.Provider>
       </LinkStyled>
       <LinkStyled to="/idioms">
         <IconContext.Provider value={{ size: '32px' }}>
           <GrBlockQuote />
+          <ScreenReaderOnly>Redewendungen Seite</ScreenReaderOnly>
         </IconContext.Provider>
       </LinkStyled>
       <LinkStyled to="/traditions">
         <IconContext.Provider value={{ size: '32px' }}>
           <GiDreamCatcher />
+          <ScreenReaderOnly>Traditionen Seite</ScreenReaderOnly>
         </IconContext.Provider>
       </LinkStyled>
     </Nav>
