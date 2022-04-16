@@ -2,6 +2,7 @@ import { IconContext } from 'react-icons';
 import { BsFillBookmarkCheckFill } from 'react-icons/bs';
 import { GiCardRandom, GiDreamCatcher } from 'react-icons/gi';
 import { GrBlockQuote } from 'react-icons/gr';
+import { GoHome } from 'react-icons/go';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import ScreenReaderOnly from '../components/ScreenReaderOnly';
@@ -9,6 +10,12 @@ import ScreenReaderOnly from '../components/ScreenReaderOnly';
 export default function Navigation() {
   return (
     <Nav>
+      <LinkStyled to="/home">
+        <IconContext.Provider value={{ size: '32px' }}>
+          <GoHome />
+          <ScreenReaderOnly>home</ScreenReaderOnly>
+        </IconContext.Provider>
+      </LinkStyled>
       <LinkStyled to="/">
         <IconContext.Provider value={{ size: '40px' }}>
           <GiCardRandom />

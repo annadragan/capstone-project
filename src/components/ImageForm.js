@@ -34,7 +34,12 @@ export default function ImageForm({ onCreateTradition }) {
             placeholder="Nenne die Tradition..."
             maxLength="20"
             id="title"
+            required
+            rows={1}
+            columns={10}
           />
+        </InputWrapper>
+        <InputWrapper>
           <Input
             required
             labelText="Beschreibung der Tradition*"
@@ -44,6 +49,8 @@ export default function ImageForm({ onCreateTradition }) {
             maxLength="300"
             minLength="4"
             id="tradition"
+            rows={7}
+            columns={10}
           />
         </InputWrapper>
         <ImageWrapper>
@@ -147,10 +154,8 @@ const ImageLabel = styled.label`
 `;
 
 const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
+  display: grid;
+  gap: 15px;
 `;
 
 const ImageWrapper = styled.div`
@@ -182,5 +187,4 @@ const UploadedImageWrapper = styled.div`
 const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 15px;
 `;

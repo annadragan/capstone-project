@@ -42,6 +42,8 @@ export default function Form({ onCreateTerm }) {
             name="new_word"
             value={newWord}
             type="text"
+            rows={1}
+            columns={10}
             onChange={recalculateWordCharacter}
           />
           <Counter>{newWord}/20</Counter>
@@ -80,7 +82,7 @@ export default function Form({ onCreateTerm }) {
           />
           <Counter>{newExplanation}/200</Counter>
         </InputWrapper>
-        <FormButton category="Erstellen" disabled={disabled}></FormButton>
+        <Button category="Erstellen" disabled={disabled}></Button>
       </FormWrapper>
     </>
   );
@@ -121,11 +123,4 @@ const InputWrapper = styled.div`
 const Counter = styled.small`
   display: flex;
   justify-content: right;
-`;
-
-const FormButton = styled(Button)`
-  width: 85%;
-  &:hover {
-    width: 90%;
-  }
 `;

@@ -18,14 +18,14 @@ const ButtonStyled = styled.button`
   ${props =>
     props.variant === 'scroll' &&
     css`
-      left: 10px;
+      left: 6px;
       bottom: 56px;
     `}
 
   ${props =>
     props.variant === 'plus' &&
     css`
-      right: 16px;
+      right: 6px;
       bottom: 56px;
     `}
 `;

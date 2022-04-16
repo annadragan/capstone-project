@@ -33,7 +33,7 @@ export default function ImageCard({
             onClick={() => setShowMessage(true)}
             variant="trash"
           >
-            <BsTrash style={{ width: '35px', height: '35px' }} />
+            <BsTrash style={{ width: '25px', height: '25px' }} />
             <ScreenReaderOnly>delete this card</ScreenReaderOnly>
           </IconButton>
           {showMessage && (
@@ -90,12 +90,11 @@ const ToggleButton = styled.button.attrs(() => ({
     </>
   ),
 }))`
-  all: unset;
   background: transparent;
   border: transparent;
   position: absolute;
   bottom: 12px;
-  left: 150px;
+  left: 45%;
   margin-bottom: -18px;
   &:hover {
     color: crimson;

@@ -32,6 +32,8 @@ export default function Card({
               maxLength="20"
               minLength="2"
               type="text"
+              rows={1}
+              columns={10}
             />
           </EditInputWrapper>
           <EditInputWrapper>
@@ -42,6 +44,8 @@ export default function Card({
               maxLength="80"
               minLength="4"
               type="text"
+              rows={3}
+              columns={10}
             />
           </EditInputWrapper>
           <EditInputWrapper>
@@ -52,9 +56,11 @@ export default function Card({
               maxLength="200"
               minLength="4"
               type="text"
+              rows={5}
+              columns={10}
             />
           </EditInputWrapper>
-          <EditSaveButton category="Speichern" type="submit"></EditSaveButton>
+          <Button category="Speichern" type="submit"></Button>
         </EditForm>
       ) : (
         <CardWrapper isBookmaked={isBookmarked}>
@@ -140,19 +146,20 @@ const CardWord = styled.dt`
   font-weight: bold;
   color: azure;
   font-size: 1.2rem;
+  padding-bottom: 5px;
 `;
 
 const CardExample = styled.dd`
   color: white;
   margin-left: 0;
-  font-style: italic;
-  padding: 4px;
+  font-size: 0.9rem;
+  padding-bottom: 5px;
 `;
 
 const CardExplanation = styled.dd`
   color: white;
   margin-left: 0;
-  padding: 4px;
+  font-size: 1rem;
 `;
 
 const EditForm = styled.form`
@@ -161,6 +168,7 @@ const EditForm = styled.form`
   border-radius: 7px;
   padding: 4px;
   gap: 10px;
+  width: 300px;
 `;
 
 const EditInputWrapper = styled.div`
@@ -189,13 +197,5 @@ const EditInput = styled.textarea`
   }
   &:hover {
     background-color: azure;
-  }
-`;
-
-const EditSaveButton = styled(Button)`
-  width: 90%;
-  height: 48px;
-  &:hover {
-    width: 95%;
   }
 `;

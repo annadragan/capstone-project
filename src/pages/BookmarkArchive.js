@@ -16,6 +16,7 @@ export default function BookmarkArchive({
   return (
     <>
       <Header>Favoriten</Header>
+
       {bookmarkedList.length === 0 && (
         <>
           <Text>

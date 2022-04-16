@@ -10,6 +10,7 @@ import VocabularyCards from './pages/VocabularyCards';
 import IdiomaticExpressions from './pages/IdiomaticExpressions';
 import Traditions from './pages/Traditions';
 import ImageForm from './components/ImageForm';
+import HomePage from './pages/HomePage';
 
 function App() {
   const [vocabulary, setVocabulary] = useLocalStorage('dictionary', []);
@@ -61,6 +62,7 @@ function App() {
               />
             }
           />
+          <Route path="/home" element={<HomePage />} />
         </Routes>
         <Navigation />
       </AppWrapper>
