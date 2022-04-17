@@ -104,7 +104,7 @@ export default function Form({ onCreateTerm }) {
       setNewWord('');
       setNewExample('');
       setNewExplanation('');
-      navigate('/');
+      navigate('/vocabel');
       form.reset();
     }
   }
