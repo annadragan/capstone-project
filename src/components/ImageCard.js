@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { BsTrash } from 'react-icons/bs';
-import { FaChevronCircleDown } from 'react-icons/fa';
+import { IoIosArrowDropdown, IoIosArrowDropup } from 'react-icons/io';
 import styled from 'styled-components';
 import DeleteMessage from './DeleteMessage';
 import IconButton from './IconButton';
@@ -48,7 +48,15 @@ export default function ImageCard({
         type="button"
         onClick={() => setAbout(!about)}
         aria-label="toggle the card"
-      />
+      >
+        <ScreenReaderOnly>show more / show less</ScreenReaderOnly>
+        {/* {!about ? 'Show more ' : 'Show less '} */}
+        {!about ? (
+          <IoIosArrowDropdown style={{ width: '25px', height: '25px' }} />
+        ) : (
+          <IoIosArrowDropup style={{ width: '25px', height: '25px' }} />
+        )}
+      </ToggleButton>
     </CardWrapper>
   );
 }
@@ -63,14 +71,17 @@ const CardWrapper = styled.li`
   border-radius: 14px;
   border-top: 16px solid #d70761;
   position: relative;
+
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
 `;
 
 const CardTitle = styled.h2`
-  color: white;
   font-weight: bold;
   font-size: 1.4rem;
   display: flex;
   justify-content: center;
+  margin: 0;
+  padding-top: 0;
 `;
 
 const CardPhoto = styled.img`
@@ -79,23 +90,17 @@ const CardPhoto = styled.img`
 `;
 
 const CardTradition = styled.p`
-  color: white;
+  /* color: white; */
 `;
 
-const ToggleButton = styled.button.attrs(() => ({
-  children: (
-    <>
-      <ScreenReaderOnly>toggle the card</ScreenReaderOnly>
-      <FaChevronCircleDown style={{ width: '20px', height: '20px' }} />
-    </>
-  ),
-}))`
+const ToggleButton = styled.button`
   background: transparent;
   border: transparent;
   position: absolute;
   bottom: 12px;
-  left: 45%;
-  margin-bottom: -18px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: -15px;
   &:hover {
     color: crimson;
   }

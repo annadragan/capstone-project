@@ -22,7 +22,7 @@ function App() {
         <Header />
         <Routes>
           <Route
-            path="/"
+            path="/vocabel"
             element={
               <VocabularyCards
                 vocabulary={vocabulary}
@@ -62,7 +62,7 @@ function App() {
               />
             }
           />
-          <Route path="/home" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
         </Routes>
         <Navigation />
       </AppWrapper>

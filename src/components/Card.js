@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { BsFillBookmarkCheckFill, BsTrash } from 'react-icons/bs';
-import { GrEdit } from 'react-icons/gr';
+import { BsTrash } from 'react-icons/bs';
+import { FaFeatherAlt } from 'react-icons/fa';
+import { BsShieldFillCheck } from 'react-icons/bs';
 import styled from 'styled-components';
 import Button from './Button';
 import DeleteMessage from './DeleteMessage';
@@ -76,9 +77,7 @@ export default function Card({
             isBookmarked={isBookmarked}
             variant="bookmark"
           >
-            <BsFillBookmarkCheckFill
-              style={{ width: '25px', height: '25px' }}
-            />
+            <BsShieldFillCheck style={{ width: '25px', height: '25px' }} />
             <ScreenReaderOnly>bookmark this card</ScreenReaderOnly>
           </IconButton>
           <IconButton
@@ -86,7 +85,7 @@ export default function Card({
             onClick={() => setIsEditing(!isEditing)}
             variant="pen"
           >
-            <GrEdit style={{ width: '25px', height: '25px' }} />
+            <FaFeatherAlt style={{ width: '25px', height: '25px' }} />
             <ScreenReaderOnly>edit this card</ScreenReaderOnly>
           </IconButton>
           <IconButton
@@ -134,6 +133,8 @@ const CardWrapper = styled.div`
   border-radius: 14px;
   border-top: 16px solid #d70761;
   position: relative;
+
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
 `;
 
 const TestList = styled.dl`
@@ -144,20 +145,17 @@ const CardWord = styled.dt`
   display: flex;
   justify-content: center;
   font-weight: bold;
-  color: azure;
   font-size: 1.2rem;
   padding-bottom: 5px;
 `;
 
 const CardExample = styled.dd`
-  color: white;
   margin-left: 0;
   font-size: 0.9rem;
   padding-bottom: 5px;
 `;
 
 const CardExplanation = styled.dd`
-  color: white;
   margin-left: 0;
   font-size: 1rem;
 `;

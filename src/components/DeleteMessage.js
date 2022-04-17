@@ -1,4 +1,4 @@
-import { MdCancel } from 'react-icons/md';
+import { IoIosCloseCircleOutline } from 'react-icons/io';
 import styled from 'styled-components';
 import DeleteMessageButton from './DeleteMessageButton';
 import ScreenReaderOnly from './ScreenReaderOnly';
@@ -72,7 +72,7 @@ const CloseMessageButton = styled.button.attrs(() => ({
   children: (
     <>
       <ScreenReaderOnly>toggle the card</ScreenReaderOnly>
-      <MdCancel style={{ width: '30px', height: '30px' }} />
+      <IoIosCloseCircleOutline style={{ width: '30px', height: '30px' }} />
     </>
   ),
 }))`

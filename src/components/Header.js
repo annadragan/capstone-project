@@ -12,4 +12,5 @@ export default styled.header`
   position: fixed;
   margin: 0;
   font-size: 1.4rem;
+  border-radius: 9px;
 `;
