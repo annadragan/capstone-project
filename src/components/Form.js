@@ -82,7 +82,9 @@ export default function Form({ onCreateTerm }) {
           />
           <Counter>{newExplanation}/200</Counter>
         </InputWrapper>
-        <Button category="Erstellen" disabled={disabled}></Button>
+        <ButtonWrapper>
+          <Button category="Erstellen" disabled={disabled}></Button>
+        </ButtonWrapper>
       </FormWrapper>
     </>
   );
@@ -123,4 +125,11 @@ const InputWrapper = styled.div`
 const Counter = styled.small`
   display: flex;
   justify-content: right;
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 `;

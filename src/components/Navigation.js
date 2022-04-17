@@ -63,7 +63,7 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   height: 48px;
-  border-radius: 9px;
+  border-radius: 9px 9px 3px 3px;
   background: hsl(220, 15%, 35%);
   position: fixed;
   bottom: 0;

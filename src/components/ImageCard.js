@@ -71,7 +71,6 @@ const CardWrapper = styled.li`
   border-radius: 14px;
   border-top: 16px solid #d70761;
   position: relative;
-
   box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
 `;
 

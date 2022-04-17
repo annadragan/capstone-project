@@ -1,15 +1,14 @@
 import { RiDoubleQuotesR } from 'react-icons/ri';
 import styled from 'styled-components';
 import Header from '../components/Header';
-import levelup from '../images/levelup.png';
+import level from '../images/level.png';
 import time from '../images/time.png';
 
 export default function HomePage() {
   return (
     <>
-      <Header>Start</Header>
-      <Level src={levelup} alt="time to learn"></Level>
-      <Subtitle>Deutsch</Subtitle>
+      <Header>Startseite</Header>
+      <Level src={level} alt="time to learn"></Level>
       <ExpressionWrapper>
         <QuoteIcon />
         <Text>"Es ist Fünf vor zwölf!</Text>
@@ -83,11 +82,6 @@ const Level = styled.img`
   &:hover {
     width: 300px;
   }
-`;
-
-const Subtitle = styled.h2`
-  font-size: 1.4rem;
-  color: #d70761;
 `;
 
 const ExpressionWrapper = styled.div`

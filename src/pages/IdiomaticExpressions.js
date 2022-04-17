@@ -13,7 +13,6 @@ export default function IdiomaticExpressions() {
   return (
     <>
       <Header>Redewendungen</Header>
-
       <IdiomaticButton
         category="nächste Redewendung"
         onClick={() => handleRandomeQuote()}

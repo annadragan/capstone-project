@@ -26,63 +26,66 @@ export default function ImageForm({ onCreateTradition }) {
         onSubmit={handleSubmitTradition}
         aria-describedby="Describe a new tradition"
       >
-        <InputWrapper>
-          <Input
-            labelText="Überschrift"
-            type="text"
-            name="title"
-            placeholder="Nenne die Tradition..."
-            maxLength="20"
-            id="title"
-            required
-            rows={1}
-            columns={10}
-          />
-        </InputWrapper>
-        <InputWrapper>
-          <Input
-            required
-            labelText="Beschreibung der Tradition*"
-            type="text"
-            name="tradition"
-            placeholder="Beschreibe die Tradition..."
-            maxLength="300"
-            minLength="4"
-            id="tradition"
-            rows={7}
-            columns={10}
-          />
-        </InputWrapper>
+        <InputContainer>
+          <InputWrapper>
+            <Input
+              labelText="Überschrift"
+              type="text"
+              name="title"
+              placeholder="Nenne die Tradition..."
+              maxLength="20"
+              minLength="2"
+              id="title"
+              required
+              rows={1}
+            />
+          </InputWrapper>
+          <InputWrapper>
+            <Input
+              required
+              labelText="Beschreibung der Tradition*"
+              type="text"
+              name="tradition"
+              placeholder="Beschreibe die Tradition..."
+              maxLength="300"
+              minLength="4"
+              id="tradition"
+              rows={7}
+            />
+          </InputWrapper>
+        </InputContainer>
         <ImageWrapper>
-          {photo ? (
-            <UploadedImageWrapper>
-              <Image
-                src={photo}
-                alt=""
-                srcset="large.jpg 1024w, medium.jpg 512w, small.jpg 256w"
-                sizes="(max-width: 30em) 30em, 100vw"
-              />
-            </UploadedImageWrapper>
-          ) : (
-            <Wrapper>
-              <ImageInput
-                type="file"
-                aria-label="preview of uploaded photo"
-                onChange={upload}
-                id="files"
-              />
-              <ImageLabel htmlFor="files">
-                Foto hochladen {loading && <p>{process}%</p>}
-                <FaCloudUploadAlt
-                  style={{
-                    width: '25px',
-                    height: '25px',
-                  }}
+          <ImageUpload>
+            {photo ? (
+              <UploadedImageWrapper>
+                <Image
+                  src={photo}
+                  alt=""
+                  srcset="large.jpg 1024w, medium.jpg 512w, small.jpg 256w"
+                  sizes="(max-width: 30em) 30em, 100vw"
                 />
-                <ScreenReaderOnly>upload your image</ScreenReaderOnly>
-              </ImageLabel>
-            </Wrapper>
-          )}
+              </UploadedImageWrapper>
+            ) : (
+              <Wrapper>
+                <input
+                  type="file"
+                  aria-label="preview of uploaded photo"
+                  onChange={upload}
+                  id="files"
+                />
+                <ImageLabel htmlFor="files">
+                  Foto hochladen {loading && <p>{process}%</p>}
+                  <FaCloudUploadAlt
+                    style={{
+                      width: '25px',
+                      height: '25px',
+                    }}
+                  />
+                  <ScreenReaderOnly>upload your image</ScreenReaderOnly>
+                </ImageLabel>
+              </Wrapper>
+            )}
+          </ImageUpload>
         </ImageWrapper>
         <Button category="Save" />
       </Form>
@@ -130,32 +133,34 @@ export default function ImageForm({ onCreateTradition }) {
   }
 }
 
-const ImageInput = styled.input`
-  opacity: 0;
-  z-index: -1;
-  position: absolute;
-  top: -1px;
-  left: 0;
-  width: 0.1px;
-  height: 0.1px;
-  user-select: none;
-`;
-
-const ImageLabel = styled.label`
-  background-color: hsl(220, 15%, 35%);
-  padding: 10px;
-  color: #fff;
-  border-radius: 8px;
-  position: relative;
-
-  :hover {
+const ImageUpload = styled.div`
+  input[type='file'] {
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 0.1px;
+    height: 0.1px;
+    user-select: none;
+  }
+  label[for='files'] {
+    background-color: hsl(220, 15%, 35%);
+    padding: 10px;
+    color: #fff;
+    border-radius: 8px;
+    position: relative;
+  }
+  label[for='files']:hover {
     background-color: #d70761;
   }
 `;
 
 const Form = styled.form`
-  display: grid;
-  gap: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 `;
 
 const ImageWrapper = styled.div`
@@ -175,7 +180,6 @@ const Image = styled.img`
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  position: relative;
 `;
 
 const UploadedImageWrapper = styled.div`
@@ -187,4 +191,14 @@ const UploadedImageWrapper = styled.div`
 const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+const ImageLabel = styled.label`
+  position: absolute;
+`;
+
+const InputContainer = styled.div`
+  display: grid;
+  gap: 30px;
+  align-items: center;
 `;

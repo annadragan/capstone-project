@@ -61,7 +61,9 @@ export default function Card({
               columns={10}
             />
           </EditInputWrapper>
-          <Button category="Speichern" type="submit"></Button>
+          <EditButtonWrapper>
+            <Button category="Speichern" type="submit"></Button>
+          </EditButtonWrapper>
         </EditForm>
       ) : (
         <CardWrapper isBookmaked={isBookmarked}>
@@ -133,7 +135,6 @@ const CardWrapper = styled.div`
   border-radius: 14px;
   border-top: 16px solid #d70761;
   position: relative;
-
   box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
 `;
 
@@ -196,4 +197,10 @@ const EditInput = styled.textarea`
   &:hover {
     background-color: azure;
   }
+`;
+
+const EditButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
