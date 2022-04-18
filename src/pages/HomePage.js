@@ -1,8 +1,8 @@
 import { RiDoubleQuotesR } from 'react-icons/ri';
 import styled from 'styled-components';
 import Header from '../components/Header';
-import level from '../images/level.png';
-import time from '../images/time.png';
+import level from '../icons/level.png';
+import time from '../icons/time.png';
 
 export default function HomePage() {
   return (
@@ -11,7 +11,7 @@ export default function HomePage() {
       <Level src={level} alt="time to learn"></Level>
       <ExpressionWrapper>
         <QuoteIcon />
-        <Text>"Es ist Fünf vor zwölf!</Text>
+        <Text>"Es ist fünf vor zwölf!"</Text>
       </ExpressionWrapper>
       <Time>
         <TimeCircle></TimeCircle>

@@ -15,6 +15,15 @@ export default function ImageForm({ onCreateTradition }) {
   const [photo, setPhoto] = useState('');
   const [loading, setLoading] = useState(false);
   const [process, setProcess] = useState(0);
+  const [newTitle, setNewTitle] = useState(0);
+  const [newTradition, setNewTradition] = useState(0);
+
+  const recalculateTitleCharacter = e => {
+    setNewTitle(e.target.value.length);
+  };
+  const recalculateTraditionCharacter = e => {
+    setNewTradition(e.target.value.length);
+  };
 
   const navigate = useNavigate();
 
@@ -29,7 +38,7 @@ export default function ImageForm({ onCreateTradition }) {
         <InputContainer>
           <InputWrapper>
             <Input
-              labelText="Überschrift"
+              labelText="Überschrift*"
               type="text"
               name="title"
               placeholder="Nenne die Tradition..."
@@ -37,8 +46,10 @@ export default function ImageForm({ onCreateTradition }) {
               minLength="2"
               id="title"
               required
+              onChange={recalculateTitleCharacter}
               rows={1}
             />
+            <Counter>{newTitle}/20</Counter>
           </InputWrapper>
           <InputWrapper>
             <Input
@@ -50,8 +61,10 @@ export default function ImageForm({ onCreateTradition }) {
               maxLength="300"
               minLength="4"
               id="tradition"
+              onChange={recalculateTraditionCharacter}
               rows={7}
             />
+            <Counter>{newTradition}/300</Counter>
           </InputWrapper>
         </InputContainer>
         <ImageWrapper>
@@ -125,7 +138,7 @@ export default function ImageForm({ onCreateTradition }) {
     const newTradition = form.elements.tradition.value.trim();
     const newTitle = form.elements.title.value.trim();
 
-    if (newTradition.length >= 4) {
+    if ((newTitle.length >= 2) & (newTradition.length >= 4)) {
       onCreateTradition(newTitle, photo, newTradition);
       navigate('/traditions');
       form.reset();
@@ -160,7 +173,7 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
 `;
 
 const ImageWrapper = styled.div`
@@ -199,6 +212,10 @@ const ImageLabel = styled.label`
 
 const InputContainer = styled.div`
   display: grid;
-  gap: 30px;
+  gap: 20px;
   align-items: center;
+`;
+const Counter = styled.small`
+  display: flex;
+  justify-content: right;
 `;
