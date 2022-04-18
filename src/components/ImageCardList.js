@@ -8,8 +8,11 @@ export default function ImageCardList({
 }) {
   return (
     <>
-      <ListWrapper role="list" aria-label="tradition cards list">
-        {stories?.map(({ _id, title, tradition, photo, isToggled }) => {
+      <ListWrapper
+        role="list"
+        aria-label="Liste von Karteikarten über die Traditionen"
+      >
+        {stories?.map(({ _id, title, tradition, photo }) => {
           return (
             <ImageCard
               key={_id}

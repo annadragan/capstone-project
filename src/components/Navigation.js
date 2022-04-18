@@ -1,5 +1,4 @@
 import { IconContext } from 'react-icons';
-
 import { GiCardRandom, GiPretzel } from 'react-icons/gi';
 import { GoHome } from 'react-icons/go';
 import { GrBlockQuote } from 'react-icons/gr';
@@ -14,7 +13,7 @@ export default function Navigation() {
       <LinkStyled to="/">
         <IconContext.Provider value={{ size: '32px' }}>
           <GoHome />
-          <ScreenReaderOnly>home</ScreenReaderOnly>
+          <ScreenReaderOnly>Startseite</ScreenReaderOnly>
         </IconContext.Provider>
       </LinkStyled>
       <LinkStyled to="/vocabel">
@@ -26,7 +25,7 @@ export default function Navigation() {
       <LinkStyled to="/archive">
         <IconContext.Provider value={{ size: '32px' }}>
           <BsShieldFillCheck />
-          <ScreenReaderOnly>Archive Seite</ScreenReaderOnly>
+          <ScreenReaderOnly>Archiv Seite</ScreenReaderOnly>
         </IconContext.Provider>
       </LinkStyled>
       <LinkStyled to="/idioms">

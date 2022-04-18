@@ -8,10 +8,9 @@ export default function DeleteMessage({ onConfirmDelete, onCancelDelete }) {
     <MessageOverlay>
       <MessageContent>
         <CloseMessageButton type="button" onClick={onCancelDelete}>
-          <ScreenReaderOnly>close this message</ScreenReaderOnly>
+          <ScreenReaderOnly>Benachrichtigung schließen</ScreenReaderOnly>
         </CloseMessageButton>
-
-        <h2>Bestätige das Löschen</h2>
+        <h2>Löschen bestätigen</h2>
         <p>Möchtest du diese Karteikarte wirklich löschen?</p>
         <MessageWindowWrapper>
           <DeleteMessageButton
@@ -19,14 +18,14 @@ export default function DeleteMessage({ onConfirmDelete, onCancelDelete }) {
             type="button"
             onClick={onCancelDelete}
           >
-            Nein <ScreenReaderOnly>cancel deleting this card</ScreenReaderOnly>
+            Nein <ScreenReaderOnly>Löschvorgang abbrechen</ScreenReaderOnly>
           </DeleteMessageButton>
           <DeleteMessageButton
             variant={'confirm'}
             type="button"
             onClick={onConfirmDelete}
           >
-            Ja <ScreenReaderOnly>confirm deleting this card</ScreenReaderOnly>
+            Ja <ScreenReaderOnly>Endgültig löschen</ScreenReaderOnly>
           </DeleteMessageButton>
         </MessageWindowWrapper>
       </MessageContent>
@@ -71,7 +70,7 @@ const MessageWindowWrapper = styled.div`
 const CloseMessageButton = styled.button.attrs(() => ({
   children: (
     <>
-      <ScreenReaderOnly>toggle the card</ScreenReaderOnly>
+      <ScreenReaderOnly>Benachrichtigung schließen</ScreenReaderOnly>
       <IoIosCloseCircleOutline style={{ width: '30px', height: '30px' }} />
     </>
   ),

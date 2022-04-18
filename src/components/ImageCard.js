@@ -34,7 +34,7 @@ export default function ImageCard({
             variant="trash"
           >
             <BsTrash style={{ width: '25px', height: '25px' }} />
-            <ScreenReaderOnly>delete this card</ScreenReaderOnly>
+            <ScreenReaderOnly>Karteikarte löschen</ScreenReaderOnly>
           </IconButton>
           {showMessage && (
             <DeleteMessage
@@ -49,8 +49,9 @@ export default function ImageCard({
         onClick={() => setAbout(!about)}
         aria-label="toggle the card"
       >
-        <ScreenReaderOnly>show more / show less</ScreenReaderOnly>
-        {/* {!about ? 'Show more ' : 'Show less '} */}
+        <ScreenReaderOnly>
+          Karteikarte ausklappen / Karteikarte zuklappen
+        </ScreenReaderOnly>
         {!about ? (
           <IoIosArrowDropdown style={{ width: '25px', height: '25px' }} />
         ) : (

@@ -29,11 +29,11 @@ export default function ImageForm({ onCreateTradition }) {
 
   return (
     <>
-      <Header>Form</Header>
+      <Header>Formular</Header>
       <Form
         autoComplete="off"
         onSubmit={handleSubmitTradition}
-        aria-describedby="Describe a new tradition"
+        aria-describedby="Neue Tradition beschreiben"
       >
         <InputContainer>
           <InputWrapper>
@@ -82,7 +82,7 @@ export default function ImageForm({ onCreateTradition }) {
               <Wrapper>
                 <input
                   type="file"
-                  aria-label="preview of uploaded photo"
+                  aria-label="Vorschau der hochgeladenen Fotos"
                   onChange={upload}
                   id="files"
                 />
@@ -94,13 +94,13 @@ export default function ImageForm({ onCreateTradition }) {
                       height: '25px',
                     }}
                   />
-                  <ScreenReaderOnly>upload your image</ScreenReaderOnly>
+                  <ScreenReaderOnly>Foto hochladen</ScreenReaderOnly>
                 </ImageLabel>
               </Wrapper>
             )}
           </ImageUpload>
         </ImageWrapper>
-        <Button category="Save" />
+        <Button category="Speichern" />
       </Form>
     </>
   );
@@ -129,7 +129,7 @@ export default function ImageForm({ onCreateTradition }) {
   }
 
   function onPhotoSubmit(response) {
-    setPhoto(response.data.url);
+    setPhoto(response.data.url.replace('http', 'https'));
   }
 
   function handleSubmitTradition(event) {
@@ -186,7 +186,7 @@ const ImageWrapper = styled.div`
 `;
 
 const Image = styled.img`
-  width: 60vw;
+  width: 70vw;
   height: auto;
 `;
 
@@ -215,6 +215,7 @@ const InputContainer = styled.div`
   gap: 20px;
   align-items: center;
 `;
+
 const Counter = styled.small`
   display: flex;
   justify-content: right;

@@ -25,9 +25,9 @@ export default function Form({ onCreateTerm }) {
 
   return (
     <>
-      <Header>Form</Header>
+      <Header>Formular</Header>
       <FormWrapper
-        aria-describedby="Create a new word"
+        aria-describedby="Neues Wort erstellen"
         onSubmit={handleSubmitTerm}
         autoComplete="off"
       >

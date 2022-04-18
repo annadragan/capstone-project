@@ -19,11 +19,11 @@ export default function BookmarkArchive({
       {bookmarkedList.length === 0 && (
         <>
           <Text>
-            Das machst du gut! Hierher kannst du die Vokabelkärtchen verschieben
-            die du dir bereits gut merkst um sie nicht zu verlieren. Wenn du
-            eine Abwechslung brauchst lerne ein paar Redewendungen auf der
-            nächsten Seite kennen. Sie werden haüfig in Gesprächen, Filmen und
-            Büchern benutzt und sie zu verstehen gehört bei der
+            Hierhin kannst du die Vokabelkärtchen verschieben, die du dir
+            bereits gut gemerkt hast, um sie nicht zu verlieren. Wenn du eine
+            Abwechslung brauchst kannst du ein paar Redewendungen auf der
+            nächsten Seite kennenlernen. Sie werden haüfig in Gesprächen, Filmen
+            und Büchern verwendet und sie zu verstehen gehört bei der
             Sprachentwicklung einfach dazu!
           </Text>
         </>
@@ -55,6 +55,7 @@ const Text = styled.p`
   padding: 20px;
   text-align: center;
 `;
+
 const ListWrapper = styled.ul`
   display: grid;
   justify-items: center;

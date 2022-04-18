@@ -10,7 +10,6 @@ const ButtonStyled = styled.button`
   margin: 2px;
   position: absolute;
   right: 1px;
-
   &:hover {
     color: crimson;
   }

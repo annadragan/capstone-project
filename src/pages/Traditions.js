@@ -25,7 +25,7 @@ export default function Stories({
             }}
           />
           <ScreenReaderOnly>
-            gehe zu der Erstelle eine Tradition Form
+            Gehe zum Formular um eine neue Tradition anzulegen
           </ScreenReaderOnly>
         </AsideButton>
       </Link>
@@ -33,10 +33,10 @@ export default function Stories({
         <>
           <Text>
             Das ist ein Ort für alldas, was dich in Deutschland überrascht hat,
-            was du erst dort kennengelernt hast, was du als 'typisch deutsch'
-            bezeichnet würdest und was uner den Deutschen allgemein bekant ist.
-            Nur mit Kenntnis des kulturellen Kontexts kanst du deine
-            Sprachkenntnisse auf das höchste Niveo bringen und sagen, dass du
+            was du erst hier kennengelernt hast, was du als 'typisch deutsch'
+            bezeichnen würdest und was unter den Deutschen allgemein bekant ist.
+            Nur mit Kenntnis des kulturellen Kontexts kannst du deine
+            Sprachkenntnisse auf das höchste Niveau bringen und sagen, dass du
             dieser Sprache wirklich mächtig bist!
           </Text>
         </>

@@ -21,11 +21,12 @@ export default function VocabularyCards({
       {vocabulary.length === 0 ? (
         <>
           <Text>
-            Das ist ein besonderer Ort, da du diesen nach eigenen Vorliben
-            gestallten kannst. Hier kannst du die für dich wichtigen Vokabeln
-            und Sätze aufbewahren und trainieren. Die Vokabelkärtchen mit den
-            für dich persönlich interessanten und spanennden Wörtern sind beim
-            perfektionieren einer anderen Sprache der Schlüssel zum Erfolg!
+            Das ist ein besonderer Ort, da du diesen nach deinen eigenen
+            Vorlieben gestallten kannst. Hier kannst du die für dich wichtigen
+            Vokabeln und Sätze aufbewahren und trainieren. Die Vokabelkärtchen
+            mit den für dich persönlich interessanten und spanennden Wörtern
+            sind beim perfektionieren einer anderen Sprache der Schlüssel zum
+            Erfolg!
           </Text>
         </>
       ) : (
@@ -37,13 +38,11 @@ export default function VocabularyCards({
         />
       )}
       <Link to={'/form'}>
-        <AsideButton
-          type="button"
-          variant="plus"
-          aria-label="go to create a card-form button"
-        >
+        <AsideButton type="button" variant="plus" aria-label="Zum Formular">
           <BsPatchPlusFill style={{ width: '35px', height: '35px' }} />{' '}
-          <ScreenReaderOnly>add a new vocabulary card</ScreenReaderOnly>
+          <ScreenReaderOnly>
+            Neues Vokabelkärtchen im Formular erstellen
+          </ScreenReaderOnly>
         </AsideButton>
       </Link>
       <ScrollToTop onClick={onScrollUp} hidden={backToTop} />

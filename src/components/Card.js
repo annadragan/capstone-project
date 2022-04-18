@@ -26,7 +26,7 @@ export default function Card({
       {isEditing ? (
         <EditForm onSubmit={handleSubmitEdit} autoComplete="off">
           <EditInputWrapper>
-            <EditLabel htmlFor="word">editiere das Wort</EditLabel>
+            <EditLabel htmlFor="word">Wort bearbeiten</EditLabel>
             <EditInput
               id="word"
               defaultValue={word}
@@ -38,7 +38,7 @@ export default function Card({
             />
           </EditInputWrapper>
           <EditInputWrapper>
-            <EditLabel htmlFor="example">editiere den Beispielsatz</EditLabel>
+            <EditLabel htmlFor="example">Beispielsatz bearbeiten</EditLabel>
             <EditInput
               id="example"
               defaultValue={example}
@@ -50,7 +50,7 @@ export default function Card({
             />
           </EditInputWrapper>
           <EditInputWrapper>
-            <EditLabel htmlFor="explanation">editiere die Erklärung</EditLabel>
+            <EditLabel htmlFor="explanation">Erklärung bearbeiten</EditLabel>
             <EditInput
               id="explanation"
               defaultValue={explanation}
@@ -74,13 +74,13 @@ export default function Card({
           </TestList>
           <IconButton
             type="button"
-            aria-label="bookmark this card"
+            aria-label="Lesezeichen setzen"
             onClick={() => onBookmarkCard(_id)}
             isBookmarked={isBookmarked}
             variant="bookmark"
           >
             <BsShieldFillCheck style={{ width: '25px', height: '25px' }} />
-            <ScreenReaderOnly>bookmark this card</ScreenReaderOnly>
+            <ScreenReaderOnly>Lesezeichen setzen</ScreenReaderOnly>
           </IconButton>
           <IconButton
             type="button"
@@ -88,17 +88,17 @@ export default function Card({
             variant="pen"
           >
             <FaFeatherAlt style={{ width: '25px', height: '25px' }} />
-            <ScreenReaderOnly>edit this card</ScreenReaderOnly>
+            <ScreenReaderOnly>Karte bearbeiten</ScreenReaderOnly>
           </IconButton>
           <IconButton
             type="button"
-            aria-label="delete this card"
+            aria-label="Karte löschen"
             _id={_id}
             onClick={() => setShowMessage(true)}
             variant="trash"
           >
             <BsTrash style={{ width: '25px', height: '25px' }} />
-            <ScreenReaderOnly>delete this card</ScreenReaderOnly>
+            <ScreenReaderOnly>Karte löschen</ScreenReaderOnly>
           </IconButton>
           {showMessage && (
             <DeleteMessage
