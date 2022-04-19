@@ -3,7 +3,7 @@ import Card from '../components/Card';
 import Header from '../components/Header';
 import ScrollToTop from '../components/ScrollToTop';
 import Searchbar from '../components/SearchBar';
-
+import { useState } from 'react';
 import Fuse from 'fuse.js';
 
 export default function BookmarkArchive({
@@ -13,19 +13,17 @@ export default function BookmarkArchive({
   onEditCard,
   onScrollUp,
   backToTop,
+  onSearch,
 }) {
+  const [searchValue, setSearchValue] = useState('');
+
   const bookmarkedList = vocabulary.filter(card => card.isBookmarked === true);
 
-  const fuse = new Fuse(vocabulary, {
+  const fuse = new Fuse(bookmarkedList, {
     keys: ['word'],
-    // includeisBookmark: 'true',
   });
 
-  // console.log('fuse', fuse);
-  const results = fuse.search('hallo');
-  // console.log('');
-
-  const searchedWords = results.map(result => result.word);
+  const results = fuse.search(searchValue);
 
   return (
     <>
@@ -42,7 +40,6 @@ export default function BookmarkArchive({
           </Text>
         </>
       )}
-      <Searchbar />
       <ListWrapper>
         {vocabulary?.map(
           ({ _id, word, example, explanation, isBookmarked }) =>
@@ -61,13 +58,25 @@ export default function BookmarkArchive({
             )
         )}
       </ListWrapper>
-      {/* <ul>
-{searchedWords.map(singWord => {const {word} = singWord;
-return (<li key={word} > </li>))}
-</ul>; */}
+      <Searchbar
+        vocabulary={vocabulary}
+        onSearch={handleSearch}
+        value={searchValue}
+      />
+      <ul>
+        {results.map(vocab => (
+          <li key={vocab._id}>{vocab.word}</li>
+        ))}
+      </ul>
       <ScrollToTop onClick={onScrollUp} hidden={backToTop} />
     </>
   );
+
+  function handleSearch(event) {
+    event.preventDefault();
+    const input = event.target.value.toLowerCase();
+    setSearchValue(input);
+  }
 }
 
 const Text = styled.p`
