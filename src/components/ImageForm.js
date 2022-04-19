@@ -82,6 +82,7 @@ export default function ImageForm({ onCreateTradition }) {
               <Wrapper>
                 <input
                   type="file"
+                  accept="image/png, image/gif, image/jpeg"
                   aria-label="Vorschau der hochgeladenen Fotos"
                   onChange={upload}
                   id="files"

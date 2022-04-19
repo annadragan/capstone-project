@@ -8,7 +8,7 @@ export default styled.header`
   text-align: center;
   height: 48px;
   background-color: #d70761;
-
+  /* background-color: hsl(220, 15%, 35%); */
   color: white;
   position: fixed;
   margin: 0;

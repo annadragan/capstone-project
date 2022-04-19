@@ -11,6 +11,7 @@ import IdiomaticExpressions from './pages/IdiomaticExpressions';
 import Traditions from './pages/Traditions';
 import ImageForm from './components/ImageForm';
 import HomePage from './pages/HomePage';
+import AutoScroll from './components/AutoScroll';
 
 function App() {
   const [vocabulary, setVocabulary] = useLocalStorage('dictionary', []);
@@ -20,7 +21,7 @@ function App() {
     <>
       <AppWrapper>
         <Header />
-        <div></div>
+        <AutoScroll />
         <Routes>
           <Route
             path="/vocabel"

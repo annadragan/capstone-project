@@ -2,8 +2,9 @@ import styled from 'styled-components';
 import Card from '../components/Card';
 import Header from '../components/Header';
 import ScrollToTop from '../components/ScrollToTop';
-// import Searchbar from '../components/SearchBar';
-// import { useState } from 'react';
+import Searchbar from '../components/SearchBar';
+
+import Fuse from 'fuse.js';
 
 export default function BookmarkArchive({
   vocabulary,
@@ -12,20 +13,20 @@ export default function BookmarkArchive({
   onEditCard,
   onScrollUp,
   backToTop,
-  // props,
 }) {
   const bookmarkedList = vocabulary.filter(card => card.isBookmarked === true);
 
-  // const [searchValue, setSearchValue] = useState('');
-  // const handleInput = e => {
-  //   setSearchValue(e.target.value);
-  // };
+  const fuse = new Fuse(vocabulary, {
+    keys: ['word'],
+    // includeisBookmark: 'true',
+  });
 
-  // const searchedWords = props.bookmarkedList.word.filter(vocabs => {
-  //   return vocabs.includes(searchValue);
-  // });
+  // console.log('fuse', fuse);
+  const results = fuse.search('hallo');
+  // console.log('');
 
-  // const searchedWord = vocabulary.filter(vocab => (vocab.word.toLowerCase().includes(userInput.toLowerCase().trim()))
+  const searchedWords = results.map(result => result.word);
+
   return (
     <>
       <Header>Archiv</Header>
@@ -41,6 +42,7 @@ export default function BookmarkArchive({
           </Text>
         </>
       )}
+      <Searchbar />
       <ListWrapper>
         {vocabulary?.map(
           ({ _id, word, example, explanation, isBookmarked }) =>
@@ -59,29 +61,13 @@ export default function BookmarkArchive({
             )
         )}
       </ListWrapper>
-
-      {/* <Searchbar
-        vocabulary={vocabulary}
-        onChange={handleInput}
-        value={searchValue}
-      />  */}
-      {/* <SearchResults>
-        <ul>
-          {searchedWords.map(vocabs => {
-            return <li key={vocabs}>{vocabs}</li>;
-          })}
-        </ul>
-      </SearchResults> */}
-
+      {/* <ul>
+{searchedWords.map(singWord => {const {word} = singWord;
+return (<li key={word} > </li>))}
+</ul>; */}
       <ScrollToTop onClick={onScrollUp} hidden={backToTop} />
     </>
   );
-
-  // function handleSearch(event) {
-  //   event.preventDefault();
-  //   const input = event.target.value.toLowerCase();
-  //   setSearchValue(input);
-  // }
 }
 
 const Text = styled.p`
@@ -98,4 +84,3 @@ const ListWrapper = styled.ul`
   opacity: 0.9;
   transition: 0.2s;
 `;
-// const SearchResults = styled.div``;
