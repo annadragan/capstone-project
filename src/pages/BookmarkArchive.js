@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import Card from '../components/Card';
 import Header from '../components/Header';
 import ScrollToTop from '../components/ScrollToTop';
+// import Searchbar from '../components/SearchBar';
+// import { useState } from 'react';
 
 export default function BookmarkArchive({
   vocabulary,
@@ -10,9 +12,20 @@ export default function BookmarkArchive({
   onEditCard,
   onScrollUp,
   backToTop,
+  // props,
 }) {
   const bookmarkedList = vocabulary.filter(card => card.isBookmarked === true);
 
+  // const [searchValue, setSearchValue] = useState('');
+  // const handleInput = e => {
+  //   setSearchValue(e.target.value);
+  // };
+
+  // const searchedWords = props.bookmarkedList.word.filter(vocabs => {
+  //   return vocabs.includes(searchValue);
+  // });
+
+  // const searchedWord = vocabulary.filter(vocab => (vocab.word.toLowerCase().includes(userInput.toLowerCase().trim()))
   return (
     <>
       <Header>Archiv</Header>
@@ -46,9 +59,29 @@ export default function BookmarkArchive({
             )
         )}
       </ListWrapper>
+
+      {/* <Searchbar
+        vocabulary={vocabulary}
+        onChange={handleInput}
+        value={searchValue}
+      />  */}
+      {/* <SearchResults>
+        <ul>
+          {searchedWords.map(vocabs => {
+            return <li key={vocabs}>{vocabs}</li>;
+          })}
+        </ul>
+      </SearchResults> */}
+
       <ScrollToTop onClick={onScrollUp} hidden={backToTop} />
     </>
   );
+
+  // function handleSearch(event) {
+  //   event.preventDefault();
+  //   const input = event.target.value.toLowerCase();
+  //   setSearchValue(input);
+  // }
 }
 
 const Text = styled.p`
@@ -65,3 +98,4 @@ const ListWrapper = styled.ul`
   opacity: 0.9;
   transition: 0.2s;
 `;
+// const SearchResults = styled.div``;

@@ -66,5 +66,6 @@ const QuoteIcon = styled.div.attrs(() => ({
 `;
 
 const IdiomaticButton = styled(Button)`
-  height: 58px;
+  height: 50px;
+  width: auto;
 `;

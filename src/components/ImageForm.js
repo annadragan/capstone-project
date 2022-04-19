@@ -188,6 +188,7 @@ const ImageWrapper = styled.div`
 const Image = styled.img`
   width: 70vw;
   height: auto;
+  border-radius: 12px;
 `;
 
 const Wrapper = styled.div`

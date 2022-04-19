@@ -20,6 +20,7 @@ function App() {
     <>
       <AppWrapper>
         <Header />
+        <div></div>
         <Routes>
           <Route
             path="/vocabel"
