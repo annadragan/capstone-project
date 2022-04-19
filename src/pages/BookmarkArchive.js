@@ -13,7 +13,6 @@ export default function BookmarkArchive({
   onEditCard,
   onScrollUp,
   backToTop,
-  onSearch,
 }) {
   const [searchValue, setSearchValue] = useState('');
 
@@ -40,34 +39,37 @@ export default function BookmarkArchive({
           </Text>
         </>
       )}
-      <ListWrapper>
-        {vocabulary?.map(
-          ({ _id, word, example, explanation, isBookmarked }) =>
-            isBookmarked && (
-              <Card
-                key={_id}
-                word={word}
-                example={example}
-                explanation={explanation}
-                _id={_id}
-                onBookmarkCard={onBookmarkCard}
-                isBookmarked={isBookmarked}
-                onDeleteCard={() => onDeleteCard(_id)}
-                onEditCard={onEditCard}
-              />
-            )
-        )}
-      </ListWrapper>
       <Searchbar
         vocabulary={vocabulary}
         onSearch={handleSearch}
         value={searchValue}
       />
-      <ul>
+      {console.log(results)}
+      {/* <ul>
         {results.map(vocab => (
           <li key={vocab._id}>{vocab.word}</li>
         ))}
-      </ul>
+      </ul> */}
+      <ListWrapper>
+        {vocabulary
+          ?.filter(result => result.word === searchValue)
+          .map(
+            ({ _id, word, example, explanation, isBookmarked }) =>
+              isBookmarked && (
+                <Card
+                  key={_id}
+                  word={word}
+                  example={example}
+                  explanation={explanation}
+                  _id={_id}
+                  onBookmarkCard={onBookmarkCard}
+                  isBookmarked={isBookmarked}
+                  onDeleteCard={() => onDeleteCard(_id)}
+                  onEditCard={onEditCard}
+                />
+              )
+          )}
+      </ListWrapper>
       <ScrollToTop onClick={onScrollUp} hidden={backToTop} />
     </>
   );
