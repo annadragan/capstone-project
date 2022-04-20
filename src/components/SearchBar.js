@@ -1,11 +1,9 @@
 import styled from 'styled-components';
-// import { BiSearchAlt2 } from 'react-icons/bi';
 import ScreenReaderOnly from './ScreenReaderOnly';
 
 export default function Searchbar({ value, onSearch }) {
   return (
     <SearchbarWrapper>
-      {/* <BiSearchAlt2 style={{ width: '25px', height: '25px' }} /> */}
       <InputLabel htmlFor="searchInput">
         <ScreenReaderOnly>Suche nach dem Wort</ScreenReaderOnly>
       </InputLabel>
