@@ -18,7 +18,7 @@ describe('BookmarkArchive', () => {
         <BookmarkArchive vocabulary={data} />
       </MemoryRouter>
     );
-    const title = screen.getByText('Favoriten');
+    const title = screen.getByText('Archiv');
 
     expect(title).toBeInTheDocument();
   });

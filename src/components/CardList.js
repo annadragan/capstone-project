@@ -7,23 +7,25 @@ export default function CardList({
   onBookmarkCard,
   onEditCard,
 }) {
+  const bookmarkedList = vocabulary.filter(card => card.isBookmarked === false);
   return (
     <>
-      <ListWrapper role="list" aria-label="vocabulary cards">
-        {vocabulary?.map(
+      <ListWrapper role="list" aria-label="Vokabelkärtchen">
+        {bookmarkedList?.map(
           ({ _id, word, example, explanation, isBookmarked }) => {
             return (
-              <Card
-                key={_id}
-                word={word}
-                example={example}
-                explanation={explanation}
-                onDeleteCard={onDeleteCard}
-                _id={_id}
-                onBookmarkCard={onBookmarkCard}
-                isBookmarked={isBookmarked}
-                onEditCard={onEditCard}
-              />
+              <li key={_id}>
+                <Card
+                  word={word}
+                  example={example}
+                  explanation={explanation}
+                  onDeleteCard={onDeleteCard}
+                  _id={_id}
+                  onBookmarkCard={onBookmarkCard}
+                  isBookmarked={isBookmarked}
+                  onEditCard={onEditCard}
+                />
+              </li>
             );
           }
         )}
@@ -33,18 +35,10 @@ export default function CardList({
 }
 
 const ListWrapper = styled.ul`
+  list-style: none;
   display: grid;
   justify-items: center;
   padding-left: 0;
-  list-style: none;
   gap: 30px;
   opacity: 0.9;
-  transition: 0.2s;
-
-  @media (min-width: 640px) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @media (min-width: 1024px) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
 `;

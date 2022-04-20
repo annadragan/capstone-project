@@ -20,6 +20,9 @@ describe('Traditions', () => {
       </MemoryRouter>
     );
 
+    const buttonPlus = screen.getByText(/gehe/i);
+    expect(buttonPlus).toBeInTheDocument();
+
     const title = screen.getByText('Traditionen');
     const link = screen.getAllByRole('link');
 

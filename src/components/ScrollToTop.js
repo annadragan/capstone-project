@@ -34,8 +34,8 @@ export default function ScrollToTop() {
       hidden={backToTop}
       variant="scroll"
     >
-      <BsFillArrowUpCircleFill style={{ width: '35px', height: '35px' }} />{' '}
-      <ScreenReaderOnly>scroll to the top</ScreenReaderOnly>
+      <BsFillArrowUpCircleFill style={{ width: '35px', height: '35px' }} />
+      <ScreenReaderOnly>Nach oben scrollen</ScreenReaderOnly>
     </AsideButton>
   );
 }

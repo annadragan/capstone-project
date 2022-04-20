@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { BsTrash } from 'react-icons/bs';
+import { IoIosArrowDropdown, IoIosArrowDropup } from 'react-icons/io';
 import styled from 'styled-components';
 import DeleteMessage from './DeleteMessage';
 import IconButton from './IconButton';
@@ -13,26 +14,50 @@ export default function ImageCard({
   _id,
 }) {
   const [showMessage, setShowMessage] = useState(false);
+  const [about, setAbout] = useState(false);
 
   return (
     <CardWrapper>
-      <CardPhoto src={photo}></CardPhoto>
+      <CardPhoto
+        src={photo}
+        srcset="large.jpg 1024w, medium.jpg 512w, small.jpg 256w"
+        sizes="(max-width: 30em) 30em, 100vw"
+        alt=""
+      ></CardPhoto>
       <CardTitle>{title}</CardTitle>
-      <CardTradition>{tradition}</CardTradition>
-      <IconButton
-        type="button"
-        onClick={() => setShowMessage(true)}
-        variant="trash"
-      >
-        <BsTrash style={{ width: '25px', height: '25px' }} />
-        <ScreenReaderOnly>delete this card</ScreenReaderOnly>
-      </IconButton>
-      {showMessage && (
-        <DeleteMessage
-          onConfirmDelete={() => onDeleteTradition(_id)}
-          onCancelDelete={() => setShowMessage(false)}
-        />
+      {about && (
+        <div>
+          <p>{tradition}</p>
+          <IconButton
+            type="button"
+            onClick={() => setShowMessage(true)}
+            variant="trash"
+          >
+            <BsTrash style={{ width: '25px', height: '25px' }} />
+            <ScreenReaderOnly>Karteikarte löschen</ScreenReaderOnly>
+          </IconButton>
+          {showMessage && (
+            <DeleteMessage
+              onConfirmDelete={() => onDeleteTradition(_id)}
+              onCancelDelete={() => setShowMessage(false)}
+            />
+          )}
+        </div>
       )}
+      <ToggleButton
+        type="button"
+        onClick={() => setAbout(!about)}
+        aria-label="toggle the card"
+      >
+        <ScreenReaderOnly>
+          Karteikarte ausklappen / Karteikarte zuklappen
+        </ScreenReaderOnly>
+        {!about ? (
+          <IoIosArrowDropdown style={{ width: '25px', height: '25px' }} />
+        ) : (
+          <IoIosArrowDropup style={{ width: '25px', height: '25px' }} />
+        )}
+      </ToggleButton>
     </CardWrapper>
   );
 }
@@ -47,14 +72,16 @@ const CardWrapper = styled.li`
   border-radius: 14px;
   border-top: 16px solid #d70761;
   position: relative;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
 `;
 
 const CardTitle = styled.h2`
-  color: white;
   font-weight: bold;
   font-size: 1.4rem;
   display: flex;
   justify-content: center;
+  margin: 0;
+  padding-top: 0;
 `;
 
 const CardPhoto = styled.img`
@@ -62,6 +89,15 @@ const CardPhoto = styled.img`
   width: 100%;
 `;
 
-const CardTradition = styled.p`
-  color: white;
+const ToggleButton = styled.button`
+  background: transparent;
+  border: transparent;
+  position: absolute;
+  bottom: 12px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: -15px;
+  &:hover {
+    color: #d70761;
+  }
 `;

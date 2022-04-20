@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
+import { AiOutlineForm } from 'react-icons/ai';
 import { FaCloudUploadAlt } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
@@ -15,48 +16,89 @@ export default function ImageForm({ onCreateTradition }) {
   const [photo, setPhoto] = useState('');
   const [loading, setLoading] = useState(false);
   const [process, setProcess] = useState(0);
+  const [newTitle, setNewTitle] = useState(0);
+  const [newTradition, setNewTradition] = useState(0);
+
+  const recalculateTitleCharacter = e => {
+    setNewTitle(e.target.value.length);
+  };
+  const recalculateTraditionCharacter = e => {
+    setNewTradition(e.target.value.length);
+  };
 
   const navigate = useNavigate();
 
   return (
     <>
-      <Header>Form</Header>
+      <Header>
+        <AiOutlineForm
+          style={{
+            width: '32px',
+            height: '32px',
+            color: '#4C5567',
+          }}
+        />
+        <Break
+          style={{
+            wordBreak: 'break-word',
+          }}
+        ></Break>
+        Formular
+      </Header>
       <Form
         autoComplete="off"
         onSubmit={handleSubmitTradition}
-        aria-describedby="Describe a new tradition"
+        aria-describedby="Neue Tradition beschreiben"
       >
-        <InputWrapper>
-          <Input
-            labelText="Überschrift"
-            type="text"
-            name="title"
-            placeholder="Nenne die Tradition..."
-            maxLength="20"
-            id="title"
-          />
-          <Input
-            required
-            labelText="Beschreibung der Tradition*"
-            type="text"
-            name="tradition"
-            placeholder="Beschreibe die Tradition..."
-            maxLength="300"
-            minLength="4"
-            id="tradition"
-          />
-        </InputWrapper>
+        <InputContainer>
+          <InputWrapper>
+            <Input
+              labelText="Überschrift*"
+              type="text"
+              name="title"
+              placeholder="Nenne die Tradition..."
+              maxLength="20"
+              minLength="2"
+              id="title"
+              required
+              onChange={recalculateTitleCharacter}
+              rows={1}
+            />
+            <Counter>{newTitle}/20</Counter>
+          </InputWrapper>
+          <InputWrapper>
+            <Input
+              required
+              labelText="Beschreibung der Tradition*"
+              type="text"
+              name="tradition"
+              placeholder="Beschreibe die Tradition..."
+              maxLength="300"
+              minLength="4"
+              id="tradition"
+              onChange={recalculateTraditionCharacter}
+              rows={7}
+            />
+            <Counter>{newTradition}/300</Counter>
+          </InputWrapper>
+        </InputContainer>
         <ImageWrapper>
           <ImageUpload>
             {photo ? (
               <UploadedImageWrapper>
-                <Image src={photo} alt="" />
+                <Image
+                  src={photo}
+                  alt=""
+                  srcset="large.jpg 1024w, medium.jpg 512w, small.jpg 256w"
+                  sizes="(max-width: 30em) 30em, 100vw"
+                />
               </UploadedImageWrapper>
             ) : (
               <Wrapper>
                 <input
                   type="file"
-                  aria-label="upload your photo"
+                  accept="image/png, image/gif, image/jpeg"
+                  aria-label="Vorschau der hochgeladenen Fotos"
                   onChange={upload}
                   id="files"
                 />
@@ -66,17 +108,15 @@ export default function ImageForm({ onCreateTradition }) {
                     style={{
                       width: '25px',
                       height: '25px',
-                      position: 'relative',
-                      bottom: '-4px',
                     }}
                   />
-                  <ScreenReaderOnly>upload your image</ScreenReaderOnly>
+                  <ScreenReaderOnly>Foto hochladen</ScreenReaderOnly>
                 </ImageLabel>
               </Wrapper>
             )}
           </ImageUpload>
         </ImageWrapper>
-        <Button category="Save" />
+        <Button category="Speichern" />
       </Form>
     </>
   );
@@ -105,7 +145,7 @@ export default function ImageForm({ onCreateTradition }) {
   }
 
   function onPhotoSubmit(response) {
-    setPhoto(response.data.url);
+    setPhoto(response.data.url.replace('http', 'https'));
   }
 
   function handleSubmitTradition(event) {
@@ -114,7 +154,7 @@ export default function ImageForm({ onCreateTradition }) {
     const newTradition = form.elements.tradition.value.trim();
     const newTitle = form.elements.title.value.trim();
 
-    if (newTradition.length >= 4) {
+    if ((newTitle.length >= 2) & (newTradition.length >= 4)) {
       onCreateTradition(newTitle, photo, newTradition);
       navigate('/traditions');
       form.reset();
@@ -133,7 +173,6 @@ const ImageUpload = styled.div`
     height: 0.1px;
     user-select: none;
   }
-
   label[for='files'] {
     background-color: hsl(220, 15%, 35%);
     padding: 10px;
@@ -141,7 +180,6 @@ const ImageUpload = styled.div`
     border-radius: 8px;
     position: relative;
   }
-
   label[for='files']:hover {
     background-color: #d70761;
   }
@@ -151,7 +189,8 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
+  margin-top: 7vh;
 `;
 
 const ImageWrapper = styled.div`
@@ -164,8 +203,9 @@ const ImageWrapper = styled.div`
 `;
 
 const Image = styled.img`
-  width: 60vw;
+  width: 70vw;
   height: auto;
+  border-radius: 12px;
 `;
 
 const Wrapper = styled.div`
@@ -182,9 +222,23 @@ const UploadedImageWrapper = styled.div`
 const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 15px;
 `;
 
 const ImageLabel = styled.label`
   position: absolute;
+`;
+
+const InputContainer = styled.div`
+  display: grid;
+  gap: 20px;
+  align-items: center;
+`;
+
+const Counter = styled.small`
+  display: flex;
+  justify-content: right;
+`;
+
+const Break = styled.div`
+  margin-top: -16px;
 `;

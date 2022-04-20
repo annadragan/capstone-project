@@ -1,12 +1,16 @@
+import { IoIosCloseCircleOutline } from 'react-icons/io';
 import styled from 'styled-components';
-import ScreenReaderOnly from './ScreenReaderOnly';
 import DeleteMessageButton from './DeleteMessageButton';
+import ScreenReaderOnly from './ScreenReaderOnly';
 
 export default function DeleteMessage({ onConfirmDelete, onCancelDelete }) {
   return (
     <MessageOverlay>
       <MessageContent>
-        <h2>Bestätige das Löschen</h2>
+        <CloseMessageButton type="button" onClick={onCancelDelete}>
+          <ScreenReaderOnly>Benachrichtigung schließen</ScreenReaderOnly>
+        </CloseMessageButton>
+        <h2>Löschen bestätigen</h2>
         <p>Möchtest du diese Karteikarte wirklich löschen?</p>
         <MessageWindowWrapper>
           <DeleteMessageButton
@@ -14,14 +18,14 @@ export default function DeleteMessage({ onConfirmDelete, onCancelDelete }) {
             type="button"
             onClick={onCancelDelete}
           >
-            Nein <ScreenReaderOnly>cancel deleting this card</ScreenReaderOnly>
+            Nein
           </DeleteMessageButton>
           <DeleteMessageButton
             variant={'confirm'}
             type="button"
             onClick={onConfirmDelete}
           >
-            Ja <ScreenReaderOnly>confirm deleting this card</ScreenReaderOnly>
+            Ja
           </DeleteMessageButton>
         </MessageWindowWrapper>
       </MessageContent>
@@ -46,6 +50,7 @@ const MessageContent = styled.div`
   margin: 30vh auto;
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
+  position: relative;
 
   h2 {
     padding-top: 5px;
@@ -61,4 +66,23 @@ const MessageWindowWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 50%;
+`;
+
+const CloseMessageButton = styled.button.attrs(() => ({
+  children: (
+    <>
+      <ScreenReaderOnly>Benachrichtigung schließen</ScreenReaderOnly>
+      <IoIosCloseCircleOutline style={{ width: '30px', height: '30px' }} />
+    </>
+  ),
+}))`
+  all: unset;
+  background: transparent;
+  border: transparent;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  &:hover {
+    color: crimson;
+  }
 `;

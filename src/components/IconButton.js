@@ -30,6 +30,6 @@ const ButtonStyled = styled.button`
     props.variant === 'bookmark' &&
     css`
       top: -9px;
-      color: ${props => (props.isBookmarked ? '#E4717A' : '#9F9191')};
+      color: ${props => (props.isBookmarked ? '#f80759' : 'black')};
     `}
 `;

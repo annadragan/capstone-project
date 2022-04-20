@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { GrBlockQuote } from 'react-icons/gr';
 import { RiDoubleQuotesR } from 'react-icons/ri';
 import styled from 'styled-components';
 import Button from '../components/Button';
@@ -12,7 +13,21 @@ export default function IdiomaticExpressions() {
 
   return (
     <>
-      <Header>Redewendungen</Header>
+      <Header>
+        <GrBlockQuote
+          style={{
+            width: '32px',
+            height: '32px',
+            color: '#4C5567',
+          }}
+        />
+        <Break
+          style={{
+            wordBreak: 'break-word',
+          }}
+        ></Break>
+        Redewendungen
+      </Header>
       <IdiomaticButton
         category="nächste Redewendung"
         onClick={() => handleRandomeQuote()}
@@ -41,7 +56,7 @@ const ExpressionWrapper = styled.div`
   width: 90%;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
   border-radius: 12px;
-  margin: 30px auto;
+  margin: 50px auto;
 `;
 
 const ExpressionContent = styled.p`
@@ -66,5 +81,14 @@ const QuoteIcon = styled.div.attrs(() => ({
 `;
 
 const IdiomaticButton = styled(Button)`
-  height: 58px;
+  height: 50px;
+  width: 220px;
+  margin-top: 8vh;
+  &:hover {
+    width: 250px;
+  }
+`;
+
+const Break = styled.div`
+  margin-top: -16px;
 `;

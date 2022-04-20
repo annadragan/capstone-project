@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { BsFillBookmarkCheckFill, BsTrash } from 'react-icons/bs';
-import { GrEdit } from 'react-icons/gr';
+import { BsTrash } from 'react-icons/bs';
+import { FaFeatherAlt } from 'react-icons/fa';
+import { BsShieldFillCheck } from 'react-icons/bs';
 import styled from 'styled-components';
 import Button from './Button';
 import DeleteMessage from './DeleteMessage';
@@ -25,71 +26,78 @@ export default function Card({
       {isEditing ? (
         <EditForm onSubmit={handleSubmitEdit} autoComplete="off">
           <EditInputWrapper>
-            <EditLabel htmlFor="word">editiere das Wort</EditLabel>
+            <EditLabel htmlFor="word">Wort bearbeiten</EditLabel>
             <EditInput
               id="word"
               defaultValue={word}
               maxLength="20"
               minLength="2"
               type="text"
+              rows={1}
+              columns={10}
             />
           </EditInputWrapper>
           <EditInputWrapper>
-            <EditLabel htmlFor="example">editiere den Beispielsatz</EditLabel>
+            <EditLabel htmlFor="example">Beispielsatz bearbeiten</EditLabel>
             <EditInput
               id="example"
               defaultValue={example}
               maxLength="80"
               minLength="4"
               type="text"
+              rows={3}
+              columns={10}
             />
           </EditInputWrapper>
           <EditInputWrapper>
-            <EditLabel htmlFor="explanation">editiere die Erklärung</EditLabel>
+            <EditLabel htmlFor="explanation">Erklärung bearbeiten</EditLabel>
             <EditInput
               id="explanation"
               defaultValue={explanation}
               maxLength="200"
               minLength="4"
               type="text"
+              rows={5}
+              columns={10}
             />
           </EditInputWrapper>
-          <EditSaveButton category="Speichern" type="submit"></EditSaveButton>
+          <EditButtonWrapper>
+            <Button category="Speichern" type="submit"></Button>
+          </EditButtonWrapper>
         </EditForm>
       ) : (
         <CardWrapper isBookmaked={isBookmarked}>
-          <CardWord>{word}</CardWord>
-          <CardExample>{example}</CardExample>
-          <CardExplanation>{explanation}</CardExplanation>
+          <TestList>
+            <CardWord>{word}</CardWord>
+            <CardExample>{example}</CardExample>
+            <CardExplanation>{explanation}</CardExplanation>
+          </TestList>
           <IconButton
             type="button"
-            aria-label="bookmark this card"
             onClick={() => onBookmarkCard(_id)}
             isBookmarked={isBookmarked}
             variant="bookmark"
           >
-            <BsFillBookmarkCheckFill
-              style={{ width: '25px', height: '25px' }}
-            />
-            <ScreenReaderOnly>bookmark this card</ScreenReaderOnly>
+            <BsShieldFillCheck style={{ width: '25px', height: '25px' }} />
+            <ScreenReaderOnly>Lesezeichen setzen</ScreenReaderOnly>
           </IconButton>
           <IconButton
             type="button"
             onClick={() => setIsEditing(!isEditing)}
             variant="pen"
           >
-            <GrEdit style={{ width: '25px', height: '25px' }} />
-            <ScreenReaderOnly>edit this card</ScreenReaderOnly>
+            <FaFeatherAlt style={{ width: '25px', height: '25px' }} />
+            <ScreenReaderOnly>Karte bearbeiten</ScreenReaderOnly>
           </IconButton>
           <IconButton
             type="button"
-            aria-label="delete this card"
+            aria-label="Karte löschen"
             _id={_id}
             onClick={() => setShowMessage(true)}
             variant="trash"
           >
             <BsTrash style={{ width: '25px', height: '25px' }} />
-            <ScreenReaderOnly>delete this card</ScreenReaderOnly>
+            <ScreenReaderOnly>Karte löschen</ScreenReaderOnly>
           </IconButton>
           {showMessage && (
             <DeleteMessage
@@ -115,38 +123,41 @@ export default function Card({
   }
 }
 
-const CardWrapper = styled.dl`
+const CardWrapper = styled.div`
   background-color: hsl(220, 15%, 35%);
   display: flex;
   flex-direction: column;
   word-wrap: break-word;
   width: 300px;
   gap: 10px;
-  padding: 20px;
+  padding: 20px 30px 20px 20px;
   border-radius: 14px;
   border-top: 16px solid #d70761;
   position: relative;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+`;
+
+const TestList = styled.dl`
+  margin: 0;
 `;
 
 const CardWord = styled.dt`
   display: flex;
   justify-content: center;
   font-weight: bold;
-  color: azure;
   font-size: 1.2rem;
+  padding-bottom: 5px;
 `;
 
 const CardExample = styled.dd`
-  color: white;
   margin-left: 0;
-  font-style: italic;
-  padding: 4px;
+  font-size: 0.9rem;
+  padding-bottom: 5px;
 `;
 
 const CardExplanation = styled.dd`
-  color: white;
   margin-left: 0;
-  padding: 4px;
+  font-size: 1rem;
 `;
 
 const EditForm = styled.form`
@@ -155,6 +166,7 @@ const EditForm = styled.form`
   border-radius: 7px;
   padding: 4px;
   gap: 10px;
+  width: 300px;
 `;
 
 const EditInputWrapper = styled.div`
@@ -186,10 +198,8 @@ const EditInput = styled.textarea`
   }
 `;
 
-const EditSaveButton = styled(Button)`
-  width: 90%;
-  height: 48px;
-  &:hover {
-    width: 95%;
-  }
+const EditButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

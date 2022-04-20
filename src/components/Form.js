@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { AiOutlineForm } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from './Button';
@@ -25,9 +26,23 @@ export default function Form({ onCreateTerm }) {
 
   return (
     <>
-      <Header>Form</Header>
+      <Header>
+        <AiOutlineForm
+          style={{
+            width: '32px',
+            height: '32px',
+            color: '#4C5567',
+          }}
+        />
+        <Break
+          style={{
+            wordBreak: 'break-word',
+          }}
+        ></Break>
+        Formular
+      </Header>
       <FormWrapper
-        aria-describedby="Create a new word"
+        aria-describedby="Neues Wort erstellen"
         onSubmit={handleSubmitTerm}
         autoComplete="off"
       >
@@ -42,6 +57,8 @@ export default function Form({ onCreateTerm }) {
             name="new_word"
             value={newWord}
             type="text"
+            rows={1}
+            columns={10}
             onChange={recalculateWordCharacter}
           />
           <Counter>{newWord}/20</Counter>
@@ -80,7 +97,9 @@ export default function Form({ onCreateTerm }) {
           />
           <Counter>{newExplanation}/200</Counter>
         </InputWrapper>
-        <FormButton category="Erstellen" disabled={disabled}></FormButton>
+        <ButtonWrapper>
+          <Button category="Erstellen" disabled={disabled}></Button>
+        </ButtonWrapper>
       </FormWrapper>
     </>
   );
@@ -100,7 +119,7 @@ export default function Form({ onCreateTerm }) {
       setNewWord('');
       setNewExample('');
       setNewExplanation('');
-      navigate('/');
+      navigate('/vocabel');
       form.reset();
     }
   }
@@ -109,6 +128,7 @@ export default function Form({ onCreateTerm }) {
 const FormWrapper = styled.form`
   display: grid;
   gap: 15px;
+  margin-top: 7vh;
   align-items: center;
 `;
 
@@ -123,9 +143,13 @@ const Counter = styled.small`
   justify-content: right;
 `;
 
-const FormButton = styled(Button)`
-  width: 85%;
-  &:hover {
-    width: 90%;
-  }
+const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+`;
+
+const Break = styled.div`
+  margin-top: -16px;
 `;

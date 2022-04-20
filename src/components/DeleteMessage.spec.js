@@ -29,8 +29,8 @@ describe('DeleteMessage', () => {
           />
         </MemoryRouter>
       );
-      const cancelButton = screen.getByRole('button', { name: /cancel/i });
-      const deleteButton = screen.getByRole('button', { name: /confirm/i });
+      const cancelButton = screen.getByRole('button', { name: /abbrechen/i });
+      const deleteButton = screen.getByRole('button', { name: /löschen/i });
 
       userEvent.click(cancelButton);
       userEvent.click(deleteButton);

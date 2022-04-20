@@ -6,26 +6,24 @@ export default function AsideButton({ children, ...buttonProps }) {
 
 const ButtonStyled = styled.button`
   position: fixed;
-
   z-index: 2;
   background: transparent;
   border: transparent;
-
   &:hover {
-    color: crimson;
+    color: #d70761;
   }
 
   ${props =>
     props.variant === 'scroll' &&
     css`
-      left: 10px;
+      left: 6px;
       bottom: 56px;
     `}
 
   ${props =>
     props.variant === 'plus' &&
     css`
-      right: 16px;
+      right: 6px;
       bottom: 56px;
     `}
 `;

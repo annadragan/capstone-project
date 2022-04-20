@@ -8,7 +8,10 @@ export default function ImageCardList({
 }) {
   return (
     <>
-      <ListWrapper role="list" aria-label="tradition cards list">
+      <ListWrapper
+        role="list"
+        aria-label="Liste von Karteikarten über die Traditionen"
+      >
         {stories?.map(({ _id, title, tradition, photo }) => {
           return (
             <ImageCard
@@ -35,11 +38,4 @@ const ListWrapper = styled.ul`
   gap: 30px;
   opacity: 0.9;
   transition: 0.2s;
-
-  @media (min-width: 640px) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @media (min-width: 1024px) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
 `;
