@@ -64,11 +64,13 @@ export default function BookmarkArchive({
           </Text>
         </>
       )}
-      <Searchbar
-        vocabulary={vocabulary}
-        onSearch={handleSearch}
-        value={searchValue}
-      />
+      {bookmarkedList.length >= 1 && (
+        <Searchbar
+          vocabulary={vocabulary}
+          onSearch={handleSearch}
+          value={searchValue}
+        />
+      )}
       <ListWrapper>
         {sortedArrayAfterSearch.map(
           ({ _id, word, example, explanation, isBookmarked }) => (
