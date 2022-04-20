@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { AiOutlineForm } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from './Button';
@@ -25,7 +26,21 @@ export default function Form({ onCreateTerm }) {
 
   return (
     <>
-      <Header>Formular</Header>
+      <Header>
+        <AiOutlineForm
+          style={{
+            width: '32px',
+            height: '32px',
+            color: '#4C5567',
+          }}
+        />
+        <Break
+          style={{
+            wordBreak: 'break-word',
+          }}
+        ></Break>
+        Formular
+      </Header>
       <FormWrapper
         aria-describedby="Neues Wort erstellen"
         onSubmit={handleSubmitTerm}
@@ -113,6 +128,7 @@ export default function Form({ onCreateTerm }) {
 const FormWrapper = styled.form`
   display: grid;
   gap: 15px;
+  margin-top: 7vh;
   align-items: center;
 `;
 
@@ -132,4 +148,8 @@ const ButtonWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 30px;
+`;
+
+const Break = styled.div`
+  margin-top: -16px;
 `;

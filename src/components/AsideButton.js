@@ -10,7 +10,7 @@ const ButtonStyled = styled.button`
   background: transparent;
   border: transparent;
   &:hover {
-    color: crimson;
+    color: #d70761;
   }
 
   ${props =>

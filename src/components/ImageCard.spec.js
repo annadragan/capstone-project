@@ -16,6 +16,7 @@ describe('ImageCard', () => {
         />
       </MemoryRouter>
     );
+
     const title = screen.getByRole('heading', { level: 2 });
     expect(title).toBeInTheDocument();
 

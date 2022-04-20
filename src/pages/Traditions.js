@@ -1,4 +1,5 @@
 import { BsPatchPlusFill } from 'react-icons/bs';
+import { GiPretzel } from 'react-icons/gi';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import AsideButton from '../components/AsideButton';
@@ -15,7 +16,21 @@ export default function Stories({
 }) {
   return (
     <>
-      <Header>Traditionen</Header>
+      <Header>
+        <GiPretzel
+          style={{
+            width: '32px',
+            height: '32px',
+            color: '#4C5567',
+          }}
+        />
+        <Break
+          style={{
+            wordBreak: 'break-word',
+          }}
+        ></Break>
+        Traditionen
+      </Header>
       <Link to={'/create'}>
         <AsideButton variant="plus">
           <BsPatchPlusFill
@@ -54,4 +69,8 @@ export default function Stories({
 const Text = styled.p`
   text-align: center;
   padding: 20px;
+`;
+
+const Break = styled.div`
+  margin-top: -16px;
 `;

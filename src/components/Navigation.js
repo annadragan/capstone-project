@@ -1,8 +1,8 @@
 import { IconContext } from 'react-icons';
+import { BsShieldFillCheck } from 'react-icons/bs';
 import { GiCardRandom, GiPretzel } from 'react-icons/gi';
 import { GoHome } from 'react-icons/go';
 import { GrBlockQuote } from 'react-icons/gr';
-import { BsShieldFillCheck } from 'react-icons/bs';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import ScreenReaderOnly from '../components/ScreenReaderOnly';

@@ -1,4 +1,5 @@
 import ScrollToTop from './ScrollToTop';
+
 export default {
   title: 'components/ScrollToTop',
   component: ScrollToTop,

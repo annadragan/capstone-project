@@ -1,4 +1,5 @@
 import { BsPatchPlusFill } from 'react-icons/bs';
+import { GiCardRandom } from 'react-icons/gi';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import AsideButton from '../components/AsideButton';
@@ -17,7 +18,21 @@ export default function VocabularyCards({
 }) {
   return (
     <>
-      <Header>Vokabelkärtchen</Header>
+      <Header>
+        <GiCardRandom
+          style={{
+            width: '40px',
+            height: '40px',
+            color: '#4C5567',
+          }}
+        />
+        <Break
+          style={{
+            wordBreak: 'break-word',
+          }}
+        ></Break>
+        Vokabelkärtchen
+      </Header>
       {vocabulary.length === 0 ? (
         <>
           <Text>
@@ -53,4 +68,8 @@ export default function VocabularyCards({
 const Text = styled.p`
   text-align: center;
   padding: 20px;
+`;
+
+const Break = styled.div`
+  margin-top: -16px;
 `;

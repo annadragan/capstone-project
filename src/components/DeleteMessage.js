@@ -67,6 +67,7 @@ const MessageWindowWrapper = styled.div`
   justify-content: space-between;
   width: 50%;
 `;
+
 const CloseMessageButton = styled.button.attrs(() => ({
   children: (
     <>

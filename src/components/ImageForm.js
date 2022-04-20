@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
+import { AiOutlineForm } from 'react-icons/ai';
 import { FaCloudUploadAlt } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
@@ -29,7 +30,21 @@ export default function ImageForm({ onCreateTradition }) {
 
   return (
     <>
-      <Header>Formular</Header>
+      <Header>
+        <AiOutlineForm
+          style={{
+            width: '32px',
+            height: '32px',
+            color: '#4C5567',
+          }}
+        />
+        <Break
+          style={{
+            wordBreak: 'break-word',
+          }}
+        ></Break>
+        Formular
+      </Header>
       <Form
         autoComplete="off"
         onSubmit={handleSubmitTradition}
@@ -175,6 +190,7 @@ const Form = styled.form`
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  margin-top: 7vh;
 `;
 
 const ImageWrapper = styled.div`
@@ -221,4 +237,8 @@ const InputContainer = styled.div`
 const Counter = styled.small`
   display: flex;
   justify-content: right;
+`;
+
+const Break = styled.div`
+  margin-top: -16px;
 `;

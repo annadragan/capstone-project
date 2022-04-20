@@ -2,18 +2,18 @@ import { nanoid } from 'nanoid';
 import { Route, Routes } from 'react-router-dom';
 import styled from 'styled-components';
 import { useLocalStorage } from 'usehooks-ts';
+import AutoScroll from './components/AutoScroll';
 import Form from './components/Form';
 import Header from './components/Header';
+import ImageForm from './components/ImageForm';
 import Navigation from './components/Navigation';
 import BookmarkArchive from './pages/BookmarkArchive';
-import VocabularyCards from './pages/VocabularyCards';
+import HomePage from './pages/HomePage';
 import IdiomaticExpressions from './pages/IdiomaticExpressions';
 import Traditions from './pages/Traditions';
-import ImageForm from './components/ImageForm';
-import HomePage from './pages/HomePage';
-import AutoScroll from './components/AutoScroll';
+import VocabularyCards from './pages/VocabularyCards';
 
-function App() {
+export default function App() {
   const [vocabulary, setVocabulary] = useLocalStorage('dictionary', []);
   const [stories, setStories] = useLocalStorage('chronicle', []);
 
@@ -50,7 +50,6 @@ function App() {
             }
           />
           <Route path="/idioms" element={<IdiomaticExpressions />} />
-
           <Route
             path="/create"
             element={<ImageForm onCreateTradition={handleSubmitTradition} />}
@@ -126,11 +125,9 @@ function App() {
   }
 }
 
-export default App;
-
 const AppWrapper = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px 0;
+  padding: 76px 0 80px 0;
 `;
