@@ -2,7 +2,7 @@ import { nanoid } from 'nanoid';
 import { Route, Routes } from 'react-router-dom';
 import styled from 'styled-components';
 import { useLocalStorage } from 'usehooks-ts';
-import AutoScroll from './components/AutoScroll';
+import AutoScroll from './services/AutoScroll';
 import Form from './components/Form';
 import Header from './components/Header';
 import ImageForm from './components/ImageForm';

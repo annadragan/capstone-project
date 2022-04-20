@@ -40,7 +40,7 @@ export default function VocabularyCards({
             Vorlieben gestalten kannst. Hier kannst du die für dich wichtigen
             Vokabeln und Sätze aufbewahren und trainieren. Die Vokabelkärtchen
             mit den für dich persönlich interessanten und spanennden Wörtern
-            sind beim perfektionieren einer anderen Sprache der Schlüssel zum
+            sind beim Perfektionieren einer anderen Sprache der Schlüssel zum
             Erfolg!
           </Text>
         </>
