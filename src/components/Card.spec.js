@@ -43,7 +43,7 @@ describe('Card', () => {
         </MemoryRouter>
       );
       const bookmarkButton = screen.getByRole('button', {
-        name: /Lesezeichen/i,
+        name: /lesezeichen/i,
       });
 
       userEvent.click(bookmarkButton);

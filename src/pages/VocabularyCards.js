@@ -37,7 +37,7 @@ export default function VocabularyCards({
         <>
           <Text>
             Das ist ein besonderer Ort, da du diesen nach deinen eigenen
-            Vorlieben gestallten kannst. Hier kannst du die für dich wichtigen
+            Vorlieben gestalten kannst. Hier kannst du die für dich wichtigen
             Vokabeln und Sätze aufbewahren und trainieren. Die Vokabelkärtchen
             mit den für dich persönlich interessanten und spanennden Wörtern
             sind beim perfektionieren einer anderen Sprache der Schlüssel zum

@@ -74,7 +74,6 @@ export default function Card({
           </TestList>
           <IconButton
             type="button"
-            aria-label="Lesezeichen setzen"
             onClick={() => onBookmarkCard(_id)}
             isBookmarked={isBookmarked}
             variant="bookmark"

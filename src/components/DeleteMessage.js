@@ -18,14 +18,14 @@ export default function DeleteMessage({ onConfirmDelete, onCancelDelete }) {
             type="button"
             onClick={onCancelDelete}
           >
-            Nein <ScreenReaderOnly>Löschvorgang abbrechen</ScreenReaderOnly>
+            Nein
           </DeleteMessageButton>
           <DeleteMessageButton
             variant={'confirm'}
             type="button"
             onClick={onConfirmDelete}
           >
-            Ja <ScreenReaderOnly>Endgültig löschen</ScreenReaderOnly>
+            Ja
           </DeleteMessageButton>
         </MessageWindowWrapper>
       </MessageContent>

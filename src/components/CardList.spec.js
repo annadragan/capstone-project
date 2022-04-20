@@ -6,7 +6,7 @@ describe('CardList', () => {
     {
       _id: '_id',
       word: 'stolpern',
-      example: 'Der Manager ist über die Wirecardaffere gestolpert',
+      example: 'Der Manager ist über die Wirecardaffäre gestolpert',
       explanation:
         'mit dem Fuß gegen ein Hindernis stoßen und aus dem Gleichgewicht geraten',
     },

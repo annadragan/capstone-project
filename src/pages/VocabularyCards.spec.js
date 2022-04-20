@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import VocabularyCards from './VocabularyCards';
 
@@ -30,6 +29,5 @@ describe('VocabularyCards', () => {
 
     const button = screen.getAllByRole('button');
     expect(button).toHaveLength(1);
-    userEvent.click(button[0]);
   });
 });

@@ -58,7 +58,7 @@ export default function BookmarkArchive({
             Hierhin kannst du die Vokabelkärtchen verschieben, die du dir
             bereits gut gemerkt hast, um sie nicht zu verlieren. Wenn du eine
             Abwechslung brauchst kannst du ein paar Redewendungen auf der
-            nächsten Seite kennenlernen. Sie werden haüfig in Gesprächen, Filmen
+            nächsten Seite kennenlernen. Sie werden häufig in Gesprächen, Filmen
             und Büchern verwendet und sie zu verstehen gehört bei der
             Sprachentwicklung einfach dazu!
           </Text>

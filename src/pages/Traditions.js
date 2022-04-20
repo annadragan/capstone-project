@@ -47,10 +47,10 @@ export default function Stories({
       {stories.length === 0 ? (
         <>
           <Text>
-            Das ist ein Ort für alldas, was dich in Deutschland überrascht hat,
+            Das ist ein Ort für all das, was dich in Deutschland überrascht hat,
             was du erst hier kennengelernt hast, was du als 'typisch deutsch'
-            bezeichnen würdest und was unter den Deutschen allgemein bekant ist.
-            Nur mit Kenntnis des kulturellen Kontexts kannst du deine
+            bezeichnen würdest und was unter den Deutschen allgemein bekannt
+            ist. Nur mit Kenntnis des kulturellen Kontexts kannst du deine
             Sprachkenntnisse auf das höchste Niveau bringen und sagen, dass du
             dieser Sprache wirklich mächtig bist!
           </Text>
