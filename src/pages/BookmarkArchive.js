@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Card from '../components/Card';
 import Header from '../components/Header';
 import ScrollToTop from '../components/ScrollToTop';
-import Searchbar from '../components/Searchbar';
+import Searchbar from '../components/Suche';
 
 export default function BookmarkArchive({
   vocabulary,
