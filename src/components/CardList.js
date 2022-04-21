@@ -40,5 +40,4 @@ const ListWrapper = styled.ul`
   justify-items: center;
   padding-left: 0;
   gap: 30px;
-  opacity: 0.9;
 `;

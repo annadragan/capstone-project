@@ -110,7 +110,6 @@ const ListWrapper = styled.ul`
   padding-left: 0;
   list-style: none;
   gap: 30px;
-  opacity: 0.9;
   transition: 0.2s;
 `;
 

@@ -21,8 +21,8 @@ export default function VocabularyCards({
       <Header>
         <GiCardRandom
           style={{
-            width: '40px',
-            height: '40px',
+            width: '32px',
+            height: '32px',
             color: '#4C5567',
           }}
         />

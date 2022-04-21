@@ -7,7 +7,6 @@ import styled from 'styled-components';
 import Button from './Button';
 import Header from './Header';
 import Input from './Input';
-import ScreenReaderOnly from './ScreenReaderOnly';
 
 const CLOUDNAME = process.env.REACT_APP_CLOUDINARY_CLOUDNAME;
 const PRESET = process.env.REACT_APP_CLOUDINARY_PRESET;
@@ -110,7 +109,6 @@ export default function ImageForm({ onCreateTradition }) {
                       height: '25px',
                     }}
                   />
-                  <ScreenReaderOnly>Foto hochladen</ScreenReaderOnly>
                 </ImageLabel>
               </Wrapper>
             )}
@@ -226,6 +224,7 @@ const InputWrapper = styled.div`
 
 const ImageLabel = styled.label`
   position: absolute;
+  margin-top: -10px;
 `;
 
 const InputContainer = styled.div`

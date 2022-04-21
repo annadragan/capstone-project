@@ -27,7 +27,7 @@ export default function ImageCard({
       <CardTitle>{title}</CardTitle>
       {about && (
         <div>
-          <p>{tradition}</p>
+          <CardTradition>{tradition}</CardTradition>
           <IconButton
             type="button"
             onClick={() => setShowMessage(true)}
@@ -82,6 +82,14 @@ const CardTitle = styled.h2`
   justify-content: center;
   margin: 0;
   padding-top: 0;
+  color: #f2f2f2;
+`;
+
+const CardTradition = styled.p`
+  color: #f2f2f2;
+  margin-top: 12px;
+  text-align: justify;
+  hyphens: auto;
 `;
 
 const CardPhoto = styled.img`
@@ -93,10 +101,11 @@ const ToggleButton = styled.button`
   background: transparent;
   border: transparent;
   position: absolute;
-  bottom: 12px;
   display: flex;
   justify-content: center;
-  margin-bottom: -15px;
+  bottom: 5px;
+  left: -1px;
+  color: #cbc5b9;
   &:hover {
     color: #d70761;
   }

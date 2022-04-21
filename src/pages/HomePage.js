@@ -1,83 +1,52 @@
+import { BsFillArrowRightCircleFill } from 'react-icons/bs';
+import { GoHome } from 'react-icons/go';
 import { RiDoubleQuotesR } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Header from '../components/Header';
 import level from '../icons/level.png';
-import time from '../icons/time.png';
 
 export default function HomePage() {
   return (
     <>
+      <Header>
+        <GoHome
+          style={{
+            width: '32px',
+            height: '32px',
+            color: '#4C5567',
+          }}
+        />
+        <Break
+          style={{
+            wordBreak: 'break-word',
+          }}
+        ></Break>
+        Startseite
+      </Header>
       <Level src={level} alt="time to learn"></Level>
+
+      <LinkStyled role="link" to={'/vocabel'}>
+        <BsFillArrowRightCircleFill
+          style={{
+            width: '35px',
+            height: '35px',
+            color: '#d70761',
+            marginTop: '50px',
+          }}
+        />
+      </LinkStyled>
       <ExpressionWrapper>
-        <QuoteIcon />
+        <QuoteIcon role="link" to={'/idioms'} />
         <Text>"Es ist fünf vor zwölf!"</Text>
       </ExpressionWrapper>
-      <Time>
-        <TimeCircle />
-      </Time>
-      <Subject>
-        <p>Deutsch</p>
-      </Subject>
     </>
   );
 }
 
-const Time = styled.div`
-  height: 70px;
-  width: 70px;
-  background-image: url(${time});
-  background-size: 100%;
-  border-radius: 50%;
-  position: absolute;
-  box-shadow: -4px 2px 56px hsl(220, 15%, 35%);
-  left: 39%;
-  top: 36%;
-  transform: translate(-46% 40%);
-  animation: hour 20s linear infinite;
-
-  @keyframes hour {
-    from {
-      transform: rotate(0deg) translateX(150px) rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg) translateX(150px) rotate(-360deg);
-    }
-  }
-`;
-
-const TimeCircle = styled.div`
-  height: 76px;
-  width: 79px;
-  border: 1px dotted #fff;
-  position: relative;
-  left: -8px;
-  top: -8px;
-  border-radius: 40px;
-`;
-
-const Subject = styled.div`
-  height: 70px;
-  width: 70px;
-  border: 1px dotted #fff;
-  position: absolute;
-  left: 37%;
-  top: 58%;
-  border-radius: 50px;
-  transform: translate(-50% 54%);
-  animation: subject 16s linear infinite;
-
-  @keyframes subject {
-    from {
-      transform: rotate(0deg) translateX(130px) rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg) translateX(130px) rotate(-360deg);
-    }
-  }
-`;
-
 const Level = styled.img`
-  margin-top: -15px;
-  width: 270px;
+  width: 74vw;
+  margin-top: 8%;
 `;
 
 const ExpressionWrapper = styled.div`
@@ -86,21 +55,44 @@ const ExpressionWrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 10px;
-  width: 90%;
+  width: 90vw;
+  height: 25vh;
+  margin-top: 20%;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
   border-radius: 12px;
-  margin: 30px auto;
 `;
 
-const QuoteIcon = styled.div.attrs(() => ({
+const QuoteIcon = styled(Link).attrs(() => ({
   children: <RiDoubleQuotesR style={{ width: '35px', height: '35px' }} />,
 }))`
   background: transparent;
   border: none;
+
+  color: hsl(220, 15%, 35%);
+
+  display: flex;
   padding: 6px;
-  margin: 0 10px;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Text = styled.p`
   font-size: 1.4rem;
+`;
+
+const LinkStyled = styled(Link)`
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-size: 20px;
+  margin: 32px;
+  height: 34px;
+  width: 75px;
+`;
+
+const Break = styled.div`
+  margin-top: -16px;
 `;

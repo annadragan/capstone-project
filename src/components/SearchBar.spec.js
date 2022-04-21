@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import Searchbar from './Searchbar';
 import { MemoryRouter } from 'react-router-dom';
+import Searchbar from './Searchbar';
 
 describe('Searchbar', () => {
   it('renders a label, an input element and a searchbox and it calls onChange event when change input value', () => {
