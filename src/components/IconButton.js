@@ -7,11 +7,12 @@ export default function IconButton({ children, ...buttonProps }) {
 const ButtonStyled = styled.button`
   background: transparent;
   border: transparent;
-  margin: 2px;
+
   position: absolute;
-  right: 1px;
+  right: -2px;
+  color: #cbc5b9;
   &:hover {
-    color: crimson;
+    color: #d70761;
   }
 
   ${props =>
@@ -30,6 +31,6 @@ const ButtonStyled = styled.button`
     props.variant === 'bookmark' &&
     css`
       top: -9px;
-      color: ${props => (props.isBookmarked ? '#f80759' : 'black')};
+      color: ${props => (props.isBookmarked ? '#28f89e' : '#cbc5b9')};
     `}
 `;

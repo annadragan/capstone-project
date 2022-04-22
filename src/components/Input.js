@@ -43,7 +43,6 @@ const StyledTextarea = styled.textarea`
   border-color: crimson;
   &:focus {
     outline: none;
-    background-color: pink;
     width: 100%;
   }
   &::placeholder {

@@ -7,6 +7,7 @@ export default function AsideButton({ children, ...buttonProps }) {
 const ButtonStyled = styled.button`
   position: fixed;
   z-index: 2;
+  color: #121212;
   background: transparent;
   border: transparent;
   &:hover {

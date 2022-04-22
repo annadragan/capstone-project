@@ -39,6 +39,6 @@ const ListWrapper = styled.ul`
   display: grid;
   justify-items: center;
   padding-left: 0;
-  gap: 30px;
   opacity: 0.9;
+  gap: 30px;
 `;

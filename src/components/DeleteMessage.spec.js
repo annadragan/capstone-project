@@ -18,7 +18,7 @@ describe('DeleteMessage', () => {
   });
 
   describe('DeleteMessage', () => {
-    it('calls onClick when clicking the cancel or confirm delete button', () => {
+    it('calls onClick when clicking the cancel or confirm delete button', async () => {
       const cancelBtn = jest.fn();
       const deleteBtn = jest.fn();
       render(
@@ -29,11 +29,11 @@ describe('DeleteMessage', () => {
           />
         </MemoryRouter>
       );
-      const cancelButton = screen.getByRole('button', { name: /abbrechen/i });
-      const deleteButton = screen.getByRole('button', { name: /löschen/i });
+      const cancelButton = screen.getByRole('button', { name: /nein/i });
+      const deleteButton = screen.getByRole('button', { name: /ja/i });
 
-      userEvent.click(cancelButton);
-      userEvent.click(deleteButton);
+      await userEvent.click(cancelButton);
+      await userEvent.click(deleteButton);
 
       expect(deleteBtn).toHaveBeenCalled();
       expect(cancelBtn).toHaveBeenCalled();

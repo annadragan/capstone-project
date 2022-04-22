@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Card from '../components/Card';
 import Header from '../components/Header';
 import ScrollToTop from '../components/ScrollToTop';
-import Searchbar from '../components/SearchBar';
+import Searchbar from '../components/Searchbar';
 
 export default function BookmarkArchive({
   vocabulary,
@@ -110,8 +110,8 @@ const ListWrapper = styled.ul`
   padding-left: 0;
   list-style: none;
   gap: 30px;
-  opacity: 0.9;
   transition: 0.2s;
+  opacity: 0.9;
 `;
 
 const Break = styled.div`

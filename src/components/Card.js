@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { BsTrash } from 'react-icons/bs';
+import { BsShieldFillCheck, BsTrash } from 'react-icons/bs';
 import { FaFeatherAlt } from 'react-icons/fa';
-import { BsShieldFillCheck } from 'react-icons/bs';
 import styled from 'styled-components';
 import Button from './Button';
 import DeleteMessage from './DeleteMessage';
@@ -67,11 +66,11 @@ export default function Card({
         </EditForm>
       ) : (
         <CardWrapper isBookmaked={isBookmarked}>
-          <TestList>
+          <List>
             <CardWord>{word}</CardWord>
             <CardExample>{example}</CardExample>
             <CardExplanation>{explanation}</CardExplanation>
-          </TestList>
+          </List>
           <IconButton
             type="button"
             onClick={() => onBookmarkCard(_id)}
@@ -130,14 +129,14 @@ const CardWrapper = styled.div`
   word-wrap: break-word;
   width: 300px;
   gap: 10px;
-  padding: 20px 30px 20px 20px;
+  padding: 20px 40px 20px 20px;
   border-radius: 14px;
   border-top: 16px solid #d70761;
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
 `;
 
-const TestList = styled.dl`
+const List = styled.dl`
   margin: 0;
 `;
 
@@ -145,19 +144,27 @@ const CardWord = styled.dt`
   display: flex;
   justify-content: center;
   font-weight: bold;
-  font-size: 1.2rem;
-  padding-bottom: 5px;
+  font-size: 18px;
+  padding-bottom: 6px;
+  color: #f2f2f2;
+  margin-top: -12px;
 `;
 
 const CardExample = styled.dd`
   margin-left: 0;
-  font-size: 0.9rem;
   padding-bottom: 5px;
+  color: #f2f2f2;
+  margin-top: 12px;
+  text-align: justify;
+  hyphens: auto;
 `;
 
 const CardExplanation = styled.dd`
   margin-left: 0;
-  font-size: 1rem;
+  color: #f2f2f2;
+  margin-top: 12px;
+  text-align: justify;
+  hyphens: auto;
 `;
 
 const EditForm = styled.form`
@@ -187,7 +194,6 @@ const EditInput = styled.textarea`
   border-color: crimson;
   &:focus {
     outline: none;
-    background-color: pink;
     width: 100%;
   }
   &::placeholder {
