@@ -38,7 +38,7 @@ export default function HomePage() {
       </LinkStyled>
       <ExpressionWrapper>
         <QuoteIcon role="link" to={'/idioms'} />
-        <Text>"Es ist fünf vor zwölf!"</Text>
+        <Text>„Es ist fünf vor zwölf!“</Text>
       </ExpressionWrapper>
     </>
   );
@@ -46,7 +46,8 @@ export default function HomePage() {
 
 const Level = styled.img`
   width: 74vw;
-  margin-top: 8%;
+  margin-top: 50px;
+  max-width: 400px;
 `;
 
 const ExpressionWrapper = styled.div`
@@ -57,7 +58,7 @@ const ExpressionWrapper = styled.div`
   padding: 10px;
   width: 90vw;
   height: 25vh;
-  margin-top: 20%;
+  margin-top: 70px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
   border-radius: 12px;
 `;

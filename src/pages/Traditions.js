@@ -29,7 +29,7 @@ export default function Stories({
             wordBreak: 'break-word',
           }}
         ></Break>
-        Traditionen
+        Besonderheiten
       </Header>
       <Link to={'/create'}>
         <AsideButton variant="plus">

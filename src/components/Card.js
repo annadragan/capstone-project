@@ -123,7 +123,6 @@ export default function Card({
 }
 
 const CardWrapper = styled.div`
-  opacity: 0.9;
   background-color: hsl(220, 15%, 35%);
   display: flex;
   flex-direction: column;
@@ -195,7 +194,6 @@ const EditInput = styled.textarea`
   border-color: crimson;
   &:focus {
     outline: none;
-    background-color: pink;
     width: 100%;
   }
   &::placeholder {

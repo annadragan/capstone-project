@@ -111,6 +111,7 @@ const ListWrapper = styled.ul`
   list-style: none;
   gap: 30px;
   transition: 0.2s;
+  opacity: 0.9;
 `;
 
 const Break = styled.div`
