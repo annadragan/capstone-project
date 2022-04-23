@@ -14,15 +14,17 @@ Have a look at the hosted version on [Vercel](https://level-up-deutsch.vercel.ap
 
 ## Preview
 
+### Important: This demo is optimized for mobile screen!
+
+![App screens](/public/App-preview.png)
+
+![App screens](/public/App-preview2.png)
+
 ## Video
 
 <div>
 <img src="./src/movie.gif" width="160"/>
 </div>
-
-### Important: This demo is optimized for mobile screen!
-
-![App screens]()
 
 ## Tech stack
 
@@ -33,11 +35,14 @@ Have a look at the hosted version on [Vercel](https://level-up-deutsch.vercel.ap
   - [husky](https://typicode.github.io/husky/#/)
 - [styled components](https://styled-components.com/)
 - [Storybook](https://storybook.js.org/)
-- Cloudinary
-- Axios
+- [Cloudinary](https://cloudinary.com/)
+- [Axios](https://axios-http.com/docs/intro)
+- [npm](https://www.npmjs.com/)
 - Local Storage
 
 ---
+
+### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Cloudinary Setup
 
@@ -45,7 +50,7 @@ Have a look at the hosted version on [Vercel](https://level-up-deutsch.vercel.ap
 - Go to [Upload presets](https://cloudinary.com/console/settings/upload#upload_presets)
 - Click `Enable` unsigned uploading
 - Copy the preset name (the 8 character hash below name)
-- Add your cloudname and preset name to `.env.local`. You can use `.env.example` to create your own `.env.local` inside the `.gitignore`
+- Add your cloudname and preset name to `.env.local`. You can use `.env.example` to create your own `.env.local`
 
 ---
 
@@ -61,3 +66,4 @@ Have a look at the hosted version on [Vercel](https://level-up-deutsch.vercel.ap
 - to run Storybook  
   `npm run storybook`
 - Create a build ready for deploying: `npm run build`
+- Create `.env.local` file (please check if you have added `env.local` in your `.gitignore`)
