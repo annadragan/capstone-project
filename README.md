@@ -16,16 +16,14 @@ Have a look at the hosted version on [Vercel](https://level-up-deutsch.vercel.ap
 
 ## Preview
 
-![App screens](/public/screens.png)
-
-![App screens](/public/screens2.png)
+![App screens](/public/preview.png)
 
 ---
 
 ## Video
 
 <div>
-<movie src="/public/LevelUpVideo.mov" width="200"/>
+<video src="/public/LevelUpVideo.mov" width="200"/>
 </div>
 
 ---
