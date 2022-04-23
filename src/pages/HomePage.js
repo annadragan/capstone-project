@@ -50,6 +50,7 @@ const Level = styled.img`
   width: 74vw;
   margin-top: 50px;
   max-width: 400px;
+  height: auto;
 `;
 
 const ExpressionWrapper = styled.div`

@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+## ![hero](/src/icons/level.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+> Digitales Gesellenstück Level up Deutsch is my final project of 12-weeks long bootcamp at [neuefische GmbH](https://www.neuefische.de)
 
-In the project directory, you can run:
+Level up Deutsch hilft Dir Deutsch als Zweitsprache auf das höchste Niveau zu bringen. Hier kannst Du Dir eigene Vokabelkärtchen erstellen und mit diesen trainieren. In den kulturellen Kontext tauchst du mit deutschen Redewendungen und durch das individuelle Sammeln für Dich neuer Besonderheiten ein.
 
-### `npm start`
+## Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Have a look at the hosted version on [Vercel](https://level-up-deutsch.vercel.app/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Preview
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Video
 
-### `npm run build`
+<div>
+<img src="./src/movie.gif" width="160"/>
+</div>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Important: This demo is optimized for mobile screen!
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![App screens]()
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tech stack
 
-### `npm run eject`
+- [React](https://reactjs.org/)
+  - [React Router](https://reactrouter.com/)
+  - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+  - [Jest](https://jestjs.io/)
+  - [husky](https://typicode.github.io/husky/#/)
+- [styled components](https://styled-components.com/)
+- [Storybook](https://storybook.js.org/)
+- Cloudinary
+- Axios
+- Local Storage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Cloudinary Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Create an account on [Cloudinary](https://cloudinary.com/)
+- Go to [Upload presets](https://cloudinary.com/console/settings/upload#upload_presets)
+- Click `Enable` unsigned uploading
+- Copy the preset name (the 8 character hash below name)
+- Add your cloudname and preset name to `.env.local`. You can use `.env.example` to create your own `.env.local` inside the `.gitignore`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## Project Setup
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- clone this repository
+- install all npm dependencies  
+   `npm install`
+- run app in development mode via `npm start`
+- open [http://localhost:3000](http://localhost:3000) to view it in the browser
+- to run React Testing Library & Jest  
+   `npm test`
+- to run Storybook  
+  `npm run storybook`
+- Create a build ready for deploying: `npm run build`

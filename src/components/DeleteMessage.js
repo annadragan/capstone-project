@@ -46,7 +46,7 @@ const MessageContent = styled.div`
   justify-content: center;
   align-items: center;
   padding: 10px;
-  width: 82%;
+  width: 83%;
   margin: 30vh auto;
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
