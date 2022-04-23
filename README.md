@@ -6,6 +6,8 @@
 
 Level up Deutsch hilft Dir Deutsch als Zweitsprache auf das höchste Niveau zu bringen. Hier kannst Du Dir eigene Vokabelkärtchen erstellen und mit diesen trainieren. In den kulturellen Kontext tauchst du mit deutschen Redewendungen und durch das individuelle Sammeln für Dich neuer Besonderheiten ein.
 
+---
+
 ## Demo
 
 Have a look at the hosted version on [Vercel](https://level-up-deutsch.vercel.app/) (Important: This demo is optimized for mobile screen)
@@ -14,15 +16,19 @@ Have a look at the hosted version on [Vercel](https://level-up-deutsch.vercel.ap
 
 ## Preview
 
-![App screens](/public/App-preview.png)
+![App screens](/public/screens.png)
 
-![App screens](/public/App-preview2.png)
+![App screens](/public/screens2.png)
+
+---
 
 ## Video
 
 <div>
-<img src="/public/LevelUpVideo.mov" width="200"/>
+<movie src="/public/LevelUpVideo.mov" width="200"/>
 </div>
+
+---
 
 ## Tech stack
 
