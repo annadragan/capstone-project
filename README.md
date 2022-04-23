@@ -8,13 +8,11 @@ Level up Deutsch hilft Dir Deutsch als Zweitsprache auf das höchste Niveau zu b
 
 ## Demo
 
-Have a look at the hosted version on [Vercel](https://level-up-deutsch.vercel.app/)
+Have a look at the hosted version on [Vercel](https://level-up-deutsch.vercel.app/) (Important: This demo is optimized for mobile screen)
 
 ---
 
 ## Preview
-
-### Important: This demo is optimized for mobile screen!
 
 ![App screens](/public/App-preview.png)
 
@@ -23,7 +21,7 @@ Have a look at the hosted version on [Vercel](https://level-up-deutsch.vercel.ap
 ## Video
 
 <div>
-<img src="./src/movie.gif" width="160"/>
+<img src="/public/LevelUpVideo.mov" width="200"/>
 </div>
 
 ## Tech stack
