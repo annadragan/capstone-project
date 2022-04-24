@@ -60,7 +60,7 @@ const ExpressionWrapper = styled.div`
   align-items: center;
   padding: 10px;
   width: 90vw;
-  height: 25vh;
+  height: 170px;
   margin-top: 70px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
   border-radius: 12px;
