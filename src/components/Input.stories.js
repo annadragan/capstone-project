@@ -9,4 +9,4 @@ export default {
 const Template = args => <Input {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = { labelText: 'Label', placeholder: 'placeholder' };

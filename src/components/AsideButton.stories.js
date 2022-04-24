@@ -12,6 +12,7 @@ Default.args = {};
 
 export const scroll = Template.bind({});
 scroll.args = {
+  children: 'scrollToTop',
   variant: 'scroll',
 };
 
