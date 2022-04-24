@@ -54,7 +54,7 @@ const LinkStyled = styled(NavLink)`
   border-radius: 9px;
 
   &.active {
-    background: #d70761;
+    background: var(--color-pink);
   }
 `;
 
@@ -63,7 +63,7 @@ const Nav = styled.nav`
   justify-content: space-between;
   height: 48px;
   border-radius: 9px 9px 3px 3px;
-  background: hsl(220, 15%, 35%);
+  background: var(--color-primary-gray);
   position: fixed;
   bottom: 0;
   width: 100%;

@@ -71,9 +71,7 @@ const QuoteIcon = styled(Link).attrs(() => ({
 }))`
   background: transparent;
   border: none;
-
-  color: hsl(220, 15%, 35%);
-
+  color: var(--color-primary-gray);
   display: flex;
   padding: 6px;
   justify-content: center;

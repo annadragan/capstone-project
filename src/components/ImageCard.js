@@ -63,14 +63,14 @@ export default function ImageCard({
 }
 
 const CardWrapper = styled.li`
-  background-color: hsl(220, 15%, 35%);
+  background-color: var(--color-primary-gray);
   display: flex;
   flex-direction: column;
   word-wrap: break-word;
   width: 300px;
   padding: 20px;
   border-radius: 14px;
-  border-top: 16px solid #d70761;
+  border-top: 16px solid var(--color-pink);
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
 `;
@@ -82,11 +82,11 @@ const CardTitle = styled.h2`
   justify-content: center;
   margin: 0;
   padding-top: 0;
-  color: #f2f2f2;
+  color: var(--color-font);
 `;
 
 const CardTradition = styled.p`
-  color: #f2f2f2;
+  color: var(--color-font);
   margin-top: 12px;
   text-align: justify;
   hyphens: auto;
@@ -105,8 +105,8 @@ const ToggleButton = styled.button`
   justify-content: center;
   bottom: 5px;
   left: -1px;
-  color: #cbc5b9;
+  color: var(--color-icon-button);
   &:hover {
-    color: #d70761;
+    color: var(--color-pink);
   }
 `;

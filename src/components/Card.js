@@ -123,7 +123,7 @@ export default function Card({
 }
 
 const CardWrapper = styled.div`
-  background-color: hsl(220, 15%, 35%);
+  background-color: var(--color-primary-gray);
   display: flex;
   flex-direction: column;
   word-wrap: break-word;
@@ -131,7 +131,7 @@ const CardWrapper = styled.div`
   gap: 10px;
   padding: 20px 40px 20px 20px;
   border-radius: 14px;
-  border-top: 16px solid #d70761;
+  border-top: 16px solid var(--color-pink);
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
 `;
@@ -146,14 +146,14 @@ const CardWord = styled.dt`
   font-weight: bold;
   font-size: 18px;
   padding-bottom: 6px;
-  color: #f2f2f2;
+  color: var(--color-font);
   margin-top: -12px;
 `;
 
 const CardExample = styled.dd`
   margin-left: 0;
   padding-bottom: 5px;
-  color: #f2f2f2;
+  color: var(--color-font);
   margin-top: 12px;
   text-align: justify;
   hyphens: auto;
@@ -161,7 +161,7 @@ const CardExample = styled.dd`
 
 const CardExplanation = styled.dd`
   margin-left: 0;
-  color: #f2f2f2;
+  color: var(--color-font);
   margin-top: 12px;
   text-align: justify;
   hyphens: auto;
@@ -197,7 +197,7 @@ const EditInput = styled.textarea`
     width: 100%;
   }
   &::placeholder {
-    color: rgb(159, 161, 190);
+    color: var(--color-light-gray);
   }
   &:hover {
     background-color: azure;

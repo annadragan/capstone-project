@@ -8,7 +8,7 @@ export default styled.header`
   position: fixed;
   margin: 0;
   font-size: 1.4rem;
-  background-color: #edeff4;
+  background-color: var(--color-background);
   z-index: 10;
-  box-shadow: 0px 24px 6px -24px #d70761;
+  box-shadow: 0px 24px 6px -24px var(--color-pink);
 `;

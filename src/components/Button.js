@@ -9,8 +9,8 @@ export default function Button({ category, ...props }) {
 }
 
 const ButtonStyled = styled.button`
-  background-color: #d70761;
-  color: whitesmoke;
+  background-color: var(--color-pink);
+  color: var(--color-whitesmoke);
   border-radius: 1000px;
   height: 45px;
   width: 140px;

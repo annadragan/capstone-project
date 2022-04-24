@@ -43,7 +43,7 @@ const InputField = styled.input`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #4c5567;
+  border: 1px solid var(--color-middle-gray);
   display: block;
   color: black;
   background: transparent
@@ -51,7 +51,7 @@ const InputField = styled.input`
     no-repeat 160px;
   &:focus {
     outline: none;
-    border-color: #d70761;
+    border-color: var(--color-pink);
   }
   &::placeholder {
     font-size: 0.8rem;
