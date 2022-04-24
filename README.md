@@ -1,4 +1,4 @@
-## ![hero](/src/icons/level.png)
+## ![hero](/public/logo.png)
 
 ---
 
@@ -17,14 +17,6 @@ Have a look at the hosted version on [Vercel](https://level-up-deutsch.vercel.ap
 ## Preview
 
 ![App screens](/public/preview.png)
-
----
-
-## Video
-
-<div>
-<video src="/public/LevelUpVideo.mov" width="200"/>
-</div>
 
 ---
 
