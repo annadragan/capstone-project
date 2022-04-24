@@ -25,7 +25,7 @@ export default function HomePage() {
         ></Break>
         Startseite
       </Header>
-      <Level src={level} alt="time to learn"></Level>
+      <Level src={level} alt="Level up Deutsch"></Level>
       <LinkStyled role="link" to={'/vocabel'}>
         <BsFillArrowRightCircleFill
           style={{

@@ -8,8 +8,7 @@ describe('ImageForm', () => {
     const neverCalled = jest.fn();
     render(
       <MemoryRouter>
-        {' '}
-        <ImageForm />{' '}
+        <ImageForm />
       </MemoryRouter>
     );
 
