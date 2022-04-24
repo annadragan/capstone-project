@@ -34,13 +34,12 @@ Have a look at the hosted version on [Vercel](https://level-up-deutsch.vercel.ap
   - [React Router](https://reactrouter.com/)
   - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
   - [Jest](https://jestjs.io/)
-  - [husky](https://typicode.github.io/husky/#/)
 - [styled components](https://styled-components.com/)
 - [Storybook](https://storybook.js.org/)
 - [Cloudinary](https://cloudinary.com/)
 - [Axios](https://axios-http.com/docs/intro)
 - [npm](https://www.npmjs.com/)
-- Local Storage
+- [Local Storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 
 ---
 
