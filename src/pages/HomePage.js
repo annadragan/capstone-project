@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Header from '../components/Header';
 import level from '../icons/level.png';
+import ScreenReaderOnly from '../components/ScreenReaderOnly';
 
 export default function HomePage() {
   return (
@@ -25,7 +26,6 @@ export default function HomePage() {
         Startseite
       </Header>
       <Level src={level} alt="time to learn"></Level>
-
       <LinkStyled role="link" to={'/vocabel'}>
         <BsFillArrowRightCircleFill
           style={{
@@ -35,9 +35,11 @@ export default function HomePage() {
             marginTop: '50px',
           }}
         />
+        <ScreenReaderOnly>Gehe zu den Vokabelkärtchen</ScreenReaderOnly>
       </LinkStyled>
       <ExpressionWrapper>
         <QuoteIcon role="link" to={'/idioms'} />
+        <ScreenReaderOnly>Gehe zu den Redewendungen</ScreenReaderOnly>
         <Text>„Es ist fünf vor zwölf!“</Text>
       </ExpressionWrapper>
     </>
@@ -48,6 +50,7 @@ const Level = styled.img`
   width: 74vw;
   margin-top: 50px;
   max-width: 400px;
+  height: auto;
 `;
 
 const ExpressionWrapper = styled.div`

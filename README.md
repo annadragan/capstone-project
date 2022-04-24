@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+## ![hero](/public/logo.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+> Digitales Gesellenstück Level up Deutsch is my final project of 12-weeks long bootcamp at [neuefische GmbH](https://www.neuefische.de)
 
-In the project directory, you can run:
+Level up Deutsch hilft Dir Deutsch als Zweitsprache auf das höchste Niveau zu bringen. Hier kannst Du Dir eigene Vokabelkärtchen erstellen und mit diesen trainieren. In den kulturellen Kontext tauchst du mit deutschen Redewendungen und durch das individuelle Sammeln für Dich neuer Besonderheiten ein.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Demo
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Have a look at the hosted version on [Vercel](https://level-up-deutsch.vercel.app/) (Important: This demo is optimized for mobile screen)
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Preview
 
-### `npm run build`
+![App screens](/public/preview.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Tech stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [React](https://reactjs.org/)
+  - [React Router](https://reactrouter.com/)
+  - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+  - [Jest](https://jestjs.io/)
+- [styled components](https://styled-components.com/)
+- [Storybook](https://storybook.js.org/)
+- [Cloudinary](https://cloudinary.com/)
+- [Axios](https://axios-http.com/docs/intro)
+- [npm](https://www.npmjs.com/)
+- [Local Storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Cloudinary Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Create an account on [Cloudinary](https://cloudinary.com/)
+- Go to [Upload presets](https://cloudinary.com/console/settings/upload#upload_presets)
+- Click `Enable` unsigned uploading
+- Copy the preset name (the 8 character hash below name)
+- Add your cloudname and preset name to `.env.local`. You can use `.env.example` to create your own `.env.local`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## Project Setup
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- clone this repository
+- install all npm dependencies  
+   `npm install`
+- run app in development mode via `npm start`
+- open [http://localhost:3000](http://localhost:3000) to view it in the browser
+- to run React Testing Library & Jest  
+   `npm test`
+- to run Storybook  
+  `npm run storybook`
+- Create a build ready for deploying: `npm run build`
+- Create `.env.local` file (please check if you have added `env.local` in your `.gitignore`)

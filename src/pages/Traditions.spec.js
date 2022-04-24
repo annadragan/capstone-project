@@ -23,7 +23,7 @@ describe('Traditions', () => {
     const buttonPlus = screen.getByText(/gehe/i);
     expect(buttonPlus).toBeInTheDocument();
 
-    const title = screen.getByText('Traditionen');
+    const title = screen.getByText('Besonderheiten');
     const link = screen.getAllByRole('link');
 
     expect(title).toBeInTheDocument();

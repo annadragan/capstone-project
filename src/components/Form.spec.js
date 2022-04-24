@@ -12,8 +12,8 @@ describe('Form', () => {
       </MemoryRouter>
     );
 
-    const wordTextare = screen.getByLabelText(/neues Wort*/i);
-    userEvent.type(wordTextare, '{enter}');
+    const wordTextarea = screen.getByLabelText(/neues Wort*/i);
+    userEvent.type(wordTextarea, '{enter}');
 
     const exampleTextarea = screen.getByLabelText(/Beispielsatz*/i);
     userEvent.type(exampleTextarea, '{enter}');
@@ -25,7 +25,7 @@ describe('Form', () => {
     const title = screen.getByText('Erstellen');
 
     expect(title).toBeInTheDocument();
-    expect(wordTextare).toBeInTheDocument();
+    expect(wordTextarea).toBeInTheDocument();
     expect(exampleTextarea).toBeInTheDocument();
     expect(explanationTextarea).toBeInTheDocument();
     expect(saveButton).toBeInTheDocument();
