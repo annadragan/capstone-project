@@ -1,3 +1,5 @@
+import { nanoid } from 'nanoid';
+import { BsFillArrowUpCircleFill, BsPatchPlusFill } from 'react-icons/bs';
 import AsideButton from './AsideButton';
 
 export default {
@@ -12,11 +14,16 @@ Default.args = {};
 
 export const scroll = Template.bind({});
 scroll.args = {
-  children: 'scrollToTop',
   variant: 'scroll',
+  children: (
+    <BsFillArrowUpCircleFill style={{ width: '35px', height: '35px' }} />
+  ),
+  _id: nanoid(),
 };
 
 export const plus = Template.bind({});
 plus.args = {
   variant: 'plus',
+  children: <BsPatchPlusFill style={{ width: '35px', height: '35px' }} />,
+  _id: nanoid(),
 };
