@@ -172,14 +172,14 @@ const ImageUpload = styled.div`
     user-select: none;
   }
   label[for='files'] {
-    background-color: hsl(220, 15%, 35%);
+    background-color: var(--color-primary-gray);
     padding: 10px;
-    color: #fff;
+    color: var(--color-white);
     border-radius: 8px;
     position: relative;
   }
   label[for='files']:hover {
-    background-color: #d70761;
+    background-color: var(--color-pink);
   }
 `;
 

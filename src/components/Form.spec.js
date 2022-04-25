@@ -22,7 +22,7 @@ describe('Form', () => {
     userEvent.type(explanationTextarea, '{enter}');
 
     const saveButton = screen.getByRole('button');
-    const title = screen.getByText('Erstellen');
+    const title = screen.getByText('Formular');
 
     expect(title).toBeInTheDocument();
     expect(wordTextarea).toBeInTheDocument();

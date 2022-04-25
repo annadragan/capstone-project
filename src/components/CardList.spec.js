@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import CardList from './CardList';
+import { MemoryRouter } from 'react-router-dom';
 
 describe('CardList', () => {
   const data = [
@@ -11,8 +12,13 @@ describe('CardList', () => {
         'mit dem Fuß gegen ein Hindernis stoßen und aus dem Gleichgewicht geraten',
     },
   ];
+
   it('renders a list of vocabulary cards', () => {
-    render(<CardList vocabulary={data} />);
+    render(
+      <MemoryRouter>
+        <CardList vocabulary={data} />
+      </MemoryRouter>
+    );
 
     const cardList = screen.getByRole('list');
     expect(cardList).toBeInTheDocument();

@@ -7,11 +7,11 @@ export default function AsideButton({ children, ...buttonProps }) {
 const ButtonStyled = styled.button`
   position: fixed;
   z-index: 2;
-  color: #121212;
+  color: var(--color-dark-mode-gray);
   background: transparent;
   border: transparent;
   &:hover {
-    color: #d70761;
+    color: var(--color-pink);
   }
 
   ${props =>

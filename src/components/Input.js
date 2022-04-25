@@ -46,7 +46,7 @@ const StyledTextarea = styled.textarea`
     width: 100%;
   }
   &::placeholder {
-    color: rgb(159, 161, 190);
+    color: var(--color-light-gray);
   }
   &:hover {
     background-color: azure;

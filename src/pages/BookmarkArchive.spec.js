@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 import BookmarkArchive from './BookmarkArchive';
 
 describe('BookmarkArchive', () => {
-  it('has a title', () => {
+  it('has a title and renders a header', () => {
     const data = [
       {
         _id: '_id',

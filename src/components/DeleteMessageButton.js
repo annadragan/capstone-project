@@ -4,7 +4,7 @@ export default styled.button`
   padding: 8px 20px;
   border-radius: 12px;
   transition-duration: 0.3s;
-  color: #fff;
+  color: var(--color-white);
   font-size: 1rem;
   width: 30%;
   border: none;
@@ -17,14 +17,14 @@ export default styled.button`
     css`
       background-color: green;
       &:hover {
-        background-color: #3d9816;
+        background-color: var(--color-cancle-delete);
       }
     `}
 
   ${props =>
     props.variant === 'confirm' &&
     css`
-      background-color: #e52b50;
+      background-color: var(--color-confirme-delete);
       &:hover {
         background-color: red;
       }

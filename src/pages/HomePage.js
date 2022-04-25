@@ -25,7 +25,7 @@ export default function HomePage() {
         ></Break>
         Startseite
       </Header>
-      <Level src={level} alt="time to learn"></Level>
+      <Level src={level} alt="Level up Deutsch"></Level>
       <LinkStyled role="link" to={'/vocabel'}>
         <BsFillArrowRightCircleFill
           style={{
@@ -60,7 +60,7 @@ const ExpressionWrapper = styled.div`
   align-items: center;
   padding: 10px;
   width: 90vw;
-  height: 25vh;
+  height: 170px;
   margin-top: 70px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
   border-radius: 12px;
@@ -71,9 +71,7 @@ const QuoteIcon = styled(Link).attrs(() => ({
 }))`
   background: transparent;
   border: none;
-
-  color: hsl(220, 15%, 35%);
-
+  color: var(--color-primary-gray);
   display: flex;
   padding: 6px;
   justify-content: center;

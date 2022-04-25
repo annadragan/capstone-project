@@ -10,9 +10,9 @@ const ButtonStyled = styled.button`
 
   position: absolute;
   right: -2px;
-  color: #cbc5b9;
+  color: var(--color-icon-button);
   &:hover {
-    color: #d70761;
+    color: var(--color-pink);
   }
 
   ${props =>
