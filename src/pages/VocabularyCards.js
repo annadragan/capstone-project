@@ -54,7 +54,7 @@ export default function VocabularyCards({
       )}
       <Link to={'/form'}>
         <AsideButton type="button" variant="plus" aria-label="Zum Formular">
-          <BsPatchPlusFill style={{ width: '35px', height: '35px' }} />{' '}
+          <BsPatchPlusFill style={{ width: '35px', height: '35px' }} />
           <ScreenReaderOnly>
             Neues Vokabelkärtchen im Formular erstellen
           </ScreenReaderOnly>

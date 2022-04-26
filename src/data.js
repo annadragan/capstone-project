@@ -800,6 +800,209 @@ export const idioms = [
     expression: '„In China ist ein Sack Reis umgefallen“',
     meaning: '~ Ausdruck des eigenen Desinteresses.    ',
   },
+  {
+    _id: nanoid(),
+    expression: '„Da haben wir den Salat“',
+    meaning:
+      '~ jetzt ist das Unheil/Missgeschick passiert. Salat hier wohl als Sinnbild von Durcheinander.',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Das Salz in der Suppe“',
+    meaning:
+      '~ die entscheidende, wichtigste Zutat, die erhebliche Aufwertung verspricht. Suppe ohne Salz schmeckt zumeist sehr fade.',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Etwas in den Sand setzen“',
+    meaning: '~ mit einer Aufgabe oder einem Projekt scheitern. ',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Es ist im Sande verlaufen“',
+    meaning:
+      '~ es ist nicht zum gewünschten Abschluss kommen, ergebnislos zu Ende gegangen.',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Etwas auf den Sankt-Nimmerleins-Tag verschieben“',
+    meaning: '~ dauernd vertrösten mit dem Ziel, es nie stattfinden zu lassen.',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Namen sind Schall und Rauch“',
+    meaning:
+      '~ ein Name muss nicht genannt werden, weil er zur Erledigung einer Aufgabe nicht notwendig ist.',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Das stellt alles Bisherige in den Schatten“',
+    meaning:
+      '~ das ist ein neuer Rekord (auch negativ). Dinge, die im Schatten stehen, gelten gegenüber denen in der Sonne als zweitrangig.',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Über seinen Schatten springen“',
+    meaning:
+      '~ Etwas (für ihn eigentlich) Unmögliches machen (müssen), bisheriges Verhalten zugunsten besserem ändern',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Am Scheideweg stehen“',
+    meaning:
+      '~ vor einer wichtigen Entscheidung stehen, sich entscheiden müssen. Nach der bekannten Legende von Herakles.',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Böses im Schilde führen“',
+    meaning:
+      '~ schlechte Absichten haben. Die feindlichen Ritter konnte man meist nur noch an den Wappen auf ihren Schilden identifizieren, da das Gesicht durch das heruntergelassene Visier verdeckt war.',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Eine Schippe drauflegen“',
+    meaning: '~ eine Leistung nochmals steigern.',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Von der Schippe springen“',
+    meaning: '~ drohender Gefahr knapp entkommen. ',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Auf dem Schlauch stehen“',
+    meaning:
+      '~ etwas im Augenblick nicht verstehen. Tritt jemand auf den Garten- oder seinerzeit auf den Feuerwehrschlauch, wird der Wasserfluss vorerst gestoppt.',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Jemandem auf den Schlips treten“',
+    meaning:
+      '~ jemandes Würde angreifen. Krawatte bzw. Schlips symbolisieren nur in einwandfreiem Zustand Würde.',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Jemanden zur Schnecke machen“',
+    meaning:
+      '~ jemanden niedermachen oder heftig kritisieren, sodass die betroffene Person eingeschüchtert wird, und sich zurückzieht wie eine Schnecke in ihr Haus.',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Eine Schraube locker haben“',
+    meaning:
+      '~ spinnen, verrückt sein. Von der Tatsache, dass eine Maschine, bei der eine Schraube locker ist oder fehlt, nicht richtig funktioniert.',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Den Schuh muss ich mir anziehen“',
+    meaning:
+      '~ dafür übernehme ich die Verantwortung / halte den Kopf hin. (Gegensatz: den Schuh sollen sich ruhig mal Andere anziehen)',
+  },
+  {
+    _id: nanoid(),
+    expression: '„In Schuss bringen/halten/sein“',
+    meaning:
+      '~ etwas in Ordnung, in einen guten, gepflegten Zustand bringen/halten oder bereits sein',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Eine Schwalbe machen“',
+    meaning:
+      '~ (Fußballbegriff) – einen durch einen anderen Spieler verursachten Sturz vortäuschen, um den Schiedsrichter dazu zu bewegen, die gegnerische Mannschaft zu bestrafen.',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Mein lieber Schwan! “',
+    meaning: '~ Ausruf des Erstaunens und der Anerkennung. ',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Ins Schwarze treffen“',
+    meaning:
+      '~ mit einer Vermutung oder Aussage genau richtig liegen. Aus der Schützensprache, wo das Zentrum der Zielscheibe ein schwarzer Kreis ist, den es zu treffen gilt.',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Da kannst du warten, bis du schwarz wirst“',
+    meaning:
+      '~ das dauert lange oder tritt nie ein. Früher ließ man die Gehenkten manchmal zur Abschreckung am Galgen in den Bäumen hängen, bis sie schwarz wurden.',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Den inneren Schweinehund überwinden“',
+    meaning: '~ innere Widerstände überwinden ',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Ich glaub’, mein Schwein pfeift“',
+    meaning:
+      '~ Ausdruck der Empörung und Überraschung (Schweine können nicht pfeifen. Sollte ein Schwein aber tatsächlich pfeifen, dann ist etwas Unmögliches geschehen.)',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Schwein haben “',
+    meaning: '~ Glück ohne eigenes Zutun oder wider Erwarten ',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Da muss ich noch meinen Senf dazu geben“',
+    meaning:
+      '~ da muss ich (meist ungefragt) meinen (nicht unbedingt willkommenen) Kommentar dazu geben. ',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Jemandem auf den Senkel gehen“',
+    meaning: '~ ihm zur Last fallen, ihn stören. ',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Etwas auf die Spitze treiben“',
+    meaning: '~ es zum Äußersten kommen lassen',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Er/Es ist (einsame) Spitze“',
+    meaning: '~ er/es ist hervorragend / super',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Staub aufwirbeln“',
+    meaning: '~ Aufregung/Unruhe verursachen, Aufsehen erregen.',
+  },
+  {
+    _id: nanoid(),
+    expression: '„ich aus dem Staub machen“',
+    meaning:
+      '~ sich verdrücken, verschwinden. Im Kampfgetümmel wurde viel Staub aufgewirbelt und ließ es sich eher von Freund und Feind unbemerkt in Sicherheit bringen',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Stein und Bein schwören“',
+    meaning: '~ einen Schwur besonders bekräftigen',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Jemandem Stolpersteine in den Weg legen“',
+    meaning:
+      '~ Hindernisse gegen Pläne oder Aktivitäten von jemandem aufbauen oder organisieren, um das Vorhaben zu erschweren, zu verzögern oder ganz zu verhindern.',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Jemandem einen Strich durch die Rechnung machen “',
+    meaning:
+      '~ seine Absicht durchkreuzen. Vermutlich vom Lehrer, der die Rechenlösung des Schülers als falsch durchstreicht.',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Große Stücke auf jemanden halten“',
+    meaning:
+      '~ ihn hoch einschätzen, ihm voll vertrauen. Große Stücke waren die wertvolleren Münzen, die man brauchte, um eine begehrte Ware zu erwerben.',
+  },
+  {
+    _id: nanoid(),
+    expression: '„Die Suppe auslöffeln, die ein anderer eingebrockt hat“',
+    meaning: '~ für die Taten eines Dritten (mit)bestraft werden.',
+  },
 ];
 
 // Quelle: https://de.m.wikipedia.org/wiki/Liste_deutscher_Redewendungen
