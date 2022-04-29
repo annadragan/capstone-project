@@ -3,7 +3,7 @@ import { BsFillArrowUpCircleFill } from 'react-icons/bs';
 import AsideButton from './AsideButton';
 import ScreenReaderOnly from './ScreenReaderOnly';
 
-export default function ArrowButton() {
+export default function ScrollUp() {
   const [backToTop, setBackToTop] = useState(true);
 
   useEffect(() => {

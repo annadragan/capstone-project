@@ -6,7 +6,7 @@ import AsideButton from '../components/AsideButton';
 import CardList from '../components/CardList';
 import Header from '../components/Header';
 import ScreenReaderOnly from '../components/ScreenReaderOnly';
-import ScrollUp from '../components/ArrowButton.js';
+import ScrollUp from '../components/ScrollUp.js';
 
 export default function VocabularyCards({
   vocabulary,

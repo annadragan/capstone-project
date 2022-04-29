@@ -6,7 +6,7 @@ import AsideButton from '../components/AsideButton';
 import Header from '../components/Header';
 import ImageCardList from '../components/ImageCardList';
 import ScreenReaderOnly from '../components/ScreenReaderOnly';
-import ScrollUp from '../components/ArrowButton.js';
+import ScrollUp from '../components/ScrollUp.js';
 
 export default function Stories({
   stories,

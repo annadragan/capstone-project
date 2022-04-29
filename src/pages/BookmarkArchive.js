@@ -4,7 +4,7 @@ import { BsShieldFillCheck } from 'react-icons/bs';
 import styled from 'styled-components';
 import Card from '../components/Card';
 import Header from '../components/Header';
-import ScrollUp from '../components/ArrowButton';
+import ScrollUp from '../components/ScrollUp';
 import Searchbar from '../components/Searchbar';
 
 export default function BookmarkArchive({
