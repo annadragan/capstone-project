@@ -1,13 +1,13 @@
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import ScrollToTop from '../components/ScrollToTop';
+import ScrollUp from './ScrollUp';
 
-describe('ScrollToTop', () => {
+describe('ScrollUp', () => {
   it('renders a backToTop button', () => {
     global.scrollTo = jest.fn();
     render(
       <MemoryRouter>
-        <ScrollToTop backToTop={false} />
+        <ScrollUp backToTop={false} />
       </MemoryRouter>
     );
   });

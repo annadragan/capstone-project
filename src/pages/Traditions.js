@@ -6,7 +6,7 @@ import AsideButton from '../components/AsideButton';
 import Header from '../components/Header';
 import ImageCardList from '../components/ImageCardList';
 import ScreenReaderOnly from '../components/ScreenReaderOnly';
-import ScrollToTop from '../components/ScrollToTop.js';
+import ScrollUp from '../components/ScrollUp.js';
 
 export default function Stories({
   stories,
@@ -61,7 +61,7 @@ export default function Stories({
           onDeleteTradition={onDeleteTradition}
         />
       )}
-      <ScrollToTop onClick={onScrollUp} hidden={backToTop} />
+      <ScrollUp onClick={onScrollUp} hidden={backToTop} />
     </>
   );
 }
