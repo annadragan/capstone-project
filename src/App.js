@@ -2,7 +2,7 @@ import { nanoid } from 'nanoid';
 import { Route, Routes } from 'react-router-dom';
 import styled from 'styled-components';
 import { useLocalStorage } from 'usehooks-ts';
-import AutoScroll from './services/AutoScroll';
+import Up from './services/Up';
 import Form from './components/Form';
 import Header from './components/Header';
 import ImageForm from './components/ImageForm';
@@ -21,7 +21,7 @@ export default function App() {
     <>
       <AppWrapper>
         <Header />
-        <AutoScroll />
+        <Up />
         <Routes>
           <Route
             path="/vocabel"

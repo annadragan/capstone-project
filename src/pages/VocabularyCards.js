@@ -6,7 +6,7 @@ import AsideButton from '../components/AsideButton';
 import CardList from '../components/CardList';
 import Header from '../components/Header';
 import ScreenReaderOnly from '../components/ScreenReaderOnly';
-import ScrollToTop from '../components/ScrollToTop.js';
+import ScrollUp from '../components/ArrowButton.js';
 
 export default function VocabularyCards({
   vocabulary,
@@ -60,7 +60,7 @@ export default function VocabularyCards({
           </ScreenReaderOnly>
         </AsideButton>
       </Link>
-      <ScrollToTop onClick={onScrollUp} hidden={backToTop} />
+      <ScrollUp onClick={onScrollUp} hidden={backToTop} />
     </>
   );
 }

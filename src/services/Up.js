@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-export default function AutoScroll() {
+export default function Up() {
   const { pathname } = useLocation();
 
   useEffect(() => {

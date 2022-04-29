@@ -4,7 +4,7 @@ import { BsShieldFillCheck } from 'react-icons/bs';
 import styled from 'styled-components';
 import Card from '../components/Card';
 import Header from '../components/Header';
-import ScrollToTop from '../components/ScrollToTop';
+import ScrollUp from '../components/ArrowButton';
 import Searchbar from '../components/Searchbar';
 
 export default function BookmarkArchive({
@@ -88,7 +88,7 @@ export default function BookmarkArchive({
           )
         )}
       </ListWrapper>
-      <ScrollToTop onClick={onScrollUp} hidden={backToTop} />
+      <ScrollUp onClick={onScrollUp} hidden={backToTop} />
     </>
   );
 
